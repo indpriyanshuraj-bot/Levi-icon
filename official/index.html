@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1f4eb">
+  <meta name="description" content="SVG identity concepts for LeviMC projects, using the LeviLamina botanical palette and paired light/dark neutrality previews.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LeviMC Project Identities — SVG Concepts">
+  <meta property="og:description" content="A coherent botanical identity family for LeviMC projects, with editable SVG masters and complete icon exports.">
+  <meta property="og:image" content="og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="og-image.png">
+  <title>LeviMC Project Identities — SVG Concepts</title>
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="site-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../" aria-label="Levi icon proposal home">
+      <img src="site-icon.svg" alt="" width="36" height="36">
+      <span>LEVI <b>PROJECT IDENTITIES</b></span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="../">Icon refresh</a>
+      <a href="#projects">Projects</a>
+      <a href="#assets">Asset system</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
+        <span id="theme-icon" aria-hidden="true">◐</span>
+        <span id="theme-label">Dark gallery</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">PROJECT BRANDING · SVG SOURCE COLLECTION</p>
+        <h1>One botanical language.<br><span>Distinct project identities.</span></h1>
+        <p class="intro">A more developed identity direction for each project, grounded in the current LeviLamina leaf silhouette and forest-green palette. Each icon is an editable SVG master, not a raster illustration traced into a wrapper.</p>
+        <div class="summary">
+          <div><strong id="project-count">7</strong><span>project identities</span></div>
+          <div><strong id="icon-count">21</strong><span>SVG directions</span></div>
+          <div><strong>6</strong><span>favicon resolutions</span></div>
+          <div><strong>1200 × 630</strong><span>OG artwork</span></div>
+        </div>
+      </div>
+      <aside class="reference-card">
+        <p class="eyebrow">BRAND REFERENCE</p>
+        <img src="https://raw.githubusercontent.com/LiteLDev/LeviLamina/main/docs/main/contents/logo.svg" alt="Current LeviLamina leaf logo" width="116" height="116" loading="lazy">
+        <strong>LeviLamina</strong>
+        <span>Official vector reference</span>
+        <div class="swatches" aria-label="LeviLamina colour palette">
+          <i title="#294c2d" style="--swatch:#294c2d"></i>
+          <i title="#52784d" style="--swatch:#52784d"></i>
+          <i title="#7ba46d" style="--swatch:#7ba46d"></i>
+          <i title="#90a08c" style="--swatch:#90a08c"></i>
+          <i title="#b9ccac" style="--swatch:#b9ccac"></i>
+        </div>
+      </aside>
+    </section>
+
+    <section class="notice wrap">
+      <span class="notice-mark" aria-hidden="true">i</span>
+      <p><strong>Proposal status:</strong> these are unofficial concepts for review. The <code>/official/</code> URL is a collection path, not a claim that LeviMC has approved or adopted these designs.</p>
+    </section>
+
+    <section class="toolbar wrap" id="projects">
+      <div>
+        <p class="eyebrow">IDENTITY EXPLORATION</p>
+        <h2>Project concepts</h2>
+        <p class="toolbar-copy">Every direction is shown on both light and dark surfaces. The gallery toggle also changes the surrounding interface.</p>
+      </div>
+      <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search projects or concepts…" autocomplete="off"></label>
+    </section>
+
+    <section id="project-list" class="project-list wrap" aria-live="polite"></section>
+    <p id="empty" class="empty wrap" hidden>No matching project concepts.</p>
+
+    <section class="asset-system wrap" id="assets">
+      <p class="eyebrow">DELIVERY SPECIFICATION</p>
+      <h2>One SVG master. Complete export family.</h2>
+      <div class="asset-grid">
+        <article><strong>icon.svg</strong><span>512 × 512</span><p>Transparent primary mark. No project-name text or forced background tile.</p></article>
+        <article><strong>icon-banner.svg</strong><span>1200 × 240</span><p>Transparent horizontal logo and name lockup. Project name uses Levi leaf green.</p></article>
+        <article><strong>favicon.ico</strong><span>16 · 32 · 48 · 64 · 128 · 256</span><p>One multi-resolution ICO, with separate PNG exports for each size.</p></article>
+        <article><strong>apple-touch-icon.png</strong><span>180 × 180</span><p>Platform-ready touch icon derived from the selected SVG master.</p></article>
+        <article><strong>og-image.svg / .png</strong><span>1200 × 630</span><p>Editable social card source and optimized PNG export, with project title and shared palette.</p></article>
+      </div>
+      <p class="asset-note">The light/dark gallery test does not recolour the SVG. It displays the exact same master against both surfaces so contrast failures are visible rather than hidden by theme-specific variants.</p>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <span>LeviMC project identity concepts · SVG source files included</span>
+    <span><a href="../">Back to icon refresh proposal ↗</a></span>
+  </footer>
+</body>
+</html>

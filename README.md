@@ -1,70 +1,45 @@
 # LeviMC Icon Refresh Proposal
 
-An unofficial, static showcase of icon replacement ideas for [LiteLDev/levimc.org](https://github.com/LiteLDev/levimc.org).
+An unofficial design and implementation reference for icon improvements across the LeviMC website and related projects. **Nothing in this repository is approved production branding unless the relevant maintainers explicitly accept it.**
 
-**This is a proposal, not an official LeviMC project or an approved design change.** It does not modify the source repository.
+## Preview
 
-## What is included
+- Main website icon comparison: repository root / GitHub Pages home.
+- Project identity concepts and asset exports: [`/official/`](official/).
+- Run locally from the repository root with `python3 -m http.server 8000`, then open `http://localhost:8000/` or `http://localhost:8000/official/`.
 
-- 15 source placements reviewed across the homepage, role selector, LeviLauncher showcase, About page, Support page, and blog navigation.
-- 3 candidate SVGs per placement (45 proposed SVGs total).
-- A “best fit” recommendation plus two alternatives for every placement.
-- Approximate current-icon previews under `assets/icons/current/`. These are simple drawings based on the current icon names, **not extracted copies of the kit's pixel sprites**.
-- A filterable comparison page and a copyable replacement map.
-- A refreshed light UI with six consistent accent-colour groups; the existing-icon previews remain neutral grey so the proposed options stand out.
+## Project identity collection
 
-## Preview locally
+The `/official/` gallery covers LegacyScriptEngine, lip, LeviAntiCheat, LeviOptimize, MoreDimensions, bedboo, and LeviMC Mods. Each project has three SVG concepts: one preferred master and two alternatives. A global light/dark gallery toggle is included, and every concept is rendered side-by-side against both surfaces using the same SVG source.
 
-Run a static HTTP server from this directory. For example, with Python:
+Each project folder contains:
+
+- `icon.svg` — 512 × 512 transparent SVG master.
+- `icon-banner.svg` — transparent horizontal name lockup; project name uses the LeviLamina leaf-green accent.
+- `favicon.ico` — multi-resolution 16, 32, 48, 64, 128, and 256 px icon.
+- `favicon-*.png` — explicit PNG favicon sizes.
+- `apple-touch-icon.png` — 180 × 180.
+- `og-image.svg` and `og-image.png` — editable source and 1200 × 630 social image.
+- `variants/*.svg` — two alternative logo directions.
+- `asset-family.zip` — complete per-project export bundle.
+
+See [`official/ASSET-INDEX.md`](official/ASSET-INDEX.md) for exact paths and sizes.
+
+## Brand reference
+
+The palette and botanical language are based on the current official [LeviLamina logo SVG](https://github.com/LiteLDev/LeviLamina/blob/main/docs/main/contents/logo.svg). Core colours are `#294c2d`, `#52784d`, `#7ba46d`, `#90a08c`, and `#b9ccac`. The LeviLauncher identity remains a separate reference and is not redrawn in this collection.
+
+## Regenerate the project assets
 
 ```sh
-python3 -m http.server 8000
+python -m pip install -r official/tools/requirements.txt
+python official/tools/generate-identity-assets.py
 ```
 
-Then open `http://localhost:8000`.
+## GitHub Pages
 
-Opening `index.html` directly with a `file://` URL may prevent the page from fetching `data.json`; use a local HTTP server instead.
+The workflow in `.github/workflows/pages.yml` deploys the repository root (including `/official/`) through GitHub Actions. Set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**.
 
-## Publish with GitHub Pages
+## License and status
 
-1. Create a **public** GitHub repository and upload/push the contents of this folder.
-2. In the repository, open **Settings → Pages** and select **GitHub Actions** as the build/deployment source.
-3. Push to the `main` branch. The workflow in `.github/workflows/pages.yml` deploys the static site.
-
-## Mapping overview
-
-| Area | Current icon | Recommended | Alternatives |
-|---|---|---|---|
-| Homepage · Windows + Android | `monitor` | `devices` | `smartphone`, `laptop` |
-| Homepage · One-command installs | `chest` | `terminal` | `download`, `package-check` |
-| Homepage · Multiple languages | `bookQuill` | `code` | `languages`, `braces` |
-| Homepage · Open source | `emerald` | `git-branch` | `github`, `code-merge` |
-| Role · Play | `diamond` | `gamepad` | `blocks`, `person-play` |
-| Role · Host | `monitor` | `server` | `network`, `database` |
-| Role · Develop | `pickaxe` | `code` | `terminal`, `file-code` |
-| LeviLauncher · Mod management | `chest` | `package-check` | `layers`, `blocks` |
-| LeviLauncher · Accounts | `heart` | `user-round` | `users`, `id-card` |
-| About · Story introduction | `bookQuill` | `book-open` | `file-text`, `scroll` |
-| About · Why this project exists | `question` | `lightbulb` | `message-question`, `badge-help` |
-| Support · Contribute | `pickaxe` | `git-pull-request` | `code`, `wrench` |
-| Support · Donate | `emerald` | `heart-handshake` | `heart`, `circle-dollar` |
-| Blog · Categories | `chest` | `folder` | `bookmark`, `grid` |
-| Blog · About link | `quote` | `info` | `book-open`, `file-text` |
-
-## Important implementation caveat
-
-The live site uses the shared kit's pixel-art `PixelIcon` system. The candidate SVGs here are semantic and visual concept references; they are not drop-in `PixelIcon` names and should not be plugged into the React app as-is. After maintainers select concepts, redraw/adapt them to the kit's pixel grid and update the kit icon registry and its consumers.
-
-## Source locations checked
-
-- `src/components/Features.tsx`
-- `src/components/Roles.tsx`
-- `src/pages/About.tsx`
-- `src/pages/Support.tsx`
-- `src/blog/Blog.tsx`
-
-The file paths identify the current placements at the time this proposal was prepared. Source may change independently.
-
-## License
-
-The SVG concepts and website code in this repository are provided under the MIT License. The LeviMC name and source project remain the property of their respective owners. This repository is independent and unaffiliated.
+The concepts and gallery code are provided under the repository's MIT License. LeviMC and project names remain the property of their respective owners. This is an independent proposal and does not imply endorsement.

@@ -1,0 +1,14 @@
+Levi-icon continuation overlay
+
+1. Extract this archive into the root of your existing Levi-icon clone and allow files to merge/overwrite.
+2. The archive deliberately contains only changed and newly added paths; unchanged proposal files such as app.js, styles.css, data.json and the existing icon set stay untouched.
+3. Run `python official/tools/cleanup-obsolete-variants.py` to remove stale alternatives from the earlier gallery iteration (safe when those files are absent).
+4. Review with `git status --short` and `git diff`.
+5. Stage and commit:
+
+   git add README.md index.html .github/workflows/pages.yml official/
+   git commit -m "Improve project identity SVGs and asset exports"
+
+6. Push to your branch. GitHub Pages must use GitHub Actions as its deployment source.
+
+Do not extract into a different nested folder: archive paths are already relative to the repository root.

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">LeviAntiCheat — Radar sentinel</title>
+  <desc id="desc">A segmented radial sweep sits behind a compact shield, giving the symbol a monitoring-first reading without weapon or combat cues.</desc>
+  <defs>
+    <clipPath id="markClip"><rect x="0" y="0" width="512" height="512"/></clipPath>
+  </defs>
+  <g stroke-linecap="round" stroke-linejoin="round" clip-path="url(#markClip)"><path d="M256 63 C316 94 359 110 397 124 V239 C397 322 348 392 256 452 C164 392 115 322 115 239 V124 C153 110 196 94 256 63Z" fill="#294c2d" stroke="#b9ccac" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" /><path d="M256 93 C305 118 341 131 372 145 V238 C372 304 331 361 256 411 C181 361 140 304 140 238 V145 C171 131 207 118 256 93Z" fill="#203b25" stroke="#90a08c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /><path d="M186 275 A83 83 0 0 1 326 191 M186 275 A83 83 0 0 0 326 359" fill="none" stroke="#b9ccac" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" /><path d="M256 275 L329 197" fill="none" stroke="#7ba46d" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" /><circle cx="256" cy="275" r="20" fill="#dce7d3" stroke="#294c2d" stroke-width="8" /><g transform="translate(257 276) rotate(-10) scale(0.2)" opacity="1.0">
+      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#7ba46d" stroke="#294c2d" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#b9ccac" stroke="#52784d" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#294c2d" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#52784d" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#294c2d" stroke-width="10" stroke-linecap="round"/>
+      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#90a08c" stroke-width="5" stroke-linecap="round"/>
+    </g><path d="M166 151 L186 170 M346 151 L326 170" fill="none" stroke="#90a08c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" /></g>
+</svg>

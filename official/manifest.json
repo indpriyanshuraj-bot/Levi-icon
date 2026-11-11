@@ -1,0 +1,536 @@
+{
+  "title": "LeviMC project identity concepts",
+  "status": "Unofficial concepts for review. The /official/ route is a directory label, not an approval claim.",
+  "reference": {
+    "name": "LeviLamina official vector identity",
+    "source": "https://github.com/LiteLDev/LeviLamina/blob/main/docs/main/contents/logo.svg",
+    "palette": {
+      "forest": "#294c2d",
+      "deep": "#203b25",
+      "mid": "#52784d",
+      "leaf": "#7ba46d",
+      "sage": "#90a08c",
+      "pale": "#b9ccac",
+      "mist": "#dce7d3",
+      "paper": "#f1f4eb",
+      "white": "#f8faf5",
+      "ink": "#1d3322"
+    },
+    "style_note": "Organic botanical silhouettes, layered forest-green fills and restrained sage contrasts, based on the current official vector mark."
+  },
+  "projects": [
+    {
+      "name": "LegacyScriptEngine",
+      "slug": "legacy-script-engine",
+      "summary": "A maintained compatibility layer for mods from the earlier Bedrock loader ecosystem.",
+      "subtitle": "Legacy runtime compatibility",
+      "palette": [
+        "#294c2d",
+        "#52784d",
+        "#7ba46d",
+        "#90a08c",
+        "#b9ccac"
+      ],
+      "icon": "logos/legacy-script-engine/icon.svg",
+      "banner": "logos/legacy-script-engine/icon-banner.svg",
+      "favicon": "logos/legacy-script-engine/favicon.ico",
+      "apple_touch_icon": "logos/legacy-script-engine/apple-touch-icon.png",
+      "og_image": "logos/legacy-script-engine/og-image.png",
+      "og_image_svg": "logos/legacy-script-engine/og-image.svg",
+      "asset_bundle": "logos/legacy-script-engine/asset-family.zip",
+      "variants": [
+        {
+          "slug": "heritage-leaf",
+          "label": "Heritage leaf",
+          "description": "A maintained legacy crest: layered record plates, a mature botanical branch and a continuous lower stem express predecessor lineage without implying abandonment.",
+          "file": "logos/legacy-script-engine/icon.svg",
+          "recommended": true
+        },
+        {
+          "slug": "two-era-bridge",
+          "label": "Two-era bridge",
+          "description": "Two connected generations share one living stem, representing older scripts and APIs continuing inside the modern LeviLamina runtime.",
+          "file": "logos/legacy-script-engine/variants/two-era-bridge.svg",
+          "recommended": false
+        },
+        {
+          "slug": "runtime-strata",
+          "label": "Runtime strata",
+          "description": "Three substantial runtime strata are joined by a shared botanical spine to represent language and API compatibility.",
+          "file": "logos/legacy-script-engine/variants/runtime-strata.svg",
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "lip",
+      "slug": "lip",
+      "summary": "A general-purpose package installer that resolves packages and their dependencies through one command.",
+      "subtitle": "Package and dependency installer",
+      "palette": [
+        "#294c2d",
+        "#52784d",
+        "#7ba46d",
+        "#90a08c",
+        "#b9ccac"
+      ],
+      "icon": "logos/lip/icon.svg",
+      "banner": "logos/lip/icon-banner.svg",
+      "favicon": "logos/lip/favicon.ico",
+      "apple_touch_icon": "logos/lip/apple-touch-icon.png",
+      "og_image": "logos/lip/og-image.png",
+      "og_image_svg": "logos/lip/og-image.svg",
+      "asset_bundle": "logos/lip/asset-family.zip",
+      "variants": [
+        {
+          "slug": "package-lattice",
+          "label": "Package lattice",
+          "description": "Three interlocking isometric package modules form a compact dependency lattice; the Levi botanical mark is embedded into the central package face.",
+          "file": "logos/lip/icon.svg",
+          "recommended": true
+        },
+        {
+          "slug": "dependency-constellation",
+          "label": "Dependency constellation",
+          "description": "A rooted package graph connects a primary package to dependent modules, showing resolution and installation order rather than delivery or shopping.",
+          "file": "logos/lip/variants/dependency-constellation.svg",
+          "recommended": false
+        },
+        {
+          "slug": "modular-cube",
+          "label": "Modular cube",
+          "description": "A faceted installer core opens into three removable, linked modules; the central leaf acts as the package system's identity rather than a decorative sticker.",
+          "file": "logos/lip/variants/modular-cube.svg",
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "LeviAntiCheat",
+      "slug": "levi-anticheat",
+      "summary": "A technical protection and detection identity for monitoring suspicious activity.",
+      "subtitle": "Protection and detection",
+      "palette": [
+        "#294c2d",
+        "#52784d",
+        "#7ba46d",
+        "#90a08c",
+        "#b9ccac"
+      ],
+      "icon": "logos/levi-anticheat/icon.svg",
+      "banner": "logos/levi-anticheat/icon-banner.svg",
+      "favicon": "logos/levi-anticheat/favicon.ico",
+      "apple_touch_icon": "logos/levi-anticheat/apple-touch-icon.png",
+      "og_image": "logos/levi-anticheat/og-image.png",
+      "og_image_svg": "logos/levi-anticheat/og-image.svg",
+      "asset_bundle": "logos/levi-anticheat/asset-family.zip",
+      "variants": [
+        {
+          "slug": "guardian-aperture",
+          "label": "Guardian aperture",
+          "description": "A layered shield encloses a multi-ring scanning aperture with a leaf-shaped detection core, combining protection and active inspection.",
+          "file": "logos/levi-anticheat/icon.svg",
+          "recommended": true
+        },
+        {
+          "slug": "scan-vault",
+          "label": "Scan vault",
+          "description": "A sealed technical enclosure uses a rotating scan ring, radial notches and a protected leaf core to suggest integrity checks and detection.",
+          "file": "logos/levi-anticheat/variants/scan-vault.svg",
+          "recommended": false
+        },
+        {
+          "slug": "radar-sentinel",
+          "label": "Radar sentinel",
+          "description": "A segmented radial sweep sits behind a compact shield, giving the symbol a monitoring-first reading without weapon or combat cues.",
+          "file": "logos/levi-anticheat/variants/radar-sentinel.svg",
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "LeviOptimize",
+      "slug": "levioptimize",
+      "summary": "A performance optimization project for reducing overhead across computational hot paths.",
+      "subtitle": "Performance and efficiency",
+      "palette": [
+        "#294c2d",
+        "#52784d",
+        "#7ba46d",
+        "#90a08c",
+        "#b9ccac"
+      ],
+      "icon": "logos/levioptimize/icon.svg",
+      "banner": "logos/levioptimize/icon-banner.svg",
+      "favicon": "logos/levioptimize/favicon.ico",
+      "apple_touch_icon": "logos/levioptimize/apple-touch-icon.png",
+      "og_image": "logos/levioptimize/og-image.png",
+      "og_image_svg": "logos/levioptimize/og-image.svg",
+      "asset_bundle": "logos/levioptimize/asset-family.zip",
+      "variants": [
+        {
+          "slug": "processing-core",
+          "label": "Processing core",
+          "description": "A six-sided compute engine combines a layered central core, precision channels and a botanical processing motif. It signals system efficiency without a generic speedometer.",
+          "file": "logos/levioptimize/icon.svg",
+          "recommended": true
+        },
+        {
+          "slug": "pipeline-flow",
+          "label": "Pipeline flow",
+          "description": "Three controlled execution channels converge through a compact leaf-bearing processor, representing streamlined work and reduced redundant processing.",
+          "file": "logos/levioptimize/variants/pipeline-flow.svg",
+          "recommended": false
+        },
+        {
+          "slug": "layered-engine",
+          "label": "Layered engine",
+          "description": "Nested computational plates and aligned routing channels depict optimizations applied across several hot paths, with a leaf at the shared execution junction.",
+          "file": "logos/levioptimize/variants/layered-engine.svg",
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "MoreDimensions",
+      "slug": "moredimensions",
+      "summary": "A science-fiction dimensional architecture API for adding custom Bedrock dimensions.",
+      "subtitle": "Spatial and dimensional API",
+      "palette": [
+        "#294c2d",
+        "#52784d",
+        "#7ba46d",
+        "#90a08c",
+        "#b9ccac"
+      ],
+      "icon": "logos/moredimensions/icon.svg",
+      "banner": "logos/moredimensions/icon-banner.svg",
+      "favicon": "logos/moredimensions/favicon.ico",
+      "apple_touch_icon": "logos/moredimensions/apple-touch-icon.png",
+      "og_image": "logos/moredimensions/og-image.png",
+      "og_image_svg": "logos/moredimensions/og-image.svg",
+      "asset_bundle": "logos/moredimensions/asset-family.zip",
+      "variants": [
+        {
+          "slug": "dimensional-arch",
+          "label": "Dimensional arch",
+          "description": "A nested, engineered portal uses layered elliptical frames, coordinate markers and a floating dimensional core. The leaf is embedded as the transition anchor.",
+          "file": "logos/moredimensions/icon.svg",
+          "recommended": true
+        },
+        {
+          "slug": "coordinate-cube",
+          "label": "Coordinate cube",
+          "description": "A dimensional wireframe cube intersects multiple offset coordinate planes, with a living botanical core marking the stable point between spaces.",
+          "file": "logos/moredimensions/variants/coordinate-cube.svg",
+          "recommended": false
+        },
+        {
+          "slug": "parallel-frames",
+          "label": "Parallel frames",
+          "description": "Three overlapping portal planes show parallel dimensional spaces and the transitions between them, avoiding a literal Nether-portal silhouette.",
+          "file": "logos/moredimensions/variants/parallel-frames.svg",
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "bedboo",
+      "slug": "bedboo",
+      "summary": "A bot library with a Mineflayer-compatible API surface and a Bedrock-focused identity.",
+      "subtitle": "Bot library and API bridge",
+      "palette": [
+        "#294c2d",
+        "#52784d",
+        "#7ba46d",
+        "#90a08c",
+        "#b9ccac"
+      ],
+      "icon": "logos/bedboo/icon.svg",
+      "banner": "logos/bedboo/icon-banner.svg",
+      "favicon": "logos/bedboo/favicon.ico",
+      "apple_touch_icon": "logos/bedboo/apple-touch-icon.png",
+      "og_image": "logos/bedboo/og-image.png",
+      "og_image_svg": "logos/bedboo/og-image.svg",
+      "asset_bundle": "logos/bedboo/asset-family.zip",
+      "variants": [
+        {
+          "slug": "bot-bridge",
+          "label": "Bot bridge",
+          "description": "A custom bot core is framed by API connection ports and a botanical antenna, conveying programmable agents and Mineflayer-compatible integration.",
+          "file": "logos/bedboo/icon.svg",
+          "recommended": true
+        },
+        {
+          "slug": "api-bridge",
+          "label": "API bridge",
+          "description": "A central agent node connects to three differently shaped API ports, making the integration and transport layer the main visual idea.",
+          "file": "logos/bedboo/variants/api-bridge.svg",
+          "recommended": false
+        },
+        {
+          "slug": "autonomous-agent",
+          "label": "Autonomous agent",
+          "description": "A compact modular agent silhouette includes directional sensor fins, an articulated base and a leaf-shaped status mark.",
+          "file": "logos/bedboo/variants/autonomous-agent.svg",
+          "recommended": false
+        }
+      ]
+    },
+    {
+      "name": "LeviMC Mods",
+      "slug": "levimc-mods",
+      "summary": "A curated catalogue for discovering and browsing LeviMC-compatible mods and tools.",
+      "subtitle": "Mod discovery and catalogue",
+      "palette": [
+        "#294c2d",
+        "#52784d",
+        "#7ba46d",
+        "#90a08c",
+        "#b9ccac"
+      ],
+      "icon": "logos/levimc-mods/icon.svg",
+      "banner": "logos/levimc-mods/icon-banner.svg",
+      "favicon": "logos/levimc-mods/favicon.ico",
+      "apple_touch_icon": "logos/levimc-mods/apple-touch-icon.png",
+      "og_image": "logos/levimc-mods/og-image.png",
+      "og_image_svg": "logos/levimc-mods/og-image.svg",
+      "asset_bundle": "logos/levimc-mods/asset-family.zip",
+      "variants": [
+        {
+          "slug": "curated-catalogue",
+          "label": "Curated catalogue",
+          "description": "A structured catalogue of modular cards is arranged around a central discovery mark, balancing browsing, curation and the Levi botanical family cue.",
+          "file": "logos/levimc-mods/icon.svg",
+          "recommended": true
+        },
+        {
+          "slug": "discovery-orbit",
+          "label": "Discovery orbit",
+          "description": "A discovery lens follows a ring of modular entries, representing search, sorting and exploration across a growing mod ecosystem.",
+          "file": "logos/levimc-mods/variants/discovery-orbit.svg",
+          "recommended": false
+        },
+        {
+          "slug": "module-shelf",
+          "label": "Module shelf",
+          "description": "A tiered set of installed module tiles sits in a stable catalogue frame, with an embedded leaf marking the curated source.",
+          "file": "logos/levimc-mods/variants/module-shelf.svg",
+          "recommended": false
+        }
+      ]
+    }
+  ],
+  "icons": [
+    {
+      "project": "LegacyScriptEngine",
+      "project_slug": "legacy-script-engine",
+      "slug": "heritage-leaf",
+      "label": "Heritage leaf",
+      "description": "A maintained legacy crest: layered record plates, a mature botanical branch and a continuous lower stem express predecessor lineage without implying abandonment.",
+      "file": "logos/legacy-script-engine/icon.svg",
+      "recommended": true,
+      "summary": "A maintained compatibility layer for mods from the earlier Bedrock loader ecosystem."
+    },
+    {
+      "project": "LegacyScriptEngine",
+      "project_slug": "legacy-script-engine",
+      "slug": "two-era-bridge",
+      "label": "Two-era bridge",
+      "description": "Two connected generations share one living stem, representing older scripts and APIs continuing inside the modern LeviLamina runtime.",
+      "file": "logos/legacy-script-engine/variants/two-era-bridge.svg",
+      "recommended": false,
+      "summary": "A maintained compatibility layer for mods from the earlier Bedrock loader ecosystem."
+    },
+    {
+      "project": "LegacyScriptEngine",
+      "project_slug": "legacy-script-engine",
+      "slug": "runtime-strata",
+      "label": "Runtime strata",
+      "description": "Three substantial runtime strata are joined by a shared botanical spine to represent language and API compatibility.",
+      "file": "logos/legacy-script-engine/variants/runtime-strata.svg",
+      "recommended": false,
+      "summary": "A maintained compatibility layer for mods from the earlier Bedrock loader ecosystem."
+    },
+    {
+      "project": "lip",
+      "project_slug": "lip",
+      "slug": "package-lattice",
+      "label": "Package lattice",
+      "description": "Three interlocking isometric package modules form a compact dependency lattice; the Levi botanical mark is embedded into the central package face.",
+      "file": "logos/lip/icon.svg",
+      "recommended": true,
+      "summary": "A general-purpose package installer that resolves packages and their dependencies through one command."
+    },
+    {
+      "project": "lip",
+      "project_slug": "lip",
+      "slug": "dependency-constellation",
+      "label": "Dependency constellation",
+      "description": "A rooted package graph connects a primary package to dependent modules, showing resolution and installation order rather than delivery or shopping.",
+      "file": "logos/lip/variants/dependency-constellation.svg",
+      "recommended": false,
+      "summary": "A general-purpose package installer that resolves packages and their dependencies through one command."
+    },
+    {
+      "project": "lip",
+      "project_slug": "lip",
+      "slug": "modular-cube",
+      "label": "Modular cube",
+      "description": "A faceted installer core opens into three removable, linked modules; the central leaf acts as the package system's identity rather than a decorative sticker.",
+      "file": "logos/lip/variants/modular-cube.svg",
+      "recommended": false,
+      "summary": "A general-purpose package installer that resolves packages and their dependencies through one command."
+    },
+    {
+      "project": "LeviAntiCheat",
+      "project_slug": "levi-anticheat",
+      "slug": "guardian-aperture",
+      "label": "Guardian aperture",
+      "description": "A layered shield encloses a multi-ring scanning aperture with a leaf-shaped detection core, combining protection and active inspection.",
+      "file": "logos/levi-anticheat/icon.svg",
+      "recommended": true,
+      "summary": "A technical protection and detection identity for monitoring suspicious activity."
+    },
+    {
+      "project": "LeviAntiCheat",
+      "project_slug": "levi-anticheat",
+      "slug": "scan-vault",
+      "label": "Scan vault",
+      "description": "A sealed technical enclosure uses a rotating scan ring, radial notches and a protected leaf core to suggest integrity checks and detection.",
+      "file": "logos/levi-anticheat/variants/scan-vault.svg",
+      "recommended": false,
+      "summary": "A technical protection and detection identity for monitoring suspicious activity."
+    },
+    {
+      "project": "LeviAntiCheat",
+      "project_slug": "levi-anticheat",
+      "slug": "radar-sentinel",
+      "label": "Radar sentinel",
+      "description": "A segmented radial sweep sits behind a compact shield, giving the symbol a monitoring-first reading without weapon or combat cues.",
+      "file": "logos/levi-anticheat/variants/radar-sentinel.svg",
+      "recommended": false,
+      "summary": "A technical protection and detection identity for monitoring suspicious activity."
+    },
+    {
+      "project": "LeviOptimize",
+      "project_slug": "levioptimize",
+      "slug": "processing-core",
+      "label": "Processing core",
+      "description": "A six-sided compute engine combines a layered central core, precision channels and a botanical processing motif. It signals system efficiency without a generic speedometer.",
+      "file": "logos/levioptimize/icon.svg",
+      "recommended": true,
+      "summary": "A performance optimization project for reducing overhead across computational hot paths."
+    },
+    {
+      "project": "LeviOptimize",
+      "project_slug": "levioptimize",
+      "slug": "pipeline-flow",
+      "label": "Pipeline flow",
+      "description": "Three controlled execution channels converge through a compact leaf-bearing processor, representing streamlined work and reduced redundant processing.",
+      "file": "logos/levioptimize/variants/pipeline-flow.svg",
+      "recommended": false,
+      "summary": "A performance optimization project for reducing overhead across computational hot paths."
+    },
+    {
+      "project": "LeviOptimize",
+      "project_slug": "levioptimize",
+      "slug": "layered-engine",
+      "label": "Layered engine",
+      "description": "Nested computational plates and aligned routing channels depict optimizations applied across several hot paths, with a leaf at the shared execution junction.",
+      "file": "logos/levioptimize/variants/layered-engine.svg",
+      "recommended": false,
+      "summary": "A performance optimization project for reducing overhead across computational hot paths."
+    },
+    {
+      "project": "MoreDimensions",
+      "project_slug": "moredimensions",
+      "slug": "dimensional-arch",
+      "label": "Dimensional arch",
+      "description": "A nested, engineered portal uses layered elliptical frames, coordinate markers and a floating dimensional core. The leaf is embedded as the transition anchor.",
+      "file": "logos/moredimensions/icon.svg",
+      "recommended": true,
+      "summary": "A science-fiction dimensional architecture API for adding custom Bedrock dimensions."
+    },
+    {
+      "project": "MoreDimensions",
+      "project_slug": "moredimensions",
+      "slug": "coordinate-cube",
+      "label": "Coordinate cube",
+      "description": "A dimensional wireframe cube intersects multiple offset coordinate planes, with a living botanical core marking the stable point between spaces.",
+      "file": "logos/moredimensions/variants/coordinate-cube.svg",
+      "recommended": false,
+      "summary": "A science-fiction dimensional architecture API for adding custom Bedrock dimensions."
+    },
+    {
+      "project": "MoreDimensions",
+      "project_slug": "moredimensions",
+      "slug": "parallel-frames",
+      "label": "Parallel frames",
+      "description": "Three overlapping portal planes show parallel dimensional spaces and the transitions between them, avoiding a literal Nether-portal silhouette.",
+      "file": "logos/moredimensions/variants/parallel-frames.svg",
+      "recommended": false,
+      "summary": "A science-fiction dimensional architecture API for adding custom Bedrock dimensions."
+    },
+    {
+      "project": "bedboo",
+      "project_slug": "bedboo",
+      "slug": "bot-bridge",
+      "label": "Bot bridge",
+      "description": "A custom bot core is framed by API connection ports and a botanical antenna, conveying programmable agents and Mineflayer-compatible integration.",
+      "file": "logos/bedboo/icon.svg",
+      "recommended": true,
+      "summary": "A bot library with a Mineflayer-compatible API surface and a Bedrock-focused identity."
+    },
+    {
+      "project": "bedboo",
+      "project_slug": "bedboo",
+      "slug": "api-bridge",
+      "label": "API bridge",
+      "description": "A central agent node connects to three differently shaped API ports, making the integration and transport layer the main visual idea.",
+      "file": "logos/bedboo/variants/api-bridge.svg",
+      "recommended": false,
+      "summary": "A bot library with a Mineflayer-compatible API surface and a Bedrock-focused identity."
+    },
+    {
+      "project": "bedboo",
+      "project_slug": "bedboo",
+      "slug": "autonomous-agent",
+      "label": "Autonomous agent",
+      "description": "A compact modular agent silhouette includes directional sensor fins, an articulated base and a leaf-shaped status mark.",
+      "file": "logos/bedboo/variants/autonomous-agent.svg",
+      "recommended": false,
+      "summary": "A bot library with a Mineflayer-compatible API surface and a Bedrock-focused identity."
+    },
+    {
+      "project": "LeviMC Mods",
+      "project_slug": "levimc-mods",
+      "slug": "curated-catalogue",
+      "label": "Curated catalogue",
+      "description": "A structured catalogue of modular cards is arranged around a central discovery mark, balancing browsing, curation and the Levi botanical family cue.",
+      "file": "logos/levimc-mods/icon.svg",
+      "recommended": true,
+      "summary": "A curated catalogue for discovering and browsing LeviMC-compatible mods and tools."
+    },
+    {
+      "project": "LeviMC Mods",
+      "project_slug": "levimc-mods",
+      "slug": "discovery-orbit",
+      "label": "Discovery orbit",
+      "description": "A discovery lens follows a ring of modular entries, representing search, sorting and exploration across a growing mod ecosystem.",
+      "file": "logos/levimc-mods/variants/discovery-orbit.svg",
+      "recommended": false,
+      "summary": "A curated catalogue for discovering and browsing LeviMC-compatible mods and tools."
+    },
+    {
+      "project": "LeviMC Mods",
+      "project_slug": "levimc-mods",
+      "slug": "module-shelf",
+      "label": "Module shelf",
+      "description": "A tiered set of installed module tiles sits in a stable catalogue frame, with an embedded leaf marking the curated source.",
+      "file": "logos/levimc-mods/variants/module-shelf.svg",
+      "recommended": false,
+      "summary": "A curated catalogue for discovering and browsing LeviMC-compatible mods and tools."
+    }
+  ]
+}

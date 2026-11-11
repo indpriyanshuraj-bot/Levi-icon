@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">LegacyScriptEngine — LeviMC project identity</title><desc id="desc">A maintained compatibility layer for mods from the earlier Bedrock loader ecosystem.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#203b25"/><stop offset="1" stop-color="#294c2d"/></linearGradient></defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<g><path d="M680 80 V550 M730 100 V530 M780 80 V550 M830 100 V530" fill="none" stroke="#90a08c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".16"/><path d="M650 160 H1150 M650 260 H1150 M650 360 H1150 M650 460 H1150" fill="none" stroke="#b9ccac" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".10"/></g>
+<path d="M0 523 C245 481 402 564 630 528 C823 498 1030 500 1200 545 V630 H0Z" fill="#52784d" opacity=".18"/>
+<circle cx="302" cy="310" r="207" fill="#b9ccac" opacity=".07"/><circle cx="302" cy="310" r="181" fill="#294c2d" stroke="#90a08c" stroke-width="2" opacity=".85"/>
+<g transform="translate(46 54) scale(.82)"><path d="M256 58 C319 88 365 101 393 116 V241 C393 323 344 393 256 451 C168 393 119 323 119 241 V116 C147 101 193 88 256 58Z" fill="none" stroke="#b9ccac" stroke-width="27" stroke-linecap="round" stroke-linejoin="round" /><path d="M256 58 C319 88 365 101 393 116 V241 C393 323 344 393 256 451 C168 393 119 323 119 241 V116 C147 101 193 88 256 58Z" fill="none" stroke="#294c2d" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" /><path d="M161 151 L256 113 L351 151 V235 C351 298 315 351 256 393 C197 351 161 298 161 235Z" fill="#dce7d3" stroke="#52784d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" /><path d="M190 214 C215 193 236 183 256 183 C276 183 297 193 322 214" fill="none" stroke="#90a08c" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" /><path d="M177 267 H335 M194 300 H318 M214 332 H298" fill="none" stroke="#52784d" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" /><path d="M212 270 C230 245 251 235 276 236 C298 237 315 251 327 273" fill="none" stroke="#b9ccac" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /><g transform="translate(246 240) rotate(-8) scale(0.46)" opacity="1.0">
+      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#7ba46d" stroke="#294c2d" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#b9ccac" stroke="#52784d" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#294c2d" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#52784d" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#294c2d" stroke-width="10" stroke-linecap="round"/>
+      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#90a08c" stroke-width="5" stroke-linecap="round"/>
+    </g><path d="M202 371 C220 390 238 402 256 415 C274 402 292 390 310 371" fill="none" stroke="#7ba46d" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" /></g>
+<path d="M571 120 V508" stroke="#90a08c" stroke-width="3" opacity=".65"/>
+<text x="626" y="184" fill="#b9ccac" font-family="Inter,Segoe UI,sans-serif" font-size="20" font-weight="600" letter-spacing="5">LEVIMC PROJECT CONCEPT</text>
+<text x="626" y="275" fill="#7ba46d" font-family="Inter,Segoe UI,sans-serif" font-size="46" font-weight="750" letter-spacing="-1.5">LegacyScriptEngine</text>
+<text x="630" y="333" fill="#b9ccac" font-family="Inter,Segoe UI,sans-serif" font-size="25" font-weight="500">Legacy runtime compatibility</text>
+<path d="M630 380 H1080" stroke="#90a08c" stroke-width="3"/>
+<text x="630" y="433" fill="#dce7d3" font-family="Inter,Segoe UI,sans-serif" font-size="19">Distinct project identity · shared Levi botanical language</text>
+<text x="630" y="535" fill="#90a08c" font-family="Inter,Segoe UI,sans-serif" font-size="16" letter-spacing="2">UNOFFICIAL DESIGN CONCEPT · FOR REVIEW</text>
+</svg>

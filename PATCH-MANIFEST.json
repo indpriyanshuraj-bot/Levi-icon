@@ -1,0 +1,652 @@
+[
+  {
+    "path": "README.md",
+    "bytes": 2583,
+    "sha256": "c75f41cecbeeb6e9f520619eafdf4090bdd9d8420c674ad85ef28a8197f77648"
+  },
+  {
+    "path": "index.html",
+    "bytes": 4192,
+    "sha256": "206815bda87873c9724e72de54c3462b3c08f2e248f813a0b9663bf4927a8d36"
+  },
+  {
+    "path": "APPLY-AND-COMMIT.txt",
+    "bytes": 883,
+    "sha256": "afc98bd6b3a2468cf2744ae7da00c9e07096d3b9ccf7ba0004cd869e4363c11b"
+  },
+  {
+    "path": ".github/workflows/pages.yml",
+    "bytes": 753,
+    "sha256": "9069c281684b43267b58f4259efec67cb6ee9429cf2d9d18a48fc8109fc0361c"
+  },
+  {
+    "path": "official/ASSET-INDEX.md",
+    "bytes": 3118,
+    "sha256": "6323a7f89b5a231359113b1f38941e6e838eed73aa0d3e48cec0d2b29586cbba"
+  },
+  {
+    "path": "official/README.md",
+    "bytes": 2983,
+    "sha256": "c3cb646fa5cca79affc6003533f4c24069805ab4dc55c9e48b3ce509ec64b7c2"
+  },
+  {
+    "path": "official/app.js",
+    "bytes": 5415,
+    "sha256": "b0b121e069d11dc6c62edc0ac4e97fd328a60302c262d95dcb2e7444f7c92d2c"
+  },
+  {
+    "path": "official/apple-touch-icon.png",
+    "bytes": 6188,
+    "sha256": "7c41dc1680898f3e5dc85586c8e9dcc12e7a413c220b54e46cabf267e62c6fe2"
+  },
+  {
+    "path": "official/favicon-128x128.png",
+    "bytes": 3572,
+    "sha256": "c60d649f1d04aa1aed0276f254a0f1f2226e668b564f06bbec469537306ff9e3"
+  },
+  {
+    "path": "official/favicon-16x16.png",
+    "bytes": 281,
+    "sha256": "166e5de5ea1ade3ad443aeebde8f5963489537802d00d34bd89f027c6c25ceb9"
+  },
+  {
+    "path": "official/favicon-256x256.png",
+    "bytes": 8664,
+    "sha256": "202afb04d5894d4cb8d591740ae496974479c107c7b8a0c5b358f1e920b167b3"
+  },
+  {
+    "path": "official/favicon-32x32.png",
+    "bytes": 618,
+    "sha256": "028501d0a973e9cbd3f0bc233046320f2ab409649b61cb16d4ae90eb590786a1"
+  },
+  {
+    "path": "official/favicon-48x48.png",
+    "bytes": 1006,
+    "sha256": "6c512570f904619a71b1775a7f4bffa320f92a306083c8bd818e148ceb96aa86"
+  },
+  {
+    "path": "official/favicon-64x64.png",
+    "bytes": 1470,
+    "sha256": "cd35fce66f29fec0f846076304898e4a368c02dad90bc5d4dfad30e35511752b"
+  },
+  {
+    "path": "official/favicon.ico",
+    "bytes": 18474,
+    "sha256": "14564c7de346064afefa5ca3f16c8cdb9fd2bddc8a21b005732db98aa667e74a"
+  },
+  {
+    "path": "official/index.html",
+    "bytes": 5858,
+    "sha256": "5544b65a10899273b1cf5cf229bd13e62db6e61667e5b122df81785178cd0c80"
+  },
+  {
+    "path": "official/logos/bedboo/apple-touch-icon.png",
+    "bytes": 6639,
+    "sha256": "49c0597740521e96a716579f6a60cffed2ef1258cd73573a2ab09ba218aa31bc"
+  },
+  {
+    "path": "official/logos/bedboo/asset-family.zip",
+    "bytes": 162343,
+    "sha256": "5769372a6be480deca2d70b1af9141821379ba3198a16334deb7b21253d65726"
+  },
+  {
+    "path": "official/logos/bedboo/favicon-128x128.png",
+    "bytes": 5413,
+    "sha256": "d5aafc54d36ccd4da90cf4ffe99d376f291fe94384216d08c9c09441b2573096"
+  },
+  {
+    "path": "official/logos/bedboo/favicon-16x16.png",
+    "bytes": 540,
+    "sha256": "8098fd193d401022771842f60a0023d3ed213b6c2750dab2d670c2129d3e984f"
+  },
+  {
+    "path": "official/logos/bedboo/favicon-256x256.png",
+    "bytes": 10910,
+    "sha256": "162c4a627283c8549e5e8ef17f80aeb0c4b7cdf11dd80f0c1e66c2fef19ba139"
+  },
+  {
+    "path": "official/logos/bedboo/favicon-32x32.png",
+    "bytes": 1182,
+    "sha256": "3ac7355849080a17a01dafcf4ac3bdfb8c8f9b973712258f42faffae2df1b984"
+  },
+  {
+    "path": "official/logos/bedboo/favicon-48x48.png",
+    "bytes": 1801,
+    "sha256": "0fed7540941470ddff1a79d32cb0f4541671dad86f2f4ae243465a5ac56305e8"
+  },
+  {
+    "path": "official/logos/bedboo/favicon-64x64.png",
+    "bytes": 2453,
+    "sha256": "2bfeb4ce066d825a5eb74d44baa50df9b4876f614667c0ebf88d91a588f9d871"
+  },
+  {
+    "path": "official/logos/bedboo/favicon.ico",
+    "bytes": 29178,
+    "sha256": "efee22c56014066cf3f48c9123aebde327c3d7726761ac34cae23b24a20e7656"
+  },
+  {
+    "path": "official/logos/bedboo/icon-banner.svg",
+    "bytes": 3268,
+    "sha256": "b78e10c0f163c9c36eb8ea5da51c28656c73c693d83a73c4b1bb49916d28e0c5"
+  },
+  {
+    "path": "official/logos/bedboo/icon.svg",
+    "bytes": 3045,
+    "sha256": "63d373b54c6e8c39fbfeac54bfc931c2e9b735e3ef6e4c0ba9545069151896f3"
+  },
+  {
+    "path": "official/logos/bedboo/og-image.png",
+    "bytes": 102380,
+    "sha256": "e8c7b4ea827014fa1a634128d3f2e8b36bc9d504a5203ad6b088b651c584c813"
+  },
+  {
+    "path": "official/logos/bedboo/og-image.svg",
+    "bytes": 4907,
+    "sha256": "2ed2a0d0e716b80ca432f8d37056b1ea2d15311f579e3da69192f1e33384600b"
+  },
+  {
+    "path": "official/logos/bedboo/variants/api-bridge.svg",
+    "bytes": 2493,
+    "sha256": "722868420986317bb113f604fc51947160957bc190375f9c0cdcce3c1ae98e4e"
+  },
+  {
+    "path": "official/logos/bedboo/variants/autonomous-agent.svg",
+    "bytes": 2753,
+    "sha256": "83c97910a419d0c3c0b7a2597c168b2873cf4dfa7f42eb832482bbccbe06e2f2"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/apple-touch-icon.png",
+    "bytes": 9140,
+    "sha256": "afc29310ef2c8c9db204e10448a6f36c420e1a96b1e2374987d1b0b1dd48bdb1"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/asset-family.zip",
+    "bytes": 205000,
+    "sha256": "3bffbb04d0cb697105100957cf656aa2ea7bc13b394db6d739701b6de0f58ed2"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/favicon-128x128.png",
+    "bytes": 9298,
+    "sha256": "6a4d7d1523dbea4ededc6dc5427f376d64c8f53ff95ee1cbd753bce91f3d6818"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/favicon-16x16.png",
+    "bytes": 592,
+    "sha256": "1d5ee942e4018101bcd709d62286502419f7980142e07463e508bf983e72999f"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/favicon-256x256.png",
+    "bytes": 20418,
+    "sha256": "dafb50fde85b2dcae0d8942e9ffb80025f7132c073f441d2d668bd25ec6ba11a"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/favicon-32x32.png",
+    "bytes": 1601,
+    "sha256": "366c6428541742bac190e4a6f9f1cbd5b93a4731d19e0ecf4a262603a9386b6f"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/favicon-48x48.png",
+    "bytes": 2809,
+    "sha256": "fb5f28a8744fedb29fbbbb99b5469ff2af5d2dad55308aae55546ce7cc1407c9"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/favicon-64x64.png",
+    "bytes": 4018,
+    "sha256": "ebb6f30b660a1d89b759d64c35dd1a2fdc27da42cd916c5eaa34035a8f80609d"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/favicon.ico",
+    "bytes": 47798,
+    "sha256": "d26ce9d9bd12891b2ad416f8ea54b0bf942eb17b124cc13150658ec1d78b0c90"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/icon-banner.svg",
+    "bytes": 3060,
+    "sha256": "43aad511e61cbdad1259ac1e3c7d4a8e2dfaad19f6247e8c395355223c19e9c0"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/icon.svg",
+    "bytes": 2840,
+    "sha256": "ceca3efe3e4e88bf0052d3404b8d598d1e96cb6c7911bf70b4453ef9dd778764"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/og-image.png",
+    "bytes": 108276,
+    "sha256": "958034e4b90beee1059d2b8450dd3cdf563e8766fe77e692bae228e7258f8c53"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/og-image.svg",
+    "bytes": 4387,
+    "sha256": "6fa91591712c11fe1184f808126504f442e01fe4cbf52c0a97dbd72e3441d874"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/variants/runtime-strata.svg",
+    "bytes": 2509,
+    "sha256": "908087a82c17d90a51a2dabaea904ab0e21b1a43a90e7e5662fccf3bac55a979"
+  },
+  {
+    "path": "official/logos/legacy-script-engine/variants/two-era-bridge.svg",
+    "bytes": 3567,
+    "sha256": "b8ce331d09e1d39ad5a1d25afe8b330d279557a443a7bbd352f717d84bd21f95"
+  },
+  {
+    "path": "official/logos/levi-anticheat/apple-touch-icon.png",
+    "bytes": 9766,
+    "sha256": "1354515c74b011a06faefafd810eb9e5ad5b2e38ca24e69615e909f990266fe6"
+  },
+  {
+    "path": "official/logos/levi-anticheat/asset-family.zip",
+    "bytes": 239841,
+    "sha256": "63c435bbffcbed1f3ad1e190f94eaceb8cd6dd97ef24d3999bd277e3252444f5"
+  },
+  {
+    "path": "official/logos/levi-anticheat/favicon-128x128.png",
+    "bytes": 9555,
+    "sha256": "30a11ee1f739dbfa0ffe4ee14b85b39939507c43bd5997170934f609662e29fe"
+  },
+  {
+    "path": "official/logos/levi-anticheat/favicon-16x16.png",
+    "bytes": 588,
+    "sha256": "bb5aee0e61b7d9e2c947bc9c493c92494126a5693b6d2fe964b596313e79ef4a"
+  },
+  {
+    "path": "official/logos/levi-anticheat/favicon-256x256.png",
+    "bytes": 20885,
+    "sha256": "3e0444964bb96b0752238c699fa1bf0c7ab8ec5da6cf79d5b7ee9b1c740ffa0a"
+  },
+  {
+    "path": "official/logos/levi-anticheat/favicon-32x32.png",
+    "bytes": 1569,
+    "sha256": "8f84f8aa0e91d31904a523fb2efa3f671943a2772c566500cf96551b6ebab8a3"
+  },
+  {
+    "path": "official/logos/levi-anticheat/favicon-48x48.png",
+    "bytes": 2827,
+    "sha256": "6a8f09c53043f691717dce51c864e41b1ba68213b2208b47ce5b30422e834ada"
+  },
+  {
+    "path": "official/logos/levi-anticheat/favicon-64x64.png",
+    "bytes": 4179,
+    "sha256": "3fe38a479094466795c133e3622d004791da0e242e4da08ec666a79e77104930"
+  },
+  {
+    "path": "official/logos/levi-anticheat/favicon.ico",
+    "bytes": 48537,
+    "sha256": "a05756b7dc0f6ee0b5cd0c2b2f205426d54e1126a753519e459780526eddb02d"
+  },
+  {
+    "path": "official/logos/levi-anticheat/icon-banner.svg",
+    "bytes": 2882,
+    "sha256": "4fc5563ce174dd6a0dba98e37360388fc7cece9bae50893c2a5528f930708b2c"
+  },
+  {
+    "path": "official/logos/levi-anticheat/icon.svg",
+    "bytes": 2653,
+    "sha256": "16c322b3fbce7ac63daea8c9d75535179512aaba43992547f996ae8fcd1f7500"
+  },
+  {
+    "path": "official/logos/levi-anticheat/og-image.png",
+    "bytes": 139149,
+    "sha256": "16b1483b270420d2128cc7171ab26cfb6baf2314d4cab39f718ae2e8d0607706"
+  },
+  {
+    "path": "official/logos/levi-anticheat/og-image.svg",
+    "bytes": 4376,
+    "sha256": "bfd37878f666c187760ac4afae153c0cc14d5370235a9678919232a381a37c58"
+  },
+  {
+    "path": "official/logos/levi-anticheat/variants/radar-sentinel.svg",
+    "bytes": 2494,
+    "sha256": "35fce644539303dff6851d181e9520f3c71b4887f6c028b8d3cd6128eeb57339"
+  },
+  {
+    "path": "official/logos/levi-anticheat/variants/scan-vault.svg",
+    "bytes": 2448,
+    "sha256": "de546a4afa9e352ca81c5ca0c971b3e6d62b3da4dd95eece0b501d3ab565f494"
+  },
+  {
+    "path": "official/logos/levimc-mods/apple-touch-icon.png",
+    "bytes": 6903,
+    "sha256": "dc8037f9bc42ccc5b5e2e0086d86db9812cf84dd6ae3bf899b4cb050adc64ab3"
+  },
+  {
+    "path": "official/logos/levimc-mods/asset-family.zip",
+    "bytes": 156158,
+    "sha256": "9d8b5f23fb9b2c1b49daeaafde73f120459ea6b0d92565de6da594f3a39c8a0f"
+  },
+  {
+    "path": "official/logos/levimc-mods/favicon-128x128.png",
+    "bytes": 6175,
+    "sha256": "5f5a78558b3af538647ad4c20be6c403840fe2064caa7140424ab9d989962853"
+  },
+  {
+    "path": "official/logos/levimc-mods/favicon-16x16.png",
+    "bytes": 492,
+    "sha256": "31e310ffa384d9da9b25458ff8de0e6fdcb375bfeb88607bccc9780651e4fd94"
+  },
+  {
+    "path": "official/logos/levimc-mods/favicon-256x256.png",
+    "bytes": 12164,
+    "sha256": "cc82c5531ea490eb51a05effafe3452e91def5258560606223947bce29dcec35"
+  },
+  {
+    "path": "official/logos/levimc-mods/favicon-32x32.png",
+    "bytes": 1134,
+    "sha256": "0f5677d8be58bf2b0af1ef343bac055b3b7c3b994c2e6d2f504486dc9966bbbc"
+  },
+  {
+    "path": "official/logos/levimc-mods/favicon-48x48.png",
+    "bytes": 1943,
+    "sha256": "d813a1c4d43a4e8ecb661f317091ea29044bc24f38f7ec21a80311f017264df4"
+  },
+  {
+    "path": "official/logos/levimc-mods/favicon-64x64.png",
+    "bytes": 2734,
+    "sha256": "324c4b3d2144686ca9e5c8ed9e0205da4647158e27351b0a89e741fdbb0d2b00"
+  },
+  {
+    "path": "official/logos/levimc-mods/favicon.ico",
+    "bytes": 31122,
+    "sha256": "ff2e00d32116de01b8e40e39004fc6dafcf327cd60213da212724616333dc5d7"
+  },
+  {
+    "path": "official/logos/levimc-mods/icon-banner.svg",
+    "bytes": 3081,
+    "sha256": "e21df182074800c1e9bc538e6209acc287faf358b26044cf410c3f026fdc38d4"
+  },
+  {
+    "path": "official/logos/levimc-mods/icon.svg",
+    "bytes": 2861,
+    "sha256": "6e5fb56f8be4e99991bc190faf728452ca8e6b9001b6b08e243319260dcfc935"
+  },
+  {
+    "path": "official/logos/levimc-mods/og-image.png",
+    "bytes": 92550,
+    "sha256": "d10dec2e81fa03fa143a733d0971619ef60c0aec254306af5162d95edc374d58"
+  },
+  {
+    "path": "official/logos/levimc-mods/og-image.svg",
+    "bytes": 4751,
+    "sha256": "920a60a34874bcd3e83d5cb9257a070217cebaad5c03d2a291b0d555039277d3"
+  },
+  {
+    "path": "official/logos/levimc-mods/variants/discovery-orbit.svg",
+    "bytes": 2463,
+    "sha256": "8cbdbc440dcc17c47ed9f321c059345655aa97cc53847e396f00da394b306d4e"
+  },
+  {
+    "path": "official/logos/levimc-mods/variants/module-shelf.svg",
+    "bytes": 2777,
+    "sha256": "6d1069a6f7a2c5eaaea08868226087350d12cbc78c2778c4022a25ae1048297f"
+  },
+  {
+    "path": "official/logos/levioptimize/apple-touch-icon.png",
+    "bytes": 9217,
+    "sha256": "13020ee37b8f619b213057a2de85f352d29914af1ba03c1bfbb48e8da93a9aeb"
+  },
+  {
+    "path": "official/logos/levioptimize/asset-family.zip",
+    "bytes": 188308,
+    "sha256": "5f3753a490a849cedebe601bb6f45b700ac3e1c63ca4ca0fe471bbeeae4828d3"
+  },
+  {
+    "path": "official/logos/levioptimize/favicon-128x128.png",
+    "bytes": 8528,
+    "sha256": "45da716c22a33dc5c3b96c337d372d84069bce58dbeb0666cb994b5a1c65a271"
+  },
+  {
+    "path": "official/logos/levioptimize/favicon-16x16.png",
+    "bytes": 632,
+    "sha256": "eb27144cbf69f42a16bca58b42a83e8922424017d09d8fbf3ff01f6df06615bb"
+  },
+  {
+    "path": "official/logos/levioptimize/favicon-256x256.png",
+    "bytes": 16949,
+    "sha256": "8ea73b933600c581dfcf7afb44886b377d36a2294e017a143416231fdd4aa4b9"
+  },
+  {
+    "path": "official/logos/levioptimize/favicon-32x32.png",
+    "bytes": 1700,
+    "sha256": "90eef29308f6a3aa08d4e7c3fd04cb163e38d576df7e3973bd49b14e966b3593"
+  },
+  {
+    "path": "official/logos/levioptimize/favicon-48x48.png",
+    "bytes": 3002,
+    "sha256": "13df8cdf6d11d0f3efe8b8c75514ad050cb9321bb0b13962db5d9517dc93ad8a"
+  },
+  {
+    "path": "official/logos/levioptimize/favicon-64x64.png",
+    "bytes": 4190,
+    "sha256": "4175c68ad476bf5fbed4957d2538e4094cfb060021a8b5a6756993f43802a6b6"
+  },
+  {
+    "path": "official/logos/levioptimize/favicon.ico",
+    "bytes": 45034,
+    "sha256": "9c5956a8552c9a924b0f0d50717fc26817a1e9b403ecac5bfc23ff52590d92b9"
+  },
+  {
+    "path": "official/logos/levioptimize/icon-banner.svg",
+    "bytes": 2929,
+    "sha256": "405ea4d1161ff558db9847343c1c87bcba6afe2c461ab26f31b2ca3b83d8cd50"
+  },
+  {
+    "path": "official/logos/levioptimize/icon.svg",
+    "bytes": 2732,
+    "sha256": "830808d7e7d67d9e56c037f92fb1a47d9ea1b5f1f617376187da18bad3da8512"
+  },
+  {
+    "path": "official/logos/levioptimize/og-image.png",
+    "bytes": 98052,
+    "sha256": "22d6a9f9cf41b9c1149c6e71cfb46dc7823205faa8a9b1025ad2db33bde1df89"
+  },
+  {
+    "path": "official/logos/levioptimize/og-image.svg",
+    "bytes": 4304,
+    "sha256": "a579405320c36289a06b66beb447a774e63b2954a27a75aee8887d6eaf2f3af2"
+  },
+  {
+    "path": "official/logos/levioptimize/variants/layered-engine.svg",
+    "bytes": 2544,
+    "sha256": "4c0baa5c72a54743fe92dbfd25d116b3650ef8d77fe1044de6266416c5ae242e"
+  },
+  {
+    "path": "official/logos/levioptimize/variants/pipeline-flow.svg",
+    "bytes": 2635,
+    "sha256": "5f1dc6186e5e8bfd781d92ff014f8758a4079d4786d3ef215a0f254eea0ca6e5"
+  },
+  {
+    "path": "official/logos/lip/apple-touch-icon.png",
+    "bytes": 7547,
+    "sha256": "fa1330d7ac1506dec503b6ac4afd7e7666ff77f0fbd46dc5ba7b695481961236"
+  },
+  {
+    "path": "official/logos/lip/asset-family.zip",
+    "bytes": 175453,
+    "sha256": "23a1487bfed9017485a3f9753b7c1e1f440e07ebe224c9e5528dcf02a526b63b"
+  },
+  {
+    "path": "official/logos/lip/favicon-128x128.png",
+    "bytes": 6056,
+    "sha256": "0079c256cb0222bdfdd878a2ca64c038c9a76c84e72606e0c71094ced6b6ba66"
+  },
+  {
+    "path": "official/logos/lip/favicon-16x16.png",
+    "bytes": 655,
+    "sha256": "8009a8b506d8bafa51f5c4d9eba1165806c2a7d3dc669304dccefc199f07b657"
+  },
+  {
+    "path": "official/logos/lip/favicon-256x256.png",
+    "bytes": 13337,
+    "sha256": "2fd4e2dfd93dc8b7497c2f3102c69390609042c41d36e986237686e0d7f96ea4"
+  },
+  {
+    "path": "official/logos/lip/favicon-32x32.png",
+    "bytes": 1347,
+    "sha256": "7a13dafd236e39cc67ad3b1c058029181c25d1251cfc2c4f8e170fc2684c2bf5"
+  },
+  {
+    "path": "official/logos/lip/favicon-48x48.png",
+    "bytes": 2205,
+    "sha256": "4bd74d2bbab73c9d25552843cb2ec5a17fff843e96b439a95852e089c2302caa"
+  },
+  {
+    "path": "official/logos/lip/favicon-64x64.png",
+    "bytes": 3207,
+    "sha256": "a1cc680d471e3767041f0b147a76369074e4ad4d1575e4d49ccfe2e7675d5b51"
+  },
+  {
+    "path": "official/logos/lip/favicon.ico",
+    "bytes": 33667,
+    "sha256": "0641fc98ac6e66f0471834447e7ece234386b78906c39af90c9c23d57ed294e8"
+  },
+  {
+    "path": "official/logos/lip/icon-banner.svg",
+    "bytes": 3379,
+    "sha256": "ece31ad57ff1e8cbb46662de9f02865adb5d601eb69ece859718f85c2beca77c"
+  },
+  {
+    "path": "official/logos/lip/icon.svg",
+    "bytes": 3153,
+    "sha256": "a272f37b07a9e342d886a8035a255f32ebb89a0216f465f0e2229626d84fff7f"
+  },
+  {
+    "path": "official/logos/lip/og-image.png",
+    "bytes": 105799,
+    "sha256": "4134c76974ead4e833b916ddf1fa7543927380de0ffc854b8b43ea54a7fdc602"
+  },
+  {
+    "path": "official/logos/lip/og-image.svg",
+    "bytes": 4601,
+    "sha256": "5a84c218ef09203a0927d14af5a4bbfc3a533db45246728973b6d0fdcada0ce1"
+  },
+  {
+    "path": "official/logos/lip/variants/dependency-constellation.svg",
+    "bytes": 2589,
+    "sha256": "672898582ab3360738c853d61b3a5ac7755b8d36ec3f8bbe00fd0a6d93d1802f"
+  },
+  {
+    "path": "official/logos/lip/variants/modular-cube.svg",
+    "bytes": 2431,
+    "sha256": "569212335b1c9fa5aa32b56049123e75605773ab7bef045940d283d36dff047e"
+  },
+  {
+    "path": "official/logos/moredimensions/apple-touch-icon.png",
+    "bytes": 8018,
+    "sha256": "915d0b7793d5d01b1f8681392cd417f6bbbb32c403e018d6ec841123551481e7"
+  },
+  {
+    "path": "official/logos/moredimensions/asset-family.zip",
+    "bytes": 178939,
+    "sha256": "6d1c75fac7d0a6152b4e04033c38a75d96317a41db4d3bb24f1ae1a6604398ba"
+  },
+  {
+    "path": "official/logos/moredimensions/favicon-128x128.png",
+    "bytes": 7218,
+    "sha256": "e3930f25f8e6c0534d04f9e0574c588457728926e1ec5d25b08f23b438810d40"
+  },
+  {
+    "path": "official/logos/moredimensions/favicon-16x16.png",
+    "bytes": 598,
+    "sha256": "1f1c8f7929813001a32f2d224c4a3e1c8d7c82d73c97ab79bb356f13a5195b4a"
+  },
+  {
+    "path": "official/logos/moredimensions/favicon-256x256.png",
+    "bytes": 15137,
+    "sha256": "a7c48c90351b9644bf7f02586b567278d005cef57a4a9ebba2f1546905e09255"
+  },
+  {
+    "path": "official/logos/moredimensions/favicon-32x32.png",
+    "bytes": 1452,
+    "sha256": "bd7c4dca1a5d8196f988fa085ae48997878157fcd7f8e54a498edac0d0629f12"
+  },
+  {
+    "path": "official/logos/moredimensions/favicon-48x48.png",
+    "bytes": 2391,
+    "sha256": "36b7aca4e7a91a4d804861114cbd794142910da49c93c60a469dfefe6e31ce48"
+  },
+  {
+    "path": "official/logos/moredimensions/favicon-64x64.png",
+    "bytes": 3390,
+    "sha256": "a757aa5dcc93577afd071a311e42b54eb768a7d1621cd8ac670c4c4d5ccdce3a"
+  },
+  {
+    "path": "official/logos/moredimensions/favicon.ico",
+    "bytes": 40336,
+    "sha256": "6381788747051090b05ad89abe76ce30894f7c2e10413c3903ecc5af76d0a40d"
+  },
+  {
+    "path": "official/logos/moredimensions/icon-banner.svg",
+    "bytes": 2980,
+    "sha256": "e458e6ff115c9da74b672512630763d1f7e067c094ff7ba111d5cc4da1e0d02d"
+  },
+  {
+    "path": "official/logos/moredimensions/icon.svg",
+    "bytes": 2766,
+    "sha256": "07b2d1f6a115b0ded2f36000bf1d5dbc4261abfae939d35f6169bbfa820a902b"
+  },
+  {
+    "path": "official/logos/moredimensions/og-image.png",
+    "bytes": 99109,
+    "sha256": "0e585a700e0f281906aaa53e852c4db9a17475cf722162ada6aaa291d493aa38"
+  },
+  {
+    "path": "official/logos/moredimensions/og-image.svg",
+    "bytes": 4217,
+    "sha256": "d900cb9be25fe60379f1133ffe2f1c21ac1b277716a8db51eda6f7ecddee4ed5"
+  },
+  {
+    "path": "official/logos/moredimensions/variants/coordinate-cube.svg",
+    "bytes": 2413,
+    "sha256": "5b73b42941467b3086395a57d582ac222fcb14e3145021a230e7900d6f1ed209"
+  },
+  {
+    "path": "official/logos/moredimensions/variants/parallel-frames.svg",
+    "bytes": 2450,
+    "sha256": "e2290337128e21f47c56db1c5ba37621671f8cd767ffc4b03e779013e701da0d"
+  },
+  {
+    "path": "official/manifest.json",
+    "bytes": 24287,
+    "sha256": "65e179b9130c067600a948d6617b1d863200a1a30d6ee66201ff9696b1e5f151"
+  },
+  {
+    "path": "official/og-image.png",
+    "bytes": 67918,
+    "sha256": "d7eeb203983e5c32dd4e3308d39bf534f099e42369d4390f7f7e5d45e7e9b578"
+  },
+  {
+    "path": "official/og-image.svg",
+    "bytes": 2242,
+    "sha256": "2faf9f8db893a2b9ce8cfafa962799f2ac4e367a2e66156b55b03fa5c8a22d20"
+  },
+  {
+    "path": "official/site-icon.svg",
+    "bytes": 1461,
+    "sha256": "72cc65e75bbaa8a5f8d80f49584d0a29e62d11d37500464fe8e81696328156e7"
+  },
+  {
+    "path": "official/styles.css",
+    "bytes": 10431,
+    "sha256": "2f73484a6d863f5badf86ddf9f23f995533e3d46be98575051c29f13a94e9cd3"
+  },
+  {
+    "path": "official/tools/README.md",
+    "bytes": 570,
+    "sha256": "059f62b39d7f263b21e3500b18abb6fddef4cc428fda1fd44776f6612cdaa178"
+  },
+  {
+    "path": "official/tools/cleanup-obsolete-variants.py",
+    "bytes": 1042,
+    "sha256": "115fcbd9f7dba97b2bc8e4e7ad71eaf553ffd1ebfc9169a87959a0e3e7193e93"
+  },
+  {
+    "path": "official/tools/generate-identity-assets.py",
+    "bytes": 35123,
+    "sha256": "4ba60ca48c875b2db405a188feacc8625c910f51a0fd612c2f3c7de6d6bddc73"
+  },
+  {
+    "path": "official/tools/requirements.txt",
+    "bytes": 27,
+    "sha256": "071099ce1bc57baefa24405c62280622bf271d2c815aaa2097bf99a21af15c0d"
+  }
+]

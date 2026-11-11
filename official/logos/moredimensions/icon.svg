@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">MoreDimensions — Dimensional arch</title>
+  <desc id="desc">A nested, engineered portal uses layered elliptical frames, coordinate markers and a floating dimensional core. The leaf is embedded as the transition anchor.</desc>
+  <defs>
+    <clipPath id="markClip"><rect x="0" y="0" width="512" height="512"/></clipPath>
+  </defs>
+  <g stroke-linecap="round" stroke-linejoin="round" clip-path="url(#markClip)"><path d="M104 409 V245 C104 147 166 74 256 74 C346 74 408 147 408 245 V409" fill="none" stroke="#294c2d" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" /><path d="M143 409 V247 C143 173 190 119 256 119 C322 119 369 173 369 247 V409" fill="none" stroke="#90a08c" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" /><path d="M180 409 V251 C180 197 212 160 256 160 C300 160 332 197 332 251 V409" fill="none" stroke="#7ba46d" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" /><path d="M84 409 H428" fill="none" stroke="#b9ccac" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" /><ellipse cx="256" cy="409" rx="142" ry="30" fill="#dce7d3" stroke="#294c2d" stroke-width="8" /><path d="M150 409 C175 378 207 365 256 365 C305 365 337 378 362 409" fill="none" stroke="#52784d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /><polygon points="256,215 306,244 306,302 256,331 206,302 206,244" fill="#b9ccac" stroke="#294c2d" stroke-width="10" stroke-linejoin="round" /><g transform="translate(256 284) rotate(0) scale(0.18)" opacity="1.0">
+      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#7ba46d" stroke="#294c2d" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#b9ccac" stroke="#52784d" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#294c2d" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#52784d" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#294c2d" stroke-width="10" stroke-linecap="round"/>
+      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#90a08c" stroke-width="5" stroke-linecap="round"/>
+    </g><circle cx="104" cy="245" r="9" fill="#b9ccac" stroke="#294c2d" stroke-width="5" /><circle cx="408" cy="245" r="9" fill="#b9ccac" stroke="#294c2d" stroke-width="5" /></g>
+</svg>

@@ -1,3 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#64748B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Approximation of current question icon">
-  <circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4.5 1.5c-1.2 1-2 1.2-2 2.5m0 3h.01"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" shape-rendering="crispEdges" fill="currentColor"><title>Question</title><path fill="currentColor" d="M5 1h6v1h-6zM4 2h8v1h-8zM3 3h3v1h-3zM10 3h3v1h-3zM3 4h3v1h-3zM10 4h3v1h-3zM10 5h3v1h-3zM9 6h3v1h-3zM8 7h3v1h-3zM7 8h3v1h-3zM7 9h3v1h-3zM7 10h3v1h-3zM7 12h3v1h-3zM7 13h3v1h-3z"/></svg>

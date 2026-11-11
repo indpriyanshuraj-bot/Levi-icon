@@ -2,14 +2,14 @@
   <title id="title">LeviOptimize — Layered engine</title>
   <desc id="desc">Nested computational plates and aligned routing channels depict optimizations applied across several hot paths, with a leaf at the shared execution junction.</desc>
   <defs>
-    <clipPath id="markClip"><rect x="0" y="0" width="512" height="512"/></clipPath>
+    <clipPath id="markClip"><rect x="0" y="0" width="512" height="512" /></clipPath>
   </defs>
-  <g stroke-linecap="round" stroke-linejoin="round" clip-path="url(#markClip)"><polygon points="256,70 400,145 256,220 112,145" fill="#dce7d3" stroke="#294c2d" stroke-width="14" stroke-linejoin="round" /><polygon points="112,145 256,220 256,260 112,185" fill="#90a08c" stroke="#294c2d" stroke-width="9" stroke-linejoin="round" /><polygon points="400,145 256,220 256,260 400,185" fill="#7ba46d" stroke="#294c2d" stroke-width="9" stroke-linejoin="round" /><polygon points="256,214 400,289 256,364 112,289" fill="#b9ccac" stroke="#294c2d" stroke-width="14" stroke-linejoin="round" /><polygon points="112,289 256,364 256,405 112,330" fill="#90a08c" stroke="#294c2d" stroke-width="9" stroke-linejoin="round" /><polygon points="400,289 256,364 256,405 400,330" fill="#52784d" stroke="#294c2d" stroke-width="9" stroke-linejoin="round" /><path d="M256 220 V433" fill="none" stroke="#294c2d" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" /><g transform="translate(256 322) rotate(0) scale(0.25)" opacity="1.0">
-      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#7ba46d" stroke="#294c2d" stroke-width="7" stroke-linejoin="round"/>
-      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#b9ccac" stroke="#52784d" stroke-width="7" stroke-linejoin="round"/>
-      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#294c2d" stroke-width="8" stroke-linecap="round"/>
-      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#52784d" stroke-width="7" stroke-linecap="round"/>
-      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#294c2d" stroke-width="10" stroke-linecap="round"/>
-      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#90a08c" stroke-width="5" stroke-linecap="round"/>
-    </g><path d="M150 450 H362" fill="none" stroke="#b9ccac" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" /></g>
+  <g stroke-linecap="round" stroke-linejoin="round" clip-path="url(#markClip)"><polygon points="256,70 400,145 256,220 112,145" fill="#e9f1fc" stroke="#1c2948" stroke-width="14" stroke-linejoin="round" /><polygon points="112,145 256,220 256,260 112,185" fill="#879bc8" stroke="#1c2948" stroke-width="9" stroke-linejoin="round" /><polygon points="400,145 256,220 256,260 400,185" fill="#27b6c8" stroke="#1c2948" stroke-width="9" stroke-linejoin="round" /><polygon points="256,214 400,289 256,364 112,289" fill="#d6e5f6" stroke="#1c2948" stroke-width="14" stroke-linejoin="round" /><polygon points="112,289 256,364 256,405 112,330" fill="#879bc8" stroke="#1c2948" stroke-width="9" stroke-linejoin="round" /><polygon points="400,289 256,364 256,405 400,330" fill="#416bb0" stroke="#1c2948" stroke-width="9" stroke-linejoin="round" /><path d="M256 220 V433" fill="none" stroke="#1c2948" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" /><g transform="translate(256 322) rotate(0) scale(0.25)" opacity="1.0">
+      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#7ba46d" stroke="#294c2d" stroke-width="7" stroke-linejoin="round" />
+      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#b9ccac" stroke="#52784d" stroke-width="7" stroke-linejoin="round" />
+      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#294c2d" stroke-width="8" stroke-linecap="round" />
+      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#52784d" stroke-width="7" stroke-linecap="round" />
+      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#294c2d" stroke-width="10" stroke-linecap="round" />
+      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#90a08c" stroke-width="5" stroke-linecap="round" />
+    </g><path d="M150 450 H362" fill="none" stroke="#d6e5f6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" /></g>
 </svg>

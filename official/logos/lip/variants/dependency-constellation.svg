@@ -2,14 +2,14 @@
   <title id="title">lip — Dependency constellation</title>
   <desc id="desc">A rooted package graph connects a primary package to dependent modules, showing resolution and installation order rather than delivery or shopping.</desc>
   <defs>
-    <clipPath id="markClip"><rect x="0" y="0" width="512" height="512"/></clipPath>
+    <clipPath id="markClip"><rect x="0" y="0" width="512" height="512" /></clipPath>
   </defs>
-  <g stroke-linecap="round" stroke-linejoin="round" clip-path="url(#markClip)"><circle cx="256" cy="248" r="104" fill="#dce7d3" stroke="#294c2d" stroke-width="14" /><circle cx="256" cy="248" r="72" fill="#7ba46d" stroke="#52784d" stroke-width="10" /><polygon points="256,172 319,208 319,280 256,316 193,280 193,208" fill="#b9ccac" stroke="#294c2d" stroke-width="10" stroke-linejoin="round" /><path d="M256 315 V372 M193 245 H126 M319 245 H386" fill="none" stroke="#52784d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" /><path d="M126 245 C105 245 92 258 92 278 M386 245 C407 245 420 258 420 278" fill="none" stroke="#294c2d" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" /><circle cx="92" cy="292" r="26" fill="#90a08c" stroke="#294c2d" stroke-width="8" /><circle cx="420" cy="292" r="26" fill="#90a08c" stroke="#294c2d" stroke-width="8" /><rect x="219" y="370" width="74" height="62" rx="16" fill="#b9ccac" stroke="#294c2d" stroke-width="10" /><g transform="translate(256 262) rotate(-8) scale(0.28)" opacity="1.0">
-      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#7ba46d" stroke="#294c2d" stroke-width="7" stroke-linejoin="round"/>
-      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#b9ccac" stroke="#52784d" stroke-width="7" stroke-linejoin="round"/>
-      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#294c2d" stroke-width="8" stroke-linecap="round"/>
-      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#52784d" stroke-width="7" stroke-linecap="round"/>
-      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#294c2d" stroke-width="10" stroke-linecap="round"/>
-      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#90a08c" stroke-width="5" stroke-linecap="round"/>
-    </g><path d="M111 196 C150 114 361 114 401 196" fill="none" stroke="#90a08c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" /></g>
+  <g stroke-linecap="round" stroke-linejoin="round" clip-path="url(#markClip)"><circle cx="256" cy="248" r="104" fill="#e3f3f4" stroke="#183247" stroke-width="14" /><circle cx="256" cy="248" r="72" fill="#20a8a3" stroke="#23647d" stroke-width="10" /><polygon points="256,172 319,208 319,280 256,316 193,280 193,208" fill="#d2ecee" stroke="#183247" stroke-width="10" stroke-linejoin="round" /><path d="M256 315 V372 M193 245 H126 M319 245 H386" fill="none" stroke="#23647d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" /><path d="M126 245 C105 245 92 258 92 278 M386 245 C407 245 420 258 420 278" fill="none" stroke="#183247" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" /><circle cx="92" cy="292" r="26" fill="#75a9b3" stroke="#183247" stroke-width="8" /><circle cx="420" cy="292" r="26" fill="#75a9b3" stroke="#183247" stroke-width="8" /><rect x="219" y="370" width="74" height="62" rx="16" fill="#d2ecee" stroke="#183247" stroke-width="10" /><g transform="translate(256 262) rotate(-8) scale(0.28)" opacity="1.0">
+      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#7ba46d" stroke="#294c2d" stroke-width="7" stroke-linejoin="round" />
+      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#b9ccac" stroke="#52784d" stroke-width="7" stroke-linejoin="round" />
+      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#294c2d" stroke-width="8" stroke-linecap="round" />
+      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#52784d" stroke-width="7" stroke-linecap="round" />
+      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#294c2d" stroke-width="10" stroke-linecap="round" />
+      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#90a08c" stroke-width="5" stroke-linecap="round" />
+    </g><path d="M111 196 C150 114 361 114 401 196" fill="none" stroke="#75a9b3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" /></g>
 </svg>

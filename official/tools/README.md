@@ -1,12 +1,13 @@
-# SVG asset generator
+# V2 asset generation
 
-The generator source lives in `generate-identity-assets.py`. It creates the seven project icon families under `official/logos/`, updates `official/manifest.json`, and writes a light/dark contact sheet at the repository root.
-
-Run from the repository root with Python 3.10+:
+From the repository root, run:
 
 ```sh
 python -m pip install -r official/tools/requirements.txt
 python official/tools/generate-identity-assets.py
+python official/tools/retheme-projects.py
 ```
 
-The script uses CairoSVG and Pillow to validate every SVG, rasterize favicon/Apple/OG derivatives, and assemble per-project `asset-family.zip` downloads.
+The first script builds the three SVG directions and base exports. The second script keeps the embedded LeviLamina leaf green, applies project-specific colours, adds extra detail to the preferred lip, LeviAntiCheat and LeviOptimize marks, and regenerates PNG/ICO derivatives and project bundles. Run both in order.
+
+The gallery UI is shared with the root `index.html`, `styles.css` and `app.js`. `/official/` redirects to the V2 tab and does not contain a separate UI implementation.

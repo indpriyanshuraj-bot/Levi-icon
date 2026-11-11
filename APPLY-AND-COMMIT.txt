@@ -1,14 +1,17 @@
-Levi-icon continuation overlay
+FULL REPOSITORY SNAPSHOT — COPY .git, THEN COMMIT
 
-1. Extract this archive into the root of your existing Levi-icon clone and allow files to merge/overwrite.
-2. The archive deliberately contains only changed and newly added paths; unchanged proposal files such as app.js, styles.css, data.json and the existing icon set stay untouched.
-3. Run `python official/tools/cleanup-obsolete-variants.py` to remove stale alternatives from the earlier gallery iteration (safe when those files are absent).
-4. Review with `git status --short` and `git diff`.
-5. Stage and commit:
+This ZIP contains the complete repository working tree at its archive root. It intentionally does not contain .git/.
 
-   git add README.md index.html .github/workflows/pages.yml official/
-   git commit -m "Improve project identity SVGs and asset exports"
+1. Extract the ZIP into a new folder (for example, Levi-icon-ready/).
+2. Copy the entire .git directory from your existing Levi-icon clone into that extracted folder, next to README.md and index.html. Do not copy individual files from the ZIP into the old clone.
+3. Open a terminal in the extracted folder and run:
 
-6. Push to your branch. GitHub Pages must use GitHub Actions as its deployment source.
+   git status --short
+   git branch --show-current
+   git add -A
+   git commit -m "Unify icon gallery and refine project identity previews"
+   git push origin HEAD
 
-Do not extract into a different nested folder: archive paths are already relative to the repository root.
+The .git directory must be the complete directory from a normal clone, not a .git file or a partial copy. The extracted working tree already contains the V1/V2 galleries, source assets, derived exports, documentation and Pages workflow.
+
+There is no icon.png anywhere in this snapshot. Project masters use icon.svg; PNG outputs are specifically named favicon-*.png, apple-touch-icon.png and og-image.png.

@@ -2,14 +2,14 @@
   <title id="title">LeviMC Mods — Discovery orbit</title>
   <desc id="desc">A discovery lens follows a ring of modular entries, representing search, sorting and exploration across a growing mod ecosystem.</desc>
   <defs>
-    <clipPath id="markClip"><rect x="0" y="0" width="512" height="512"/></clipPath>
+    <clipPath id="markClip"><rect x="0" y="0" width="512" height="512" /></clipPath>
   </defs>
-  <g stroke-linecap="round" stroke-linejoin="round" clip-path="url(#markClip)"><circle cx="250" cy="247" r="138" fill="none" stroke="#90a08c" stroke-width="12" /><circle cx="250" cy="247" r="105" fill="#dce7d3" stroke="#294c2d" stroke-width="11" /><rect x="187" y="181" width="70" height="70" rx="15" fill="#b9ccac" stroke="#294c2d" stroke-width="9" /><rect x="274" y="181" width="70" height="70" rx="15" fill="#90a08c" stroke="#294c2d" stroke-width="9" /><rect x="187" y="267" width="70" height="70" rx="15" fill="#7ba46d" stroke="#294c2d" stroke-width="9" /><rect x="274" y="267" width="70" height="70" rx="15" fill="#b9ccac" stroke="#294c2d" stroke-width="9" /><path d="M350 344 L421 415" fill="none" stroke="#294c2d" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" /><circle cx="356" cy="350" r="35" fill="#dce7d3" stroke="#294c2d" stroke-width="10" /><g transform="translate(250 264) rotate(0) scale(0.15)" opacity="1.0">
-      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#7ba46d" stroke="#294c2d" stroke-width="7" stroke-linejoin="round"/>
-      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#b9ccac" stroke="#52784d" stroke-width="7" stroke-linejoin="round"/>
-      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#294c2d" stroke-width="8" stroke-linecap="round"/>
-      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#52784d" stroke-width="7" stroke-linecap="round"/>
-      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#294c2d" stroke-width="10" stroke-linecap="round"/>
-      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#90a08c" stroke-width="5" stroke-linecap="round"/>
-    </g><path d="M112 247 H82 M250 109 V80 M250 385 V414" fill="none" stroke="#52784d" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" /></g>
+  <g stroke-linecap="round" stroke-linejoin="round" clip-path="url(#markClip)"><circle cx="250" cy="247" r="138" fill="none" stroke="#92a1be" stroke-width="12" /><circle cx="250" cy="247" r="105" fill="#f4eefb" stroke="#2a3453" stroke-width="11" /><rect x="187" y="181" width="70" height="70" rx="15" fill="#eee5f7" stroke="#2a3453" stroke-width="9" /><rect x="274" y="181" width="70" height="70" rx="15" fill="#92a1be" stroke="#2a3453" stroke-width="9" /><rect x="187" y="267" width="70" height="70" rx="15" fill="#e0a04b" stroke="#2a3453" stroke-width="9" /><rect x="274" y="267" width="70" height="70" rx="15" fill="#eee5f7" stroke="#2a3453" stroke-width="9" /><path d="M350 344 L421 415" fill="none" stroke="#2a3453" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" /><circle cx="356" cy="350" r="35" fill="#f4eefb" stroke="#2a3453" stroke-width="10" /><g transform="translate(250 264) rotate(0) scale(0.15)" opacity="1.0">
+      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#7ba46d" stroke="#294c2d" stroke-width="7" stroke-linejoin="round" />
+      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#b9ccac" stroke="#52784d" stroke-width="7" stroke-linejoin="round" />
+      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#294c2d" stroke-width="8" stroke-linecap="round" />
+      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#52784d" stroke-width="7" stroke-linecap="round" />
+      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#294c2d" stroke-width="10" stroke-linecap="round" />
+      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#90a08c" stroke-width="5" stroke-linecap="round" />
+    </g><path d="M112 247 H82 M250 109 V80 M250 385 V414" fill="none" stroke="#6553a3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" /></g>
 </svg>

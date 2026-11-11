@@ -60,7 +60,12 @@
           "file": "logos/legacy-script-engine/variants/runtime-strata.svg",
           "recommended": false
         }
-      ]
+      ],
+      "accent_palette": {
+        "primary": "#7ba46d",
+        "secondary": "#b9ccac",
+        "dark": "#203b25"
+      }
     },
     {
       "name": "lip",
@@ -68,11 +73,11 @@
       "summary": "A general-purpose package installer that resolves packages and their dependencies through one command.",
       "subtitle": "Package and dependency installer",
       "palette": [
-        "#294c2d",
-        "#52784d",
-        "#7ba46d",
-        "#90a08c",
-        "#b9ccac"
+        "#183247",
+        "#23647d",
+        "#20a8a3",
+        "#75a9b3",
+        "#d2ecee"
       ],
       "icon": "logos/lip/icon.svg",
       "banner": "logos/lip/icon-banner.svg",
@@ -103,7 +108,12 @@
           "file": "logos/lip/variants/modular-cube.svg",
           "recommended": false
         }
-      ]
+      ],
+      "accent_palette": {
+        "primary": "#20a8a3",
+        "secondary": "#e3a34f",
+        "dark": "#102536"
+      }
     },
     {
       "name": "LeviAntiCheat",
@@ -111,11 +121,11 @@
       "summary": "A technical protection and detection identity for monitoring suspicious activity.",
       "subtitle": "Protection and detection",
       "palette": [
-        "#294c2d",
-        "#52784d",
-        "#7ba46d",
-        "#90a08c",
-        "#b9ccac"
+        "#1b2a45",
+        "#2c5f91",
+        "#e36a69",
+        "#7e9fbd",
+        "#e3ebf4"
       ],
       "icon": "logos/levi-anticheat/icon.svg",
       "banner": "logos/levi-anticheat/icon-banner.svg",
@@ -146,7 +156,12 @@
           "file": "logos/levi-anticheat/variants/radar-sentinel.svg",
           "recommended": false
         }
-      ]
+      ],
+      "accent_palette": {
+        "primary": "#e36a69",
+        "secondary": "#44b8d0",
+        "dark": "#111c31"
+      }
     },
     {
       "name": "LeviOptimize",
@@ -154,11 +169,11 @@
       "summary": "A performance optimization project for reducing overhead across computational hot paths.",
       "subtitle": "Performance and efficiency",
       "palette": [
-        "#294c2d",
-        "#52784d",
-        "#7ba46d",
-        "#90a08c",
-        "#b9ccac"
+        "#1c2948",
+        "#416bb0",
+        "#27b6c8",
+        "#879bc8",
+        "#d6e5f6"
       ],
       "icon": "logos/levioptimize/icon.svg",
       "banner": "logos/levioptimize/icon-banner.svg",
@@ -189,7 +204,12 @@
           "file": "logos/levioptimize/variants/layered-engine.svg",
           "recommended": false
         }
-      ]
+      ],
+      "accent_palette": {
+        "primary": "#27b6c8",
+        "secondary": "#8568dc",
+        "dark": "#101a32"
+      }
     },
     {
       "name": "MoreDimensions",
@@ -197,11 +217,11 @@
       "summary": "A science-fiction dimensional architecture API for adding custom Bedrock dimensions.",
       "subtitle": "Spatial and dimensional API",
       "palette": [
-        "#294c2d",
-        "#52784d",
-        "#7ba46d",
-        "#90a08c",
-        "#b9ccac"
+        "#25204d",
+        "#584b9b",
+        "#9b70df",
+        "#6caec5",
+        "#dce8f6"
       ],
       "icon": "logos/moredimensions/icon.svg",
       "banner": "logos/moredimensions/icon-banner.svg",
@@ -232,7 +252,12 @@
           "file": "logos/moredimensions/variants/parallel-frames.svg",
           "recommended": false
         }
-      ]
+      ],
+      "accent_palette": {
+        "primary": "#9b70df",
+        "secondary": "#49b5d2",
+        "dark": "#171333"
+      }
     },
     {
       "name": "bedboo",
@@ -240,11 +265,11 @@
       "summary": "A bot library with a Mineflayer-compatible API surface and a Bedrock-focused identity.",
       "subtitle": "Bot library and API bridge",
       "palette": [
-        "#294c2d",
-        "#52784d",
-        "#7ba46d",
-        "#90a08c",
-        "#b9ccac"
+        "#1c344f",
+        "#2c6f8f",
+        "#27a9b5",
+        "#83a6b2",
+        "#d7ebef"
       ],
       "icon": "logos/bedboo/icon.svg",
       "banner": "logos/bedboo/icon-banner.svg",
@@ -275,7 +300,12 @@
           "file": "logos/bedboo/variants/autonomous-agent.svg",
           "recommended": false
         }
-      ]
+      ],
+      "accent_palette": {
+        "primary": "#27a9b5",
+        "secondary": "#eca65d",
+        "dark": "#112438"
+      }
     },
     {
       "name": "LeviMC Mods",
@@ -283,11 +313,11 @@
       "summary": "A curated catalogue for discovering and browsing LeviMC-compatible mods and tools.",
       "subtitle": "Mod discovery and catalogue",
       "palette": [
-        "#294c2d",
-        "#52784d",
-        "#7ba46d",
-        "#90a08c",
-        "#b9ccac"
+        "#2a3453",
+        "#6553a3",
+        "#e0a04b",
+        "#92a1be",
+        "#eee5f7"
       ],
       "icon": "logos/levimc-mods/icon.svg",
       "banner": "logos/levimc-mods/icon-banner.svg",
@@ -318,7 +348,12 @@
           "file": "logos/levimc-mods/variants/module-shelf.svg",
           "recommended": false
         }
-      ]
+      ],
+      "accent_palette": {
+        "primary": "#e0a04b",
+        "secondary": "#58a88c",
+        "dark": "#171f38"
+      }
     }
   ],
   "icons": [
@@ -532,5 +567,6 @@
       "recommended": false,
       "summary": "A curated catalogue for discovering and browsing LeviMC-compatible mods and tools."
     }
-  ]
+  ],
+  "color_guidance": "Project-specific accents are used in the product geometry. The embedded LeviLamina leaf remains in the official green palette as a secondary family mark."
 }

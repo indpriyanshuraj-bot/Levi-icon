@@ -5,24 +5,23 @@
     "title": "Windows + Android",
     "file": "src/components/Features.tsx",
     "current": "monitor",
-    "why": "The card promises support for two device families. A single desktop monitor undersells Android and makes the platform coverage less obvious.",
     "recommended": "devices",
     "options": [
-      [
-        "devices",
-        "Best fit",
-        "Shows desktop and phone together; communicates cross-platform support directly."
-      ],
-      [
-        "smartphone",
-        "Alternative",
-        "Useful if Android is the primary visual focus, but it downplays Windows."
-      ],
-      [
-        "laptop",
-        "Alternative",
-        "Clear Windows cue, but it is not a good representation of Android support."
-      ]
+      {
+        "name": "devices",
+        "status": "Best fit",
+        "reason": "Shows desktop and phone together; communicates cross-platform support directly."
+      },
+      {
+        "name": "smartphone",
+        "status": "Alternative",
+        "reason": "Useful if Android is the primary visual focus, but it downplays Windows."
+      },
+      {
+        "name": "laptop",
+        "status": "Alternative",
+        "reason": "Clear Windows cue, but it is not a good representation of Android support."
+      }
     ]
   },
   {
@@ -31,24 +30,23 @@
     "title": "One-command installs",
     "file": "src/components/Features.tsx",
     "current": "chest",
-    "why": "A chest reads as an in-game container. The feature is about installing software through a command or package workflow.",
     "recommended": "terminal",
     "options": [
-      [
-        "terminal",
-        "Best fit",
-        "Directly represents command-line installation."
-      ],
-      [
-        "download",
-        "Alternative",
-        "Works if the copy emphasizes downloading an installer rather than running a package command."
-      ],
-      [
-        "package-check",
-        "Alternative",
-        "Suggests a package being installed or verified; less explicit about the one-command part."
-      ]
+      {
+        "name": "terminal",
+        "status": "Best fit",
+        "reason": "Directly represents command-line installation."
+      },
+      {
+        "name": "download",
+        "status": "Alternative",
+        "reason": "Works if the copy emphasizes downloading an installer rather than running a package command."
+      },
+      {
+        "name": "package-check",
+        "status": "Alternative",
+        "reason": "Suggests a package being installed or verified; less explicit about the one-command part."
+      }
     ]
   },
   {
@@ -57,24 +55,23 @@
     "title": "Multiple languages",
     "file": "src/components/Features.tsx",
     "current": "book-quill",
-    "why": "A quill and book suggest writing or documentation. The card describes programming-language support.",
     "recommended": "code",
     "options": [
-      [
-        "code",
-        "Best fit",
-        "The angle brackets and slash read as programming, not prose."
-      ],
-      [
-        "languages",
-        "Alternative",
-        "More explicitly conveys multilingual support, though it can be mistaken for spoken languages."
-      ],
-      [
-        "braces",
-        "Alternative",
-        "Signals programming syntax and language tooling; slightly less instantly recognizable."
-      ]
+      {
+        "name": "code",
+        "status": "Best fit",
+        "reason": "The angle brackets and slash read as programming, not prose."
+      },
+      {
+        "name": "languages",
+        "status": "Alternative",
+        "reason": "More explicitly conveys multilingual support, though it can be mistaken for spoken languages."
+      },
+      {
+        "name": "braces",
+        "status": "Alternative",
+        "reason": "Signals programming syntax and language tooling; slightly less instantly recognizable."
+      }
     ]
   },
   {
@@ -83,24 +80,23 @@
     "title": "Open source",
     "file": "src/components/Features.tsx",
     "current": "emerald",
-    "why": "A gem has no clear relationship to source code, collaboration, or a public repository.",
     "recommended": "git-branch",
     "options": [
-      [
-        "git-branch",
-        "Best fit",
-        "Communicates source control and collaborative development without tying the site to one host."
-      ],
-      [
-        "github",
-        "Alternative",
-        "Immediately familiar to most developers, but visually associates open source with GitHub specifically."
-      ],
-      [
-        "code-merge",
-        "Alternative",
-        "Good for contributions and collaboration; less recognizable than a branch icon."
-      ]
+      {
+        "name": "git-branch",
+        "status": "Best fit",
+        "reason": "Communicates source control and collaborative development without tying the site to one host."
+      },
+      {
+        "name": "github",
+        "status": "Alternative",
+        "reason": "Immediately familiar to most developers, but visually associates open source with GitHub specifically."
+      },
+      {
+        "name": "code-merge",
+        "status": "Alternative",
+        "reason": "Good for contributions and collaboration; less recognizable than a branch icon."
+      }
     ]
   },
   {
@@ -109,24 +105,23 @@
     "title": "Play",
     "file": "src/components/Roles.tsx",
     "current": "diamond",
-    "why": "A diamond reads as an item, reward, or currency. The role is for people who want to play the game.",
     "recommended": "gamepad",
     "options": [
-      [
-        "gamepad",
-        "Best fit",
-        "Most direct visual for a player/gaming role."
-      ],
-      [
-        "blocks",
-        "Alternative",
-        "Minecraft-like blocks reinforce the game context, but do not distinguish playing from building."
-      ],
-      [
-        "person-play",
-        "Alternative",
-        "Focuses on the player rather than the game; a more human-centered option."
-      ]
+      {
+        "name": "gamepad",
+        "status": "Best fit",
+        "reason": "Most direct visual for a player/gaming role."
+      },
+      {
+        "name": "blocks",
+        "status": "Alternative",
+        "reason": "Minecraft-like blocks reinforce the game context, but do not distinguish playing from building."
+      },
+      {
+        "name": "person-play",
+        "status": "Alternative",
+        "reason": "Focuses on the player rather than the game; a more human-centered option."
+      }
     ]
   },
   {
@@ -135,24 +130,23 @@
     "title": "Host a server",
     "file": "src/components/Roles.tsx",
     "current": "monitor",
-    "why": "A monitor describes a computer, not the server service or hosting role.",
     "recommended": "server",
     "options": [
-      [
-        "server",
-        "Best fit",
-        "Rack units and status lights are a familiar server symbol."
-      ],
-      [
-        "network",
-        "Alternative",
-        "Emphasizes connectivity and multiplayer infrastructure."
-      ],
-      [
-        "database",
-        "Alternative",
-        "Useful if the intended meaning is server data/storage, but hosting is broader than a database."
-      ]
+      {
+        "name": "server",
+        "status": "Best fit",
+        "reason": "Rack units and status lights are a familiar server symbol."
+      },
+      {
+        "name": "network",
+        "status": "Alternative",
+        "reason": "Emphasizes connectivity and multiplayer infrastructure."
+      },
+      {
+        "name": "database",
+        "status": "Alternative",
+        "reason": "Useful if the intended meaning is server data/storage, but hosting is broader than a database."
+      }
     ]
   },
   {
@@ -161,24 +155,23 @@
     "title": "Develop",
     "file": "src/components/Roles.tsx",
     "current": "pickaxe",
-    "why": "A pickaxe is a gameplay tool. The role takes visitors to APIs, tutorials, and mod development.",
     "recommended": "code",
     "options": [
-      [
-        "code",
-        "Best fit",
-        "Simple and recognizable symbol for writing software."
-      ],
-      [
-        "terminal",
-        "Alternative",
-        "Fits a developer workflow, especially command-line tools."
-      ],
-      [
-        "file-code",
-        "Alternative",
-        "Suggests source files and API work; a more specific developer/document cue."
-      ]
+      {
+        "name": "code",
+        "status": "Best fit",
+        "reason": "Simple and recognizable symbol for writing software."
+      },
+      {
+        "name": "terminal",
+        "status": "Alternative",
+        "reason": "Fits a developer workflow, especially command-line tools."
+      },
+      {
+        "name": "file-code",
+        "status": "Alternative",
+        "reason": "Suggests source files and API work; a more specific developer/document cue."
+      }
     ]
   },
   {
@@ -187,24 +180,23 @@
     "title": "Mod management",
     "file": "src/components/Roles.tsx · LAUNCHER_ICONS",
     "current": "chest",
-    "why": "A chest is a generic game object. For a launcher feature about mods, use a package or stack metaphor.",
     "recommended": "package-check",
     "options": [
-      [
-        "package-check",
-        "Best fit",
-        "Represents installed/manageable packages, a good fit for mod management."
-      ],
-      [
-        "layers",
-        "Alternative",
-        "Suggests a stack of add-ons or layers applied to the game."
-      ],
-      [
-        "blocks",
-        "Alternative",
-        "Keeps the Minecraft visual language, though it is less specific to mod management."
-      ]
+      {
+        "name": "package-check",
+        "status": "Best fit",
+        "reason": "Represents installed/manageable packages, a good fit for mod management."
+      },
+      {
+        "name": "layers",
+        "status": "Alternative",
+        "reason": "Suggests a stack of add-ons or layers applied to the game."
+      },
+      {
+        "name": "blocks",
+        "status": "Alternative",
+        "reason": "Keeps the Minecraft visual language, though it is less specific to mod management."
+      }
     ]
   },
   {
@@ -213,24 +205,23 @@
     "title": "Accounts",
     "file": "src/components/Roles.tsx · LAUNCHER_ICONS",
     "current": "heart",
-    "why": "A heart implies favorites or affection, not a user identity or account profile.",
     "recommended": "user-round",
     "options": [
-      [
-        "user-round",
-        "Best fit",
-        "Standard profile/account metaphor."
-      ],
-      [
-        "users",
-        "Alternative",
-        "Better when the feature manages multiple player accounts."
-      ],
-      [
-        "id-card",
-        "Alternative",
-        "Works when account identity/profile details are the focus; more administrative in tone."
-      ]
+      {
+        "name": "user-round",
+        "status": "Best fit",
+        "reason": "Standard profile/account metaphor."
+      },
+      {
+        "name": "users",
+        "status": "Alternative",
+        "reason": "Better when the feature manages multiple player accounts."
+      },
+      {
+        "name": "id-card",
+        "status": "Alternative",
+        "reason": "Works when account identity/profile details are the focus; more administrative in tone."
+      }
     ]
   },
   {
@@ -239,24 +230,23 @@
     "title": "About / story introduction",
     "file": "src/pages/About.tsx",
     "current": "book-quill",
-    "why": "The current quill suggests writing. The first story card introduces the project and its background.",
     "recommended": "book-open",
     "options": [
-      [
-        "book-open",
-        "Best fit",
-        "A straightforward story/documentation metaphor."
-      ],
-      [
-        "file-text",
-        "Alternative",
-        "Good for project information and a factual overview."
-      ],
-      [
-        "scroll",
-        "Alternative",
-        "A more decorative story/history cue; less neutral than an open book."
-      ]
+      {
+        "name": "book-open",
+        "status": "Best fit",
+        "reason": "A straightforward story/documentation metaphor."
+      },
+      {
+        "name": "file-text",
+        "status": "Alternative",
+        "reason": "Good for project information and a factual overview."
+      },
+      {
+        "name": "scroll",
+        "status": "Alternative",
+        "reason": "A more decorative story/history cue; less neutral than an open book."
+      }
     ]
   },
   {
@@ -265,24 +255,23 @@
     "title": "Why this project exists",
     "file": "src/pages/About.tsx",
     "current": "question",
-    "why": "A plain question mark only repeats the fact that this is a question. A concept or conversation icon gives the card more meaning.",
     "recommended": "lightbulb",
     "options": [
-      [
-        "lightbulb",
-        "Best fit",
-        "Signals an idea, motivation, or reason behind the project."
-      ],
-      [
-        "message-question",
-        "Alternative",
-        "Useful if the content is framed as a question-and-answer."
-      ],
-      [
-        "badge-help",
-        "Alternative",
-        "Keeps the question/help meaning but gives it a more deliberate visual container."
-      ]
+      {
+        "name": "lightbulb",
+        "status": "Best fit",
+        "reason": "Signals an idea, motivation, or reason behind the project."
+      },
+      {
+        "name": "message-question",
+        "status": "Alternative",
+        "reason": "Useful if the content is framed as a question-and-answer."
+      },
+      {
+        "name": "badge-help",
+        "status": "Alternative",
+        "reason": "Keeps the question/help meaning but gives it a more deliberate visual container."
+      }
     ]
   },
   {
@@ -291,24 +280,23 @@
     "title": "Contribute code / report issues",
     "file": "src/pages/Support.tsx",
     "current": "pickaxe",
-    "why": "A pickaxe is unrelated to contributing to the software project.",
     "recommended": "git-pull-request",
     "options": [
-      [
-        "git-pull-request",
-        "Best fit",
-        "Directly represents code contribution and review workflow."
-      ],
-      [
-        "code",
-        "Alternative",
-        "A broad developer symbol; less explicit about contributing changes."
-      ],
-      [
-        "wrench",
-        "Alternative",
-        "Suggests maintenance and fixing, but not collaboration or pull requests."
-      ]
+      {
+        "name": "git-pull-request",
+        "status": "Best fit",
+        "reason": "Directly represents code contribution and review workflow."
+      },
+      {
+        "name": "code",
+        "status": "Alternative",
+        "reason": "A broad developer symbol; less explicit about contributing changes."
+      },
+      {
+        "name": "wrench",
+        "status": "Alternative",
+        "reason": "Suggests maintenance and fixing, but not collaboration or pull requests."
+      }
     ]
   },
   {
@@ -317,24 +305,23 @@
     "title": "Donate",
     "file": "src/pages/Support.tsx",
     "current": "emerald",
-    "why": "A gem suggests an item or reward. The card is explicitly about financial/community support.",
     "recommended": "heart-handshake",
     "options": [
-      [
-        "heart-handshake",
-        "Best fit",
-        "Combines community support with a helping hand."
-      ],
-      [
-        "heart",
-        "Alternative",
-        "Simple emotional/community support cue, but less specific to donations."
-      ],
-      [
-        "circle-dollar",
-        "Alternative",
-        "Explicitly signals money; more transactional and less community-oriented."
-      ]
+      {
+        "name": "heart-handshake",
+        "status": "Best fit",
+        "reason": "Combines community support with a helping hand."
+      },
+      {
+        "name": "heart",
+        "status": "Alternative",
+        "reason": "Simple emotional/community support cue, but less specific to donations."
+      },
+      {
+        "name": "circle-dollar",
+        "status": "Alternative",
+        "reason": "Explicitly signals money; more transactional and less community-oriented."
+      }
     ]
   },
   {
@@ -343,24 +330,23 @@
     "title": "Categories",
     "file": "src/blog/Blog.tsx · BlogNav + Sidebar",
     "current": "chest",
-    "why": "A chest does not communicate content classification. A folder or grid is a better metaphor for grouped posts.",
     "recommended": "folder",
     "options": [
-      [
-        "folder",
-        "Best fit",
-        "Familiar metaphor for grouping content."
-      ],
-      [
-        "bookmark",
-        "Alternative",
-        "Works if categories are curated collections, but can be confused with saved posts."
-      ],
-      [
-        "grid",
-        "Alternative",
-        "Suggests a browsable collection; less clear that the items are categories."
-      ]
+      {
+        "name": "folder",
+        "status": "Best fit",
+        "reason": "Familiar metaphor for grouping content."
+      },
+      {
+        "name": "bookmark",
+        "status": "Alternative",
+        "reason": "Works if categories are curated collections, but can be confused with saved posts."
+      },
+      {
+        "name": "grid",
+        "status": "Alternative",
+        "reason": "Suggests a browsable collection; less clear that the items are categories."
+      }
     ]
   },
   {
@@ -369,24 +355,23 @@
     "title": "About page link",
     "file": "src/blog/Blog.tsx · BlogNav",
     "current": "quote",
-    "why": "Quotation marks imply a quote or testimonial, not an information/about page.",
     "recommended": "info",
     "options": [
-      [
-        "info",
-        "Best fit",
-        "Common, compact symbol for an About or information page."
-      ],
-      [
-        "book-open",
-        "Alternative",
-        "Suggests background/story content, but may overlap with documentation."
-      ],
-      [
-        "file-text",
-        "Alternative",
-        "A neutral page/document cue; less specific than the information symbol."
-      ]
+      {
+        "name": "info",
+        "status": "Best fit",
+        "reason": "Common, compact symbol for an About or information page."
+      },
+      {
+        "name": "book-open",
+        "status": "Alternative",
+        "reason": "Suggests background/story content, but may overlap with documentation."
+      },
+      {
+        "name": "file-text",
+        "status": "Alternative",
+        "reason": "A neutral page/document cue; less specific than the information symbol."
+      }
     ]
   }
 ]

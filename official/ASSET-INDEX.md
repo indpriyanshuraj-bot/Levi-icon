@@ -1,30 +1,37 @@
-# Project identity asset index
+# V2 project identity asset index
 
-Every project directory contains one 512 × 512 SVG master, two alternative SVG directions, and derivatives exported from the master.
+All seven projects have a main SVG, two alternative SVG concepts and a complete set of derivatives. The preferred project SVG is always `icon.svg`; no raster `icon.png` is generated.
 
-| Project | Master SVG | Banner SVG | Favicon | Apple touch | Open Graph | Asset bundle |
+| Project | Main SVG | Banner | Favicon | Apple touch | Open Graph | Asset ZIP |
 |---|---|---|---|---|---|---|
-| LegacyScriptEngine | `logos/legacy-script-engine/icon.svg` | `logos/legacy-script-engine/icon-banner.svg` | `logos/legacy-script-engine/favicon.ico` | `logos/legacy-script-engine/apple-touch-icon.png` | `logos/legacy-script-engine/og-image.png` | `logos/legacy-script-engine/asset-family.zip` |
-| lip | `logos/lip/icon.svg` | `logos/lip/icon-banner.svg` | `logos/lip/favicon.ico` | `logos/lip/apple-touch-icon.png` | `logos/lip/og-image.png` | `logos/lip/asset-family.zip` |
-| LeviAntiCheat | `logos/levi-anticheat/icon.svg` | `logos/levi-anticheat/icon-banner.svg` | `logos/levi-anticheat/favicon.ico` | `logos/levi-anticheat/apple-touch-icon.png` | `logos/levi-anticheat/og-image.png` | `logos/levi-anticheat/asset-family.zip` |
-| LeviOptimize | `logos/levioptimize/icon.svg` | `logos/levioptimize/icon-banner.svg` | `logos/levioptimize/favicon.ico` | `logos/levioptimize/apple-touch-icon.png` | `logos/levioptimize/og-image.png` | `logos/levioptimize/asset-family.zip` |
-| MoreDimensions | `logos/moredimensions/icon.svg` | `logos/moredimensions/icon-banner.svg` | `logos/moredimensions/favicon.ico` | `logos/moredimensions/apple-touch-icon.png` | `logos/moredimensions/og-image.png` | `logos/moredimensions/asset-family.zip` |
-| bedboo | `logos/bedboo/icon.svg` | `logos/bedboo/icon-banner.svg` | `logos/bedboo/favicon.ico` | `logos/bedboo/apple-touch-icon.png` | `logos/bedboo/og-image.png` | `logos/bedboo/asset-family.zip` |
-| LeviMC Mods | `logos/levimc-mods/icon.svg` | `logos/levimc-mods/icon-banner.svg` | `logos/levimc-mods/favicon.ico` | `logos/levimc-mods/apple-touch-icon.png` | `logos/levimc-mods/og-image.png` | `logos/levimc-mods/asset-family.zip` |
+| LegacyScriptEngine | `logos/legacy-script-engine/icon.svg` | `icon-banner.svg` | `favicon.ico` | `apple-touch-icon.png` | `og-image.png` | `asset-family.zip` |
+| lip | `logos/lip/icon.svg` | `icon-banner.svg` | `favicon.ico` | `apple-touch-icon.png` | `og-image.png` | `asset-family.zip` |
+| LeviAntiCheat | `logos/levi-anticheat/icon.svg` | `icon-banner.svg` | `favicon.ico` | `apple-touch-icon.png` | `og-image.png` | `asset-family.zip` |
+| LeviOptimize | `logos/levioptimize/icon.svg` | `icon-banner.svg` | `favicon.ico` | `apple-touch-icon.png` | `og-image.png` | `asset-family.zip` |
+| MoreDimensions | `logos/moredimensions/icon.svg` | `icon-banner.svg` | `favicon.ico` | `apple-touch-icon.png` | `og-image.png` | `asset-family.zip` |
+| bedboo | `logos/bedboo/icon.svg` | `icon-banner.svg` | `favicon.ico` | `apple-touch-icon.png` | `og-image.png` | `asset-family.zip` |
+| LeviMC Mods | `logos/levimc-mods/icon.svg` | `icon-banner.svg` | `favicon.ico` | `apple-touch-icon.png` | `og-image.png` | `asset-family.zip` |
 
-## Standard export sizes
+Each path in the table is relative to that project's `logos/<slug>/` directory where the table gives only a filename.
 
-- `icon.svg`: 512 × 512, transparent canvas, no project-name text.
-- `icon-banner.svg`: 1200 × 240, transparent horizontal lockup; project name uses the LeviLamina leaf-green accent.
-- `favicon.ico`: embedded 16, 32, 48, 64, 128, and 256 px images.
-- `favicon-16x16.png`, `favicon-32x32.png`, `favicon-48x48.png`, `favicon-64x64.png`, `favicon-128x128.png`, `favicon-256x256.png`: explicit PNG derivatives.
+## Asset requirements
+
+- `icon.svg`: 512 × 512 viewBox, transparent canvas, editable vector shapes, no embedded raster.
+- `icon-banner.svg`: 1200 × 240 transparent lockup.
+- `favicon.ico`: embedded sizes 16, 32, 48, 64, 128 and 256 px.
+- `favicon-16x16.png`, `favicon-32x32.png`, `favicon-48x48.png`, `favicon-64x64.png`, `favicon-128x128.png`, `favicon-256x256.png`: explicit PNG sizes.
 - `apple-touch-icon.png`: 180 × 180.
-- `og-image.svg`: editable 1200 × 630 source.
-- `og-image.png`: 1200 × 630 raster export for social metadata.
-- `variants/*.svg`: additional proposed design directions, each with its own standalone 512 × 512 source.
+- `og-image.svg`: editable 1200 × 630 vector source.
+- `og-image.png`: 1200 × 630 social-sharing image.
+- `variants/*.svg`: two independently authored alternatives, each with a 512 × 512 viewBox.
+- `asset-family.zip`: includes all SVGs and derivatives for that one project.
 
-## Palette and source
+## Colour approach
 
-The shared palette is sampled from the official [LeviLamina logo SVG](https://github.com/LiteLDev/LeviLamina/blob/main/docs/main/contents/logo.svg): `#294c2d`, `#52784d`, `#7ba46d`, `#90a08c`, and `#b9ccac`. Project-specific metaphors are built using these greens and restrained neutral tones rather than unrelated purple/blue palettes.
+The LeviLamina leaf itself retains the original botanical green. The rest of each symbol uses a project-specific palette: navy/teal for lip, navy/blue/coral for LeviAntiCheat, navy/cyan/violet for LeviOptimize, indigo/violet/cyan for MoreDimensions, blue/teal for bedboo, and indigo/amber for LeviMC Mods. LegacyScriptEngine stays in the heritage-green family.
 
-The assets are design proposals only; the `/official/` URL does not imply approval by LeviMC maintainers.
+## Reference provenance
+
+`references/levilamina-logo.svg` is an unchanged copy of `LiteLDev/LeviLamina/docs/main/contents/logo.svg`. The gallery also displays the current LeviLauncher leaf PNG directly from its official source URL for an exact comparison. V1's current-icon previews use unchanged copies of the source SVGs in `LiteLDev/levimc.org/kit/assets/icons/`. Neither official mark is recoloured or redrawn.
+
+All project artwork remains an unofficial proposal pending maintainer review.

@@ -2,14 +2,14 @@
   <title id="title">bedboo — API bridge</title>
   <desc id="desc">A central agent node connects to three differently shaped API ports, making the integration and transport layer the main visual idea.</desc>
   <defs>
-    <clipPath id="markClip"><rect x="0" y="0" width="512" height="512"/></clipPath>
+    <clipPath id="markClip"><rect x="0" y="0" width="512" height="512" /></clipPath>
   </defs>
-  <g stroke-linecap="round" stroke-linejoin="round" clip-path="url(#markClip)"><circle cx="256" cy="253" r="88" fill="#dce7d3" stroke="#294c2d" stroke-width="15" /><circle cx="256" cy="253" r="59" fill="#7ba46d" stroke="#52784d" stroke-width="10" /><g transform="translate(256 265) rotate(0) scale(0.19)" opacity="1.0">
-      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#7ba46d" stroke="#294c2d" stroke-width="7" stroke-linejoin="round"/>
-      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#b9ccac" stroke="#52784d" stroke-width="7" stroke-linejoin="round"/>
-      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#294c2d" stroke-width="8" stroke-linecap="round"/>
-      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#52784d" stroke-width="7" stroke-linecap="round"/>
-      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#294c2d" stroke-width="10" stroke-linecap="round"/>
-      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#90a08c" stroke-width="5" stroke-linecap="round"/>
-    </g><path d="M168 253 H91 V188 M344 253 H421 V188 M256 341 V411" fill="none" stroke="#294c2d" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" /><rect x="55" y="116" width="73" height="73" rx="18" fill="#b9ccac" stroke="#294c2d" stroke-width="10" /><rect x="384" y="116" width="73" height="73" rx="18" fill="#b9ccac" stroke="#294c2d" stroke-width="10" /><polygon points="256,393 300,418 256,443 212,418" fill="#90a08c" stroke="#294c2d" stroke-width="9" stroke-linejoin="round" /><path d="M80 151 H103 M409 151 H432 M244 418 H268" fill="none" stroke="#52784d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /><circle cx="91" cy="188" r="10" fill="#7ba46d" stroke="#294c2d" stroke-width="5" /><circle cx="421" cy="188" r="10" fill="#7ba46d" stroke="#294c2d" stroke-width="5" /></g>
+  <g stroke-linecap="round" stroke-linejoin="round" clip-path="url(#markClip)"><circle cx="256" cy="253" r="88" fill="#e7f4f5" stroke="#1c344f" stroke-width="15" /><circle cx="256" cy="253" r="59" fill="#27a9b5" stroke="#2c6f8f" stroke-width="10" /><g transform="translate(256 265) rotate(0) scale(0.19)" opacity="1.0">
+      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#7ba46d" stroke="#294c2d" stroke-width="7" stroke-linejoin="round" />
+      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#b9ccac" stroke="#52784d" stroke-width="7" stroke-linejoin="round" />
+      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#294c2d" stroke-width="8" stroke-linecap="round" />
+      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#52784d" stroke-width="7" stroke-linecap="round" />
+      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#294c2d" stroke-width="10" stroke-linecap="round" />
+      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#90a08c" stroke-width="5" stroke-linecap="round" />
+    </g><path d="M168 253 H91 V188 M344 253 H421 V188 M256 341 V411" fill="none" stroke="#1c344f" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" /><rect x="55" y="116" width="73" height="73" rx="18" fill="#d7ebef" stroke="#1c344f" stroke-width="10" /><rect x="384" y="116" width="73" height="73" rx="18" fill="#d7ebef" stroke="#1c344f" stroke-width="10" /><polygon points="256,393 300,418 256,443 212,418" fill="#83a6b2" stroke="#1c344f" stroke-width="9" stroke-linejoin="round" /><path d="M80 151 H103 M409 151 H432 M244 418 H268" fill="none" stroke="#2c6f8f" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" /><circle cx="91" cy="188" r="10" fill="#27a9b5" stroke="#1c344f" stroke-width="5" /><circle cx="421" cy="188" r="10" fill="#27a9b5" stroke="#1c344f" stroke-width="5" /></g>
 </svg>

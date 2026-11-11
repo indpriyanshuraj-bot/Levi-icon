@@ -1,3 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Git Branch">
-  <circle cx="6" cy="4" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="6" cy="20" r="2"/><path d="M6 6v12m12-2v-2a6 6 0 0 0-6-6H6"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#0891B2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Git Branch"><circle cx="6" cy="4" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="6" cy="20" r="2"/><path d="M6 6v12m12-2v-2a6 6 0 0 0-6-6H6"/></svg>

@@ -1,0 +1,392 @@
+[
+  {
+    "id": "home-platforms",
+    "area": "Homepage features",
+    "title": "Windows + Android",
+    "file": "src/components/Features.tsx",
+    "current": "monitor",
+    "why": "The card promises support for two device families. A single desktop monitor undersells Android and makes the platform coverage less obvious.",
+    "recommended": "devices",
+    "options": [
+      [
+        "devices",
+        "Best fit",
+        "Shows desktop and phone together; communicates cross-platform support directly."
+      ],
+      [
+        "smartphone",
+        "Alternative",
+        "Useful if Android is the primary visual focus, but it downplays Windows."
+      ],
+      [
+        "laptop",
+        "Alternative",
+        "Clear Windows cue, but it is not a good representation of Android support."
+      ]
+    ]
+  },
+  {
+    "id": "home-one-command",
+    "area": "Homepage features",
+    "title": "One-command installs",
+    "file": "src/components/Features.tsx",
+    "current": "chest",
+    "why": "A chest reads as an in-game container. The feature is about installing software through a command or package workflow.",
+    "recommended": "terminal",
+    "options": [
+      [
+        "terminal",
+        "Best fit",
+        "Directly represents command-line installation."
+      ],
+      [
+        "download",
+        "Alternative",
+        "Works if the copy emphasizes downloading an installer rather than running a package command."
+      ],
+      [
+        "package-check",
+        "Alternative",
+        "Suggests a package being installed or verified; less explicit about the one-command part."
+      ]
+    ]
+  },
+  {
+    "id": "home-languages",
+    "area": "Homepage features",
+    "title": "Multiple languages",
+    "file": "src/components/Features.tsx",
+    "current": "book-quill",
+    "why": "A quill and book suggest writing or documentation. The card describes programming-language support.",
+    "recommended": "code",
+    "options": [
+      [
+        "code",
+        "Best fit",
+        "The angle brackets and slash read as programming, not prose."
+      ],
+      [
+        "languages",
+        "Alternative",
+        "More explicitly conveys multilingual support, though it can be mistaken for spoken languages."
+      ],
+      [
+        "braces",
+        "Alternative",
+        "Signals programming syntax and language tooling; slightly less instantly recognizable."
+      ]
+    ]
+  },
+  {
+    "id": "home-open-source",
+    "area": "Homepage features",
+    "title": "Open source",
+    "file": "src/components/Features.tsx",
+    "current": "emerald",
+    "why": "A gem has no clear relationship to source code, collaboration, or a public repository.",
+    "recommended": "git-branch",
+    "options": [
+      [
+        "git-branch",
+        "Best fit",
+        "Communicates source control and collaborative development without tying the site to one host."
+      ],
+      [
+        "github",
+        "Alternative",
+        "Immediately familiar to most developers, but visually associates open source with GitHub specifically."
+      ],
+      [
+        "code-merge",
+        "Alternative",
+        "Good for contributions and collaboration; less recognizable than a branch icon."
+      ]
+    ]
+  },
+  {
+    "id": "role-play",
+    "area": "Role selector",
+    "title": "Play",
+    "file": "src/components/Roles.tsx",
+    "current": "diamond",
+    "why": "A diamond reads as an item, reward, or currency. The role is for people who want to play the game.",
+    "recommended": "gamepad",
+    "options": [
+      [
+        "gamepad",
+        "Best fit",
+        "Most direct visual for a player/gaming role."
+      ],
+      [
+        "blocks",
+        "Alternative",
+        "Minecraft-like blocks reinforce the game context, but do not distinguish playing from building."
+      ],
+      [
+        "person-play",
+        "Alternative",
+        "Focuses on the player rather than the game; a more human-centered option."
+      ]
+    ]
+  },
+  {
+    "id": "role-host",
+    "area": "Role selector",
+    "title": "Host a server",
+    "file": "src/components/Roles.tsx",
+    "current": "monitor",
+    "why": "A monitor describes a computer, not the server service or hosting role.",
+    "recommended": "server",
+    "options": [
+      [
+        "server",
+        "Best fit",
+        "Rack units and status lights are a familiar server symbol."
+      ],
+      [
+        "network",
+        "Alternative",
+        "Emphasizes connectivity and multiplayer infrastructure."
+      ],
+      [
+        "database",
+        "Alternative",
+        "Useful if the intended meaning is server data/storage, but hosting is broader than a database."
+      ]
+    ]
+  },
+  {
+    "id": "role-develop",
+    "area": "Role selector",
+    "title": "Develop",
+    "file": "src/components/Roles.tsx",
+    "current": "pickaxe",
+    "why": "A pickaxe is a gameplay tool. The role takes visitors to APIs, tutorials, and mod development.",
+    "recommended": "code",
+    "options": [
+      [
+        "code",
+        "Best fit",
+        "Simple and recognizable symbol for writing software."
+      ],
+      [
+        "terminal",
+        "Alternative",
+        "Fits a developer workflow, especially command-line tools."
+      ],
+      [
+        "file-code",
+        "Alternative",
+        "Suggests source files and API work; a more specific developer/document cue."
+      ]
+    ]
+  },
+  {
+    "id": "launcher-mods",
+    "area": "LeviLauncher showcase",
+    "title": "Mod management",
+    "file": "src/components/Roles.tsx · LAUNCHER_ICONS",
+    "current": "chest",
+    "why": "A chest is a generic game object. For a launcher feature about mods, use a package or stack metaphor.",
+    "recommended": "package-check",
+    "options": [
+      [
+        "package-check",
+        "Best fit",
+        "Represents installed/manageable packages, a good fit for mod management."
+      ],
+      [
+        "layers",
+        "Alternative",
+        "Suggests a stack of add-ons or layers applied to the game."
+      ],
+      [
+        "blocks",
+        "Alternative",
+        "Keeps the Minecraft visual language, though it is less specific to mod management."
+      ]
+    ]
+  },
+  {
+    "id": "launcher-accounts",
+    "area": "LeviLauncher showcase",
+    "title": "Accounts",
+    "file": "src/components/Roles.tsx · LAUNCHER_ICONS",
+    "current": "heart",
+    "why": "A heart implies favorites or affection, not a user identity or account profile.",
+    "recommended": "user-round",
+    "options": [
+      [
+        "user-round",
+        "Best fit",
+        "Standard profile/account metaphor."
+      ],
+      [
+        "users",
+        "Alternative",
+        "Better when the feature manages multiple player accounts."
+      ],
+      [
+        "id-card",
+        "Alternative",
+        "Works when account identity/profile details are the focus; more administrative in tone."
+      ]
+    ]
+  },
+  {
+    "id": "about-intro",
+    "area": "About page",
+    "title": "About / story introduction",
+    "file": "src/pages/About.tsx",
+    "current": "book-quill",
+    "why": "The current quill suggests writing. The first story card introduces the project and its background.",
+    "recommended": "book-open",
+    "options": [
+      [
+        "book-open",
+        "Best fit",
+        "A straightforward story/documentation metaphor."
+      ],
+      [
+        "file-text",
+        "Alternative",
+        "Good for project information and a factual overview."
+      ],
+      [
+        "scroll",
+        "Alternative",
+        "A more decorative story/history cue; less neutral than an open book."
+      ]
+    ]
+  },
+  {
+    "id": "about-why",
+    "area": "About page",
+    "title": "Why this project exists",
+    "file": "src/pages/About.tsx",
+    "current": "question",
+    "why": "A plain question mark only repeats the fact that this is a question. A concept or conversation icon gives the card more meaning.",
+    "recommended": "lightbulb",
+    "options": [
+      [
+        "lightbulb",
+        "Best fit",
+        "Signals an idea, motivation, or reason behind the project."
+      ],
+      [
+        "message-question",
+        "Alternative",
+        "Useful if the content is framed as a question-and-answer."
+      ],
+      [
+        "badge-help",
+        "Alternative",
+        "Keeps the question/help meaning but gives it a more deliberate visual container."
+      ]
+    ]
+  },
+  {
+    "id": "support-contribute",
+    "area": "Support page",
+    "title": "Contribute code / report issues",
+    "file": "src/pages/Support.tsx",
+    "current": "pickaxe",
+    "why": "A pickaxe is unrelated to contributing to the software project.",
+    "recommended": "git-pull-request",
+    "options": [
+      [
+        "git-pull-request",
+        "Best fit",
+        "Directly represents code contribution and review workflow."
+      ],
+      [
+        "code",
+        "Alternative",
+        "A broad developer symbol; less explicit about contributing changes."
+      ],
+      [
+        "wrench",
+        "Alternative",
+        "Suggests maintenance and fixing, but not collaboration or pull requests."
+      ]
+    ]
+  },
+  {
+    "id": "support-donate",
+    "area": "Support page",
+    "title": "Donate",
+    "file": "src/pages/Support.tsx",
+    "current": "emerald",
+    "why": "A gem suggests an item or reward. The card is explicitly about financial/community support.",
+    "recommended": "heart-handshake",
+    "options": [
+      [
+        "heart-handshake",
+        "Best fit",
+        "Combines community support with a helping hand."
+      ],
+      [
+        "heart",
+        "Alternative",
+        "Simple emotional/community support cue, but less specific to donations."
+      ],
+      [
+        "circle-dollar",
+        "Alternative",
+        "Explicitly signals money; more transactional and less community-oriented."
+      ]
+    ]
+  },
+  {
+    "id": "blog-categories",
+    "area": "Blog navigation",
+    "title": "Categories",
+    "file": "src/blog/Blog.tsx · BlogNav + Sidebar",
+    "current": "chest",
+    "why": "A chest does not communicate content classification. A folder or grid is a better metaphor for grouped posts.",
+    "recommended": "folder",
+    "options": [
+      [
+        "folder",
+        "Best fit",
+        "Familiar metaphor for grouping content."
+      ],
+      [
+        "bookmark",
+        "Alternative",
+        "Works if categories are curated collections, but can be confused with saved posts."
+      ],
+      [
+        "grid",
+        "Alternative",
+        "Suggests a browsable collection; less clear that the items are categories."
+      ]
+    ]
+  },
+  {
+    "id": "blog-about",
+    "area": "Blog navigation",
+    "title": "About page link",
+    "file": "src/blog/Blog.tsx · BlogNav",
+    "current": "quote",
+    "why": "Quotation marks imply a quote or testimonial, not an information/about page.",
+    "recommended": "info",
+    "options": [
+      [
+        "info",
+        "Best fit",
+        "Common, compact symbol for an About or information page."
+      ],
+      [
+        "book-open",
+        "Alternative",
+        "Suggests background/story content, but may overlap with documentation."
+      ],
+      [
+        "file-text",
+        "Alternative",
+        "A neutral page/document cue; less specific than the information symbol."
+      ]
+    ]
+  }
+]

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="description" content="An icon replacement proposal for levimc.org, with side-by-side current and candidate SVG previews.">
+  <title>LeviMC Icon Refresh — Proposal</title>
+  <link rel="icon" href="assets/icons/code.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="LeviMC icon proposal home"><span class="brand-mark">L</span><span>ICON <b>REFRESH</b></span></a>
+    <nav aria-label="Main navigation"><a href="#replacements">Replacements</a><a href="#principles">Rationale</a><a class="source-link" href="https://github.com/LiteLDev/levimc.org" target="_blank" rel="noreferrer">Source repo ↗</a></nav>
+  </header>
+  <main id="top">
+    <section class="hero wrap">
+      <p class="eyebrow">COMMUNITY DESIGN PROPOSAL / NOT OFFICIAL</p>
+      <h1>Icons that say<br><span>what the feature does.</span></h1>
+      <p class="hero-copy">A focused replacement set for <strong>levimc.org</strong>. Compare each current icon with three clear, colour-coded SVG options for every proposed placement.</p>
+      <div class="hero-stats" aria-label="Proposal summary">
+        <div><strong id="stat-points">15</strong><span>replacement points</span></div>
+        <div><strong id="stat-options">45</strong><span>candidate SVGs</span></div>
+        <div><strong>01</strong><span>best-fit pick per point</span></div>
+      </div>
+      <a class="primary-button" href="#replacements">Explore the options <span>↓</span></a>
+    </section>
+
+    <section class="toolbar wrap" id="replacements" aria-label="Filter icon proposals">
+      <div><p class="eyebrow">THE PROPOSAL</p><h2>Current → proposed</h2></div>
+      <div class="filters">
+        <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search features or icons…" autocomplete="off"></label>
+        <select id="area-filter" aria-label="Filter by site area"><option value="all">All areas</option></select>
+        <button id="copy-map" class="quiet-button" type="button">Copy mapping</button>
+      </div>
+    </section>
+
+    <noscript><p class="wrap empty">JavaScript is required to render the interactive icon comparison. The SVG files and replacement map are available in this repository.</p></noscript>
+  <section class="cards wrap" id="cards" aria-live="polite"></section>
+    <p class="empty wrap" id="empty" hidden>No matching icon proposals. Try a different search.</p>
+
+    <section class="principles wrap" id="principles">
+      <p class="eyebrow">DECISION GUIDELINES</p>
+      <h2>Pick by meaning, not decoration.</h2>
+      <div class="principle-grid">
+        <article><span>01</span><h3>Match the feature</h3><p>A server icon should mean hosting; a pickaxe should stay in the game context.</p></article>
+        <article><span>02</span><h3>Stay consistent</h3><p>Use one visual language and similar stroke weight across the whole site.</p></article>
+        <article><span>03</span><h3>Keep the pixel identity</h3><p>These are semantic directions. Before merging, redraw or adapt the selected concepts to the kit’s pixel-art style.</p></article>
+      </div>
+    </section>
+    <section class="note wrap">
+      <strong>Implementation note</strong>
+      <p>The SVGs in this proposal are clean outline concepts, not drop-in replacements for <code>PixelIcon</code>. The production versions should be recreated in the existing kit sprite style and added to its icon registry. Current-icon previews are approximate drawings based on icon names, not extracted kit assets.</p>
+    </section>
+  </main>
+  <footer class="wrap footer"><span>LeviMC icon refresh proposal</span><span>Independent, unofficial concept set · SVG files included in this repository</span><a href="https://github.com/LiteLDev/levimc.org" target="_blank" rel="noreferrer">View source project ↗</a></footer>
+</body>
+</html>

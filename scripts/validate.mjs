@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /* Checks data.json against the files in the repo. Runs on every push.
    Exits non-zero so a broken reference never reaches Pages. */
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -46,6 +46,20 @@ for (const collection of data.collections || []) {
           errors.push(`${where}/${option.name}: unknown token "${option.token}"`);
         }
       }
+    }
+  }
+}
+
+/* every candidate must be a single-colour glyph: no baked-in palette */
+const iconDir = join(root, 'assets/icons');
+if (existsSync(iconDir)) {
+  for (const file of readdirSync(iconDir).filter((f) => f.endsWith('.svg'))) {
+    const body = readFileSync(join(iconDir, file), 'utf8');
+    if (/(stroke|fill)="#/.test(body)) {
+      errors.push(`assets/icons/${file}: carries a fixed colour; use stroke="currentColor"`);
+    }
+    if (!/viewBox="0 0 24 24"/.test(body)) {
+      warnings.push(`assets/icons/${file}: not on the 24x24 grid`);
     }
   }
 }

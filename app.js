@@ -4,6 +4,7 @@
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 const STORE = 'levi-icon-review-v1';
+const BUILD = '2';
 
 const state = {
   data: null,
@@ -393,14 +394,29 @@ document.addEventListener('keydown', (event) => {
 
 /* ------------------------------------------------------------ boot */
 
+function fail(title, detail) {
+  $('#rail').innerHTML = `<p class="empty"><strong>${title}</strong><br>${detail}</p>`;
+  $('#stage').innerHTML = `<p class="empty">${detail}</p>`;
+  $('#progress-count').textContent = '—';
+}
+
 async function boot() {
+  let payload;
   try {
-    state.data = await (await fetch('data.json', { cache: 'no-cache' })).json();
+    const response = await fetch(`data.json?v=${BUILD}`, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    payload = await response.json();
   } catch (error) {
-    $('#rail').innerHTML = '<p class="empty">Could not load data.json. Serve the folder over HTTP (for example <code>python3 -m http.server</code>) rather than opening the file directly.</p>';
+    fail('Could not load data.json', `The browser could not read <code>data.json</code> (${error.message}). Reload the page.`);
     return;
   }
 
+  if (Array.isArray(payload) || !payload.collections) {
+    fail('Out-of-date data.json', 'This browser is holding an old copy of the data file. Hard-reload the page (Ctrl/Cmd + Shift + R).');
+    return;
+  }
+
+  state.data = payload;
   state.collection = state.data.collections[0];
   load();
   setTheme(localStorage.getItem(STORE + '-theme') || 'light', false);
@@ -416,12 +432,16 @@ async function boot() {
 
   if (location.hash === '#review') openSheet();
 
-  renderGroups();
-  const first = visibleItems()[0];
-  state.activeId = first ? first.id : null;
-  renderRail();
-  renderStage();
-  renderProgress();
+  try {
+    renderGroups();
+    const first = visibleItems()[0];
+    state.activeId = first ? first.id : null;
+    renderRail();
+    renderStage();
+    renderProgress();
+  } catch (error) {
+    fail('The review could not start', `Something in the data did not load: ${error.message}`);
+  }
 }
 
-boot();
+boot().catch((error) => fail('The review could not start', error.message));

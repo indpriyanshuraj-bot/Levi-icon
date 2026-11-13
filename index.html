@@ -1,120 +1,62 @@
 <!doctype html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="An unofficial LeviMC design gallery for website icons, project and app logos, and existing official brand references.">
-  <meta property="og:title" content="LeviMC Icon Study">
-  <meta property="og:description" content="Explore website icons and project identities, compare with existing logos, and preview complete logo asset families.">
-  <meta property="og:image" content="official/og-image.png">
-  <title>LeviMC Icon Study</title>
-  <link rel="icon" href="official/site-icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="official/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LeviMC icon review</title>
+<meta name="description" content="Compare the current levimc.org icons with the proposed replacements, one placement at a time.">
+<meta name="theme-color" content="#f7f3e8">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
 </head>
 <body>
+<div class="app">
   <header class="topbar">
-    <a class="brand" href="#website" aria-label="LeviMC Icon Study home">
-      <img src="official/site-icon.svg" alt="" width="36" height="36">
-      <span>LEVI <b>ICON STUDY</b></span>
-    </a>
-    <div class="top-actions">
-      <nav class="view-tabs" aria-label="Icon categories" role="tablist">
-        <button class="view-tab is-active" type="button" data-view="website" role="tab" aria-selected="true">Website / UI</button>
-        <button class="view-tab" type="button" data-view="projects" role="tab" aria-selected="false">Project / app logos</button>
-        <button class="view-tab" type="button" data-view="official" role="tab" aria-selected="false">Official references</button>
-      </nav>
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">
-        <span id="theme-icon" aria-hidden="true">◐</span><span id="theme-label">OLED black</span>
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">LEVI<b>ICON REVIEW</b></span>
+    </div>
+
+    <nav class="groups" id="groups" aria-label="Sections"></nav>
+
+    <div class="tools">
+      <div class="progress" title="Decisions made">
+        <span id="progress-count">0 / 0</span>
+        <span class="progress-bar" aria-hidden="true"><i id="progress-fill"></i></span>
+      </div>
+      <button class="btn ghost sm" id="summary-btn" type="button">Review</button>
+      <button class="btn ghost sm icon" id="theme-btn" type="button" aria-pressed="false" title="Switch preview surface">
+        <span id="theme-label">Dark</span>
       </button>
     </div>
   </header>
 
-  <main>
-    <section class="hero wrap">
-      <p class="eyebrow">UNOFFICIAL DESIGN STUDY</p>
-      <h1>LeviMC visual identity<br><span>and icon exploration.</span></h1>
-      <p class="intro">Browse feature icons, project and app identities, and existing Levi brand references. Compare current artwork with selected proposals and inspect each export without leaving the gallery.</p>
-      <div class="stats" aria-label="Gallery contents">
-        <div><strong id="website-count">15</strong><span>website placements</span></div>
-        <div><strong id="website-icon-count">45</strong><span>website icon options</span></div>
-        <div><strong id="project-count">7</strong><span>project identities</span></div>
-        <div><strong id="project-icon-count">21</strong><span>project logo concepts</span></div>
-      </div>
-      <div class="hero-foot"><span class="status-dot"></span><span>Preview surfaces: pure white and OLED black. Switching the website theme does not alter any logo artwork.</span></div>
-    </section>
-
-    <section id="website" class="view-section wrap is-visible" role="tabpanel">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">WEBSITE AND INTERFACE</p>
-          <h2>Feature icon replacements</h2>
-          <p class="section-copy">Original current icons are shown beside proposed options. Switch between multicolour outline and multicolour filled artwork for the candidate set.</p>
-        </div>
-        <div class="section-controls">
-          <div class="style-switch" role="tablist" aria-label="Website icon style">
-            <button class="style-tab is-active" type="button" data-style="multicolor" role="tab" aria-selected="true">Multicolour outline</button>
-            <button class="style-tab" type="button" data-style="filled" role="tab" aria-selected="false">Multicolour filled</button>
-          </div>
-          <label class="search"><span aria-hidden="true">⌕</span><input id="website-search" type="search" placeholder="Search placements or icons…" autocomplete="off"></label>
-        </div>
-      </div>
-      <div id="website-list" class="website-grid" aria-live="polite"></div>
-      <p id="website-empty" class="empty" hidden>No matching website icon placements.</p>
-    </section>
-
-    <section id="projects" class="view-section wrap" role="tabpanel" hidden>
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">PROJECTS AND APPLICATIONS</p>
-          <h2>Project identity concepts</h2>
-          <p class="section-copy">The current project logo remains visible. Select a proposed direction to compare it, then preview that direction's SVG, banner, favicon, Apple touch icon and OG image.</p>
-        </div>
-        <div class="section-controls">
-          <label class="search"><span aria-hidden="true">⌕</span><input id="project-search" type="search" placeholder="Search projects or concepts…" autocomplete="off"></label>
-        </div>
-      </div>
-      <div id="project-list" class="project-grid" aria-live="polite"></div>
-      <p id="project-empty" class="empty" hidden>No matching project identities.</p>
-    </section>
-
-    <section id="official" class="view-section wrap" role="tabpanel" hidden>
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">EXISTING BRAND REFERENCES</p>
-          <h2>Official Levi identity comparison</h2>
-          <p class="section-copy">These are the original LeviLamina and LeviLauncher assets from their source repositories. They are displayed without recolouring or modification.</p>
-        </div>
-      </div>
-      <div class="official-grid">
-        <article class="official-card">
-          <div class="official-title"><h3>LeviLamina</h3><a href="https://github.com/LiteLDev/LeviLamina/blob/main/docs/main/contents/logo.svg" target="_blank" rel="noreferrer">Original SVG ↗</a></div>
-          <p>Official vector logo and primary leaf-shape reference.</p>
-          <div class="official-surfaces">
-            <div class="surface light-surface"><span>WHITE</span><img src="official/references/levilamina-logo.svg" alt="Original LeviLamina logo on white" loading="lazy"></div>
-            <div class="surface oled-surface"><span>OLED BLACK</span><img src="official/references/levilamina-logo.svg" alt="Original LeviLamina logo on OLED black" loading="lazy"></div>
-          </div>
-        </article>
-        <article class="official-card">
-          <div class="official-title"><h3>LeviLauncher</h3><a href="https://github.com/LiteLDev/LeviLauncher/blob/main/frontend/src/assets/images/ic_leaf_logo.png" target="_blank" rel="noreferrer">Original PNG ↗</a></div>
-          <p>Official launcher leaf asset, shown without alteration.</p>
-          <div class="official-surfaces">
-            <div class="surface light-surface"><span>WHITE</span><img src="https://raw.githubusercontent.com/LiteLDev/LeviLauncher/main/frontend/src/assets/images/ic_leaf_logo.png" alt="Original LeviLauncher leaf logo on white" loading="lazy"></div>
-            <div class="surface oled-surface"><span>OLED BLACK</span><img src="https://raw.githubusercontent.com/LiteLDev/LeviLauncher/main/frontend/src/assets/images/ic_leaf_logo.png" alt="Original LeviLauncher leaf logo on OLED black" loading="lazy"></div>
-          </div>
-        </article>
-      </div>
-      <div class="reference-note"><strong>Comparison context</strong><p>Project proposals use independent project-specific colour palettes. The LeviLamina leaf is a secondary family cue, not a replacement for the official LeviLamina or LeviLauncher marks.</p></div>
-      <div class="quick-projects"><h3>Open project comparisons</h3><div id="official-project-links" class="quick-project-grid"></div></div>
-    </section>
+  <main class="body">
+    <aside class="rail" id="rail" aria-label="Placements"></aside>
+    <section class="stage" id="stage" aria-live="polite"></section>
   </main>
+</div>
 
-  <footer class="footer wrap">
-    <span>LeviMC Icon Study · Unofficial design proposal</span>
-    <span>SVG masters and derived assets are included in this repository.</span>
-    <a href="https://github.com/LiteLDev/levimc.org" target="_blank" rel="noreferrer">Source project ↗</a>
-  </footer>
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+    <header class="sheet-head">
+      <div>
+        <p class="eyebrow">Decision sheet</p>
+        <h2 id="sheet-title">What you picked</h2>
+      </div>
+      <button class="btn ghost sm" id="sheet-close" type="button">Close</button>
+    </header>
+    <div class="sheet-body" id="sheet-body"></div>
+    <footer class="sheet-foot">
+      <p class="hint" id="sheet-hint"></p>
+      <div class="sheet-actions">
+        <button class="btn ghost sm" id="export-copy" type="button">Copy JSON</button>
+        <button class="btn ghost sm" id="export-file" type="button">Download JSON</button>
+        <button class="btn ghost sm danger" id="reset" type="button">Reset</button>
+      </div>
+    </footer>
+  </div>
+</div>
 </body>
 </html>

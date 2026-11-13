@@ -1,377 +1,596 @@
-[
-  {
-    "id": "home-platforms",
-    "area": "Homepage features",
-    "title": "Windows + Android",
-    "file": "src/components/Features.tsx",
-    "current": "monitor",
-    "recommended": "devices",
-    "options": [
-      {
-        "name": "devices",
-        "status": "Best fit",
-        "reason": "Shows desktop and phone together; communicates cross-platform support directly."
-      },
-      {
-        "name": "smartphone",
-        "status": "Alternative",
-        "reason": "Useful if Android is the primary visual focus, but it downplays Windows."
-      },
-      {
-        "name": "laptop",
-        "status": "Alternative",
-        "reason": "Clear Windows cue, but it is not a good representation of Android support."
-      }
-    ]
+{
+  "version": 1,
+  "title": "LeviMC icon review",
+  "source": {
+    "repo": "LiteLDev/levimc.org",
+    "commit": "a391a35",
+    "kit": "2.2.0"
   },
-  {
-    "id": "home-one-command",
-    "area": "Homepage features",
-    "title": "One-command installs",
-    "file": "src/components/Features.tsx",
-    "current": "chest",
-    "recommended": "terminal",
-    "options": [
-      {
-        "name": "terminal",
-        "status": "Best fit",
-        "reason": "Directly represents command-line installation."
-      },
-      {
-        "name": "download",
-        "status": "Alternative",
-        "reason": "Works if the copy emphasizes downloading an installer rather than running a package command."
-      },
-      {
-        "name": "package-check",
-        "status": "Alternative",
-        "reason": "Suggests a package being installed or verified; less explicit about the one-command part."
-      }
-    ]
+  "tokens": {
+    "primary": "#4f8a5b",
+    "pond": "#3e6e8e",
+    "wisteria": "#9a86c2",
+    "rose": "#d98a9e",
+    "sunlight": "#c9922e"
   },
-  {
-    "id": "home-languages",
-    "area": "Homepage features",
-    "title": "Multiple languages",
-    "file": "src/components/Features.tsx",
-    "current": "book-quill",
-    "recommended": "code",
-    "options": [
-      {
-        "name": "code",
-        "status": "Best fit",
-        "reason": "The angle brackets and slash read as programming, not prose."
-      },
-      {
-        "name": "languages",
-        "status": "Alternative",
-        "reason": "More explicitly conveys multilingual support, though it can be mistaken for spoken languages."
-      },
-      {
-        "name": "braces",
-        "status": "Alternative",
-        "reason": "Signals programming syntax and language tooling; slightly less instantly recognizable."
-      }
-    ]
-  },
-  {
-    "id": "home-open-source",
-    "area": "Homepage features",
-    "title": "Open source",
-    "file": "src/components/Features.tsx",
-    "current": "emerald",
-    "recommended": "git-branch",
-    "options": [
-      {
-        "name": "git-branch",
-        "status": "Best fit",
-        "reason": "Communicates source control and collaborative development without tying the site to one host."
-      },
-      {
-        "name": "github",
-        "status": "Alternative",
-        "reason": "Immediately familiar to most developers, but visually associates open source with GitHub specifically."
-      },
-      {
-        "name": "code-merge",
-        "status": "Alternative",
-        "reason": "Good for contributions and collaboration; less recognizable than a branch icon."
-      }
-    ]
-  },
-  {
-    "id": "role-play",
-    "area": "Role selector",
-    "title": "Play",
-    "file": "src/components/Roles.tsx",
-    "current": "diamond",
-    "recommended": "gamepad",
-    "options": [
-      {
-        "name": "gamepad",
-        "status": "Best fit",
-        "reason": "Most direct visual for a player/gaming role."
-      },
-      {
-        "name": "blocks",
-        "status": "Alternative",
-        "reason": "Minecraft-like blocks reinforce the game context, but do not distinguish playing from building."
-      },
-      {
-        "name": "person-play",
-        "status": "Alternative",
-        "reason": "Focuses on the player rather than the game; a more human-centered option."
-      }
-    ]
-  },
-  {
-    "id": "role-host",
-    "area": "Role selector",
-    "title": "Host a server",
-    "file": "src/components/Roles.tsx",
-    "current": "monitor",
-    "recommended": "server",
-    "options": [
-      {
-        "name": "server",
-        "status": "Best fit",
-        "reason": "Rack units and status lights are a familiar server symbol."
-      },
-      {
-        "name": "network",
-        "status": "Alternative",
-        "reason": "Emphasizes connectivity and multiplayer infrastructure."
-      },
-      {
-        "name": "database",
-        "status": "Alternative",
-        "reason": "Useful if the intended meaning is server data/storage, but hosting is broader than a database."
-      }
-    ]
-  },
-  {
-    "id": "role-develop",
-    "area": "Role selector",
-    "title": "Develop",
-    "file": "src/components/Roles.tsx",
-    "current": "pickaxe",
-    "recommended": "code",
-    "options": [
-      {
-        "name": "code",
-        "status": "Best fit",
-        "reason": "Simple and recognizable symbol for writing software."
-      },
-      {
-        "name": "terminal",
-        "status": "Alternative",
-        "reason": "Fits a developer workflow, especially command-line tools."
-      },
-      {
-        "name": "file-code",
-        "status": "Alternative",
-        "reason": "Suggests source files and API work; a more specific developer/document cue."
-      }
-    ]
-  },
-  {
-    "id": "launcher-mods",
-    "area": "LeviLauncher showcase",
-    "title": "Mod management",
-    "file": "src/components/Roles.tsx · LAUNCHER_ICONS",
-    "current": "chest",
-    "recommended": "package-check",
-    "options": [
-      {
-        "name": "package-check",
-        "status": "Best fit",
-        "reason": "Represents installed/manageable packages, a good fit for mod management."
-      },
-      {
-        "name": "layers",
-        "status": "Alternative",
-        "reason": "Suggests a stack of add-ons or layers applied to the game."
-      },
-      {
-        "name": "blocks",
-        "status": "Alternative",
-        "reason": "Keeps the Minecraft visual language, though it is less specific to mod management."
-      }
-    ]
-  },
-  {
-    "id": "launcher-accounts",
-    "area": "LeviLauncher showcase",
-    "title": "Accounts",
-    "file": "src/components/Roles.tsx · LAUNCHER_ICONS",
-    "current": "heart",
-    "recommended": "user-round",
-    "options": [
-      {
-        "name": "user-round",
-        "status": "Best fit",
-        "reason": "Standard profile/account metaphor."
-      },
-      {
-        "name": "users",
-        "status": "Alternative",
-        "reason": "Better when the feature manages multiple player accounts."
-      },
-      {
-        "name": "id-card",
-        "status": "Alternative",
-        "reason": "Works when account identity/profile details are the focus; more administrative in tone."
-      }
-    ]
-  },
-  {
-    "id": "about-intro",
-    "area": "About page",
-    "title": "About / story introduction",
-    "file": "src/pages/About.tsx",
-    "current": "book-quill",
-    "recommended": "book-open",
-    "options": [
-      {
-        "name": "book-open",
-        "status": "Best fit",
-        "reason": "A straightforward story/documentation metaphor."
-      },
-      {
-        "name": "file-text",
-        "status": "Alternative",
-        "reason": "Good for project information and a factual overview."
-      },
-      {
-        "name": "scroll",
-        "status": "Alternative",
-        "reason": "A more decorative story/history cue; less neutral than an open book."
-      }
-    ]
-  },
-  {
-    "id": "about-why",
-    "area": "About page",
-    "title": "Why this project exists",
-    "file": "src/pages/About.tsx",
-    "current": "question",
-    "recommended": "lightbulb",
-    "options": [
-      {
-        "name": "lightbulb",
-        "status": "Best fit",
-        "reason": "Signals an idea, motivation, or reason behind the project."
-      },
-      {
-        "name": "message-question",
-        "status": "Alternative",
-        "reason": "Useful if the content is framed as a question-and-answer."
-      },
-      {
-        "name": "badge-help",
-        "status": "Alternative",
-        "reason": "Keeps the question/help meaning but gives it a more deliberate visual container."
-      }
-    ]
-  },
-  {
-    "id": "support-contribute",
-    "area": "Support page",
-    "title": "Contribute code / report issues",
-    "file": "src/pages/Support.tsx",
-    "current": "pickaxe",
-    "recommended": "git-pull-request",
-    "options": [
-      {
-        "name": "git-pull-request",
-        "status": "Best fit",
-        "reason": "Directly represents code contribution and review workflow."
-      },
-      {
-        "name": "code",
-        "status": "Alternative",
-        "reason": "A broad developer symbol; less explicit about contributing changes."
-      },
-      {
-        "name": "wrench",
-        "status": "Alternative",
-        "reason": "Suggests maintenance and fixing, but not collaboration or pull requests."
-      }
-    ]
-  },
-  {
-    "id": "support-donate",
-    "area": "Support page",
-    "title": "Donate",
-    "file": "src/pages/Support.tsx",
-    "current": "emerald",
-    "recommended": "heart-handshake",
-    "options": [
-      {
-        "name": "heart-handshake",
-        "status": "Best fit",
-        "reason": "Combines community support with a helping hand."
-      },
-      {
-        "name": "heart",
-        "status": "Alternative",
-        "reason": "Simple emotional/community support cue, but less specific to donations."
-      },
-      {
-        "name": "circle-dollar",
-        "status": "Alternative",
-        "reason": "Explicitly signals money; more transactional and less community-oriented."
-      }
-    ]
-  },
-  {
-    "id": "blog-categories",
-    "area": "Blog navigation",
-    "title": "Categories",
-    "file": "src/blog/Blog.tsx · BlogNav + Sidebar",
-    "current": "chest",
-    "recommended": "folder",
-    "options": [
-      {
-        "name": "folder",
-        "status": "Best fit",
-        "reason": "Familiar metaphor for grouping content."
-      },
-      {
-        "name": "bookmark",
-        "status": "Alternative",
-        "reason": "Works if categories are curated collections, but can be confused with saved posts."
-      },
-      {
-        "name": "grid",
-        "status": "Alternative",
-        "reason": "Suggests a browsable collection; less clear that the items are categories."
-      }
-    ]
-  },
-  {
-    "id": "blog-about",
-    "area": "Blog navigation",
-    "title": "About page link",
-    "file": "src/blog/Blog.tsx · BlogNav",
-    "current": "quote",
-    "recommended": "info",
-    "options": [
-      {
-        "name": "info",
-        "status": "Best fit",
-        "reason": "Common, compact symbol for an About or information page."
-      },
-      {
-        "name": "book-open",
-        "status": "Alternative",
-        "reason": "Suggests background/story content, but may overlap with documentation."
-      },
-      {
-        "name": "file-text",
-        "status": "Alternative",
-        "reason": "A neutral page/document cue; less specific than the information symbol."
-      }
-    ]
-  }
-]
+  "collections": [
+    {
+      "id": "website",
+      "title": "Website icons",
+      "note": "Every decision below is a real placement in levimc.org source.",
+      "currentBase": "https://cdn.jsdelivr.net/gh/LiteLDev/levimc.org@main/kit/assets/icons",
+      "currentFallback": "https://raw.githubusercontent.com/LiteLDev/levimc.org/main/kit/assets/icons",
+      "optionBase": "assets/icons",
+      "groups": [
+        {
+          "id": "home",
+          "title": "Homepage",
+          "items": [
+            {
+              "id": "platforms",
+              "title": "Windows and Android",
+              "ref": "src/components/Features.tsx:13",
+              "size": 32,
+              "current": {
+                "name": "monitor",
+                "palette": [
+                  "#26313a",
+                  "#bfe3f0",
+                  "#2b3a66",
+                  "#ffd84a"
+                ]
+              },
+              "options": [
+                {
+                  "name": "devices",
+                  "token": "primary",
+                  "verdict": "best"
+                },
+                {
+                  "name": "laptop",
+                  "token": "primary",
+                  "verdict": "alt"
+                }
+              ]
+            },
+            {
+              "id": "one-command",
+              "title": "One-command installs",
+              "ref": "src/components/Features.tsx:14",
+              "size": 32,
+              "current": {
+                "name": "chest",
+                "palette": [
+                  "#2a1a0c",
+                  "#c48b45",
+                  "#a46a2c",
+                  "#7a4a1c"
+                ]
+              },
+              "options": [
+                {
+                  "name": "terminal",
+                  "token": "pond",
+                  "verdict": "best"
+                },
+                {
+                  "name": "package-check",
+                  "token": "primary",
+                  "verdict": "alt"
+                }
+              ]
+            },
+            {
+              "id": "language",
+              "title": "Your language",
+              "ref": "src/components/Features.tsx:15",
+              "size": 32,
+              "current": {
+                "name": "bookQuill",
+                "palette": [
+                  "#2a1a12",
+                  "#8b4a2b",
+                  "#6a3520",
+                  "#f4ecd6"
+                ]
+              },
+              "options": [
+                {
+                  "name": "code",
+                  "token": "pond",
+                  "verdict": "best"
+                },
+                {
+                  "name": "braces",
+                  "token": "pond",
+                  "verdict": "alt"
+                }
+              ]
+            },
+            {
+              "id": "open-source",
+              "title": "Open source",
+              "ref": "src/components/Features.tsx:16",
+              "size": 32,
+              "current": {
+                "name": "emerald",
+                "palette": [
+                  "#06401d",
+                  "#17dd62",
+                  "#41f08a",
+                  "#0e9f45"
+                ]
+              },
+              "options": [
+                {
+                  "name": "git-branch",
+                  "token": "pond",
+                  "verdict": "best"
+                },
+                {
+                  "name": "code-merge",
+                  "token": "pond",
+                  "verdict": "alt"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "roles",
+          "title": "Role tabs",
+          "items": [
+            {
+              "id": "play",
+              "title": "Play",
+              "ref": "src/components/Roles.tsx:16",
+              "size": 16,
+              "current": {
+                "name": "diamond",
+                "palette": [
+                  "#0b3b40",
+                  "#ffffff",
+                  "#b8fbff",
+                  "#5de0e6"
+                ]
+              },
+              "options": [
+                {
+                  "name": "gamepad",
+                  "token": "primary",
+                  "verdict": "best"
+                },
+                {
+                  "name": "person-play",
+                  "token": "rose",
+                  "verdict": "alt"
+                }
+              ]
+            },
+            {
+              "id": "host",
+              "title": "Host a server",
+              "ref": "src/components/Roles.tsx:16",
+              "size": 16,
+              "current": {
+                "name": "monitor",
+                "palette": [
+                  "#26313a",
+                  "#bfe3f0",
+                  "#2b3a66",
+                  "#ffd84a"
+                ]
+              },
+              "options": [
+                {
+                  "name": "server",
+                  "token": "primary",
+                  "verdict": "best"
+                },
+                {
+                  "name": "network",
+                  "token": "primary",
+                  "verdict": "alt"
+                }
+              ]
+            },
+            {
+              "id": "develop",
+              "title": "Develop",
+              "ref": "src/components/Roles.tsx:16",
+              "size": 16,
+              "current": {
+                "name": "pickaxe",
+                "palette": [
+                  "#0d3a3d",
+                  "#5de0e6",
+                  "#c9fbfd",
+                  "#2aa7b0"
+                ]
+              },
+              "options": [
+                {
+                  "name": "file-code",
+                  "token": "pond",
+                  "verdict": "best"
+                },
+                {
+                  "name": "code",
+                  "token": "pond",
+                  "verdict": "alt"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "launcher",
+          "title": "LeviLauncher showcase",
+          "items": [
+            {
+              "id": "versions",
+              "title": "Version isolation",
+              "ref": "src/components/Roles.tsx:221",
+              "size": 24,
+              "current": {
+                "name": "history",
+                "palette": [
+                  "currentColor"
+                ]
+              },
+              "options": [
+                {
+                  "name": "layers",
+                  "token": "primary",
+                  "verdict": "best"
+                },
+                {
+                  "name": "blocks",
+                  "token": "primary",
+                  "verdict": "alt"
+                }
+              ]
+            },
+            {
+              "id": "mods",
+              "title": "Mods",
+              "ref": "src/components/Roles.tsx:221",
+              "size": 24,
+              "current": {
+                "name": "chest",
+                "palette": [
+                  "#2a1a0c",
+                  "#c48b45",
+                  "#a46a2c",
+                  "#7a4a1c"
+                ]
+              },
+              "options": [
+                {
+                  "name": "package-check",
+                  "token": "primary",
+                  "verdict": "best"
+                },
+                {
+                  "name": "layers",
+                  "token": "primary",
+                  "verdict": "alt"
+                }
+              ]
+            },
+            {
+              "id": "accounts",
+              "title": "Accounts",
+              "ref": "src/components/Roles.tsx:221",
+              "size": 24,
+              "current": {
+                "name": "heart",
+                "palette": [
+                  "#3a0a0a",
+                  "#d23b3b",
+                  "#ffb3b3",
+                  "#9e1f1f"
+                ]
+              },
+              "options": [
+                {
+                  "name": "user-round",
+                  "token": "wisteria",
+                  "verdict": "best"
+                },
+                {
+                  "name": "users",
+                  "token": "wisteria",
+                  "verdict": "alt"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "about",
+          "title": "About page",
+          "items": [
+            {
+              "id": "about-intro",
+              "title": "Page intro",
+              "ref": "src/pages/About.tsx:126",
+              "size": 32,
+              "current": {
+                "name": "bookQuill",
+                "palette": [
+                  "#2a1a12",
+                  "#8b4a2b",
+                  "#6a3520",
+                  "#f4ecd6"
+                ]
+              },
+              "options": [
+                {
+                  "name": "book-open",
+                  "token": "wisteria",
+                  "verdict": "best"
+                },
+                {
+                  "name": "file-text",
+                  "token": "wisteria",
+                  "verdict": "alt"
+                }
+              ]
+            },
+            {
+              "id": "about-origin",
+              "title": "Where it comes from",
+              "ref": "src/pages/About.tsx:133",
+              "size": 32,
+              "current": {
+                "name": "map",
+                "palette": [
+                  "#4a3a22",
+                  "#efe3bd",
+                  "#d9c690",
+                  "#6aa84f"
+                ]
+              },
+              "options": [
+                {
+                  "name": "scroll",
+                  "token": "sunlight",
+                  "verdict": "best"
+                },
+                {
+                  "name": "git-branch",
+                  "token": "pond",
+                  "verdict": "alt"
+                }
+              ]
+            },
+            {
+              "id": "about-rename",
+              "title": "Why it was renamed",
+              "ref": "src/pages/About.tsx:140",
+              "size": 32,
+              "current": {
+                "name": "question",
+                "palette": [
+                  "currentColor"
+                ]
+              },
+              "options": [
+                {
+                  "name": "lightbulb",
+                  "token": "sunlight",
+                  "verdict": "best"
+                },
+                {
+                  "name": "message-question",
+                  "token": "sunlight",
+                  "verdict": "alt"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "support",
+          "title": "Support page",
+          "items": [
+            {
+              "id": "contribute",
+              "title": "Contribute code",
+              "ref": "src/pages/Support.tsx:23",
+              "size": 32,
+              "current": {
+                "name": "pickaxe",
+                "palette": [
+                  "#0d3a3d",
+                  "#5de0e6",
+                  "#c9fbfd",
+                  "#2aa7b0"
+                ]
+              },
+              "options": [
+                {
+                  "name": "git-pull-request",
+                  "token": "pond",
+                  "verdict": "best"
+                },
+                {
+                  "name": "wrench",
+                  "token": "pond",
+                  "verdict": "alt"
+                }
+              ]
+            },
+            {
+              "id": "donate",
+              "title": "Donate",
+              "ref": "src/pages/Support.tsx:37",
+              "size": 32,
+              "current": {
+                "name": "emerald",
+                "palette": [
+                  "#06401d",
+                  "#17dd62",
+                  "#41f08a",
+                  "#0e9f45"
+                ]
+              },
+              "options": [
+                {
+                  "name": "heart-handshake",
+                  "token": "rose",
+                  "verdict": "best"
+                },
+                {
+                  "name": "circle-dollar",
+                  "token": "primary",
+                  "verdict": "alt"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "blog",
+          "title": "Blog",
+          "items": [
+            {
+              "id": "blog-posts",
+              "title": "Posts",
+              "ref": "src/blog/Blog.tsx:21",
+              "size": 16,
+              "current": {
+                "name": "paper",
+                "palette": [
+                  "#4a4a40",
+                  "#f7f4ea",
+                  "#d8d2bf",
+                  "#9aa3ab"
+                ]
+              },
+              "options": [
+                {
+                  "name": "file-text",
+                  "token": "wisteria",
+                  "verdict": "best"
+                },
+                {
+                  "name": "bookmark",
+                  "token": "wisteria",
+                  "verdict": "alt"
+                }
+              ]
+            },
+            {
+              "id": "blog-categories",
+              "title": "Categories",
+              "ref": "src/blog/Blog.tsx:23",
+              "size": 16,
+              "current": {
+                "name": "chest",
+                "palette": [
+                  "#2a1a0c",
+                  "#c48b45",
+                  "#a46a2c",
+                  "#7a4a1c"
+                ]
+              },
+              "options": [
+                {
+                  "name": "folder",
+                  "token": "wisteria",
+                  "verdict": "best"
+                },
+                {
+                  "name": "grid",
+                  "token": "wisteria",
+                  "verdict": "alt"
+                }
+              ]
+            },
+            {
+              "id": "blog-about",
+              "title": "About",
+              "ref": "src/blog/Blog.tsx:26",
+              "size": 16,
+              "current": {
+                "name": "quote",
+                "palette": [
+                  "currentColor"
+                ]
+              },
+              "options": [
+                {
+                  "name": "info",
+                  "token": "wisteria",
+                  "verdict": "best"
+                },
+                {
+                  "name": "book-open",
+                  "token": "wisteria",
+                  "verdict": "alt"
+                }
+              ]
+            },
+            {
+              "id": "blog-friends",
+              "title": "Friends",
+              "ref": "src/blog/Blog.tsx:27",
+              "size": 16,
+              "current": {
+                "name": "heart",
+                "palette": [
+                  "#3a0a0a",
+                  "#d23b3b",
+                  "#ffb3b3",
+                  "#9e1f1f"
+                ]
+              },
+              "options": [
+                {
+                  "name": "users",
+                  "token": "wisteria",
+                  "verdict": "best"
+                },
+                {
+                  "name": "heart-handshake",
+                  "token": "rose",
+                  "verdict": "alt"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "notfound",
+          "title": "404",
+          "items": [
+            {
+              "id": "404-projects",
+              "title": "Projects button",
+              "ref": "src/pages/NotFound.tsx:30",
+              "size": 16,
+              "current": {
+                "name": "map",
+                "palette": [
+                  "#4a3a22",
+                  "#efe3bd",
+                  "#d9c690",
+                  "#6aa84f"
+                ]
+              },
+              "options": [
+                {
+                  "name": "grid",
+                  "token": "primary",
+                  "verdict": "best"
+                },                { "name": "folder", "token": "primary", "verdict": "alt" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

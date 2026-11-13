@@ -1,84 +1,75 @@
-# LeviMC Icon Study
+# LeviMC icon review
 
-An unofficial design review repository for website icons and project/application identities. **Nothing here is approved production branding unless the relevant maintainers explicitly accept it.**
+A comparison tool for the icons on [levimc.org](https://levimc.org): what each placement uses today, what is proposed
+instead, and at the sizes it actually renders at.
 
-## One shared, responsive gallery
+Open the site: **https://indpriyanshuraj-bot.github.io/Levi-icon**
 
-Run a static server from the repository root:
+## How it works
+
+The whole app is four files and no build step:
+
+| File | Role |
+|---|---|
+| `data.json` | every placement, its current icon, its options and colours |
+| `app.js` | reads `data.json` and renders the rail, the stage and the decision sheet |
+| `styles.css` | the layout — landscape first, no page scroll |
+| `assets/icons/*.svg` | the candidate icons, single-colour, tinted at runtime |
+
+The current icons are **not stored here**. They are hotlinked from the `LiteLDev/levimc.org` repository
+(`kit/assets/icons/`) through jsDelivr, with a `raw.githubusercontent.com` fallback, so the comparison always shows
+what is live in the source rather than a copy that can drift.
+
+Candidates are drawn through a CSS mask, which is why one single-colour SVG can carry any token colour without
+being duplicated per palette.
+
+## Adding to it
+
+1. Drop the new SVG in `assets/icons/` (24×24, `fill="none"`, `stroke-width` ~1.8, one stroke colour).
+2. Add an entry to `data.json` under the right group:
+
+```json
+{
+  "id": "blog-tags",
+  "title": "Tags",
+  "ref": "src/blog/Blog.tsx:22",
+  "size": 16,
+  "current": { "name": "hash", "palette": ["currentColor"] },
+  "options": [
+    { "name": "bookmark", "token": "wisteria", "verdict": "best" },
+    { "name": "grid", "token": "wisteria", "verdict": "alt" }
+  ]
+}
+```
+
+`token` is one of `primary`, `pond`, `wisteria`, `rose`, `sunlight` (defined in `tokens` at the top of the file).
+Use `"src"` instead of `"name"` if the icon lives somewhere else, e.g. a full-resolution project logo.
+
+3. Push. `scripts/validate.mjs` runs first and fails the build if a referenced icon or token is missing, so a broken
+entry never reaches the site.
+
+Adding a whole new collection — project logos, favicons, anything with a current state and options — means adding a
+second object to `collections` in `data.json`. The app already renders any number of them.
+
+## Local preview
 
 ```sh
 python3 -m http.server 8000
+node scripts/validate.mjs
 ```
 
-Open `http://localhost:8000/`. The same interface contains three category tabs:
+Then open `http://localhost:8000/`. Opening `index.html` from the file system will not work: the app fetches
+`data.json`.
 
-- **Website / UI** — 15 website placements, original current PixelIcon SVGs copied unchanged from `LiteLDev/levimc.org/kit/assets/icons/`, and 45 candidate icons. Candidate SVGs can be previewed in **Multicolour outline** or **Multicolour filled** styles.
-- **Project / app logos** — seven project identities, three selectable concepts each. The current repository logo remains visible while you select a proposed mark. After selecting a concept, preview its icon SVG, banner SVG, multi-resolution favicon, Apple touch icon and OG image.
-- **Official references** — the original LeviLamina SVG and LeviLauncher leaf asset displayed on white and OLED-black surfaces.
+## Using it
 
-The `/official/` route redirects into the project/app logo category of the same gallery. It does not maintain a second UI implementation.
+- Click a placement in the left rail, or step through with `←` `→`.
+- `↑` `↓` switch between the proposed options; `Enter` chooses the one on screen; `K` keeps the current icon.
+- Decisions are stored in the browser. **Review** shows the sheet, with copy/download JSON for handing the result to
+  the maintainer.
 
-## Theme and comparison behaviour
+## Provenance
 
-The global theme switch changes the website background between pure white and OLED black. It does not recolour SVG artwork. The current website icons are the exact original 16 × 16 pixel-art source SVGs; proposed website icons have both multi-colour and filled variants.
-
-For project logos, each card always shows the existing project artwork from its source repository. A proposed logo is shown only after you select one of the unranked concept tabs. No concept is marked recommended or alternative.
-
-## Project asset families
-
-Every project has three logo directions. Each direction has its own complete derivative family:
-
-- `icon.svg` — 512 × 512 transparent vector master (standard root export path; the other two equal choices are in `variants/`).
-- `icon-banner.svg` — 1200 × 240 transparent icon and name lockup. The accent line sits below the subtitle, not through the text.
-- `favicon.ico` — multi-resolution ICO containing 16, 32, 48, 64, 128 and 256 px images.
-- `favicon-*.png` — explicit PNG favicon sizes.
-- `apple-touch-icon.png` — 180 × 180 PNG.
-- `og-image.svg` and `og-image.png` — editable source and 1200 × 630 export. OG artwork uses neutral backgrounds and project-specific graphic accents; it does not use a generic green circle.
-- `asset-family.zip` — complete per-project exports, including selected concept variants.
-
-There is no local `icon.png` asset.
-
-## Brand and colour direction
-
-The LeviLamina reference is copied unchanged to `official/references/levilamina-logo.svg`. Its green leaf remains a secondary family motif. Project marks use distinct palettes: heritage greens for LegacyScriptEngine; teal/navy for lip; navy/blue/coral for LeviAntiCheat; navy/cyan/violet/amber for LeviOptimize; indigo/violet/cyan for MoreDimensions; blue/teal for bedboo; and indigo/amber for LeviMC Mods.
-
-## Regenerate assets
-
-Install dependencies and run both generators from the repository root:
-
-```sh
-python -m pip install -r official/tools/requirements.txt
-python official/tools/generate-identity-assets.py
-python official/tools/generate-website-icon-styles.py
-```
-
-The first script generates the project icon variants, banners, ICO/PNG derivatives, Apple touch icons, OG images, manifest and per-project ZIPs. The second generates the multicolour outline and multicolour filled styles for the website icon candidate icons.
-
-## GitHub Pages
-
-The workflow in `.github/workflows/pages.yml` stages the static website and deploys it with GitHub Pages. Set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. The workflow uses `actions/checkout@v6`, `actions/configure-pages@v5`, `actions/upload-pages-artifact@v4` and `actions/deploy-pages@v4`.
-
-## Full repository ZIP workflow
-
-The companion ZIP is a full repository working-tree snapshot based on the existing project files and this update. It intentionally excludes `.git/` so you can copy your existing Git metadata into it:
-
-1. Extract the ZIP into a new folder.
-2. Copy the complete `.git` directory from your existing `Levi-icon` clone into the extracted folder, beside `README.md` and `index.html`.
-3. Open a terminal in that folder and run:
-
-```sh
-git status --short
-git add -A
-git commit -m "Refine icon comparisons and project logo concepts"
-git push origin HEAD
-```
-
-No individual files need to be copied into the old working tree.
-
-## Status and ownership
-
-This repository is an independent, unofficial proposal. LeviMC, LeviLamina, LeviLauncher and project names/logos remain the property of their respective owners. The official reference marks are included or linked only for comparison, without modification or implied endorsement. The proposal website and authored concepts are provided under the repository MIT License.
-
-## Preview sheets
-
-Static review sheets for the generated assets are available under [`previews/`](previews/): website icon styles, project logo directions, and banner examples. The interactive gallery remains the primary comparison interface.
+Placements, file references and the current icon set were read from `LiteLDev/levimc.org` at `a391a35`, kit 2.2.0.
+The palette is the kit's own: `--color-primary`, `--color-accent-1..4`. LeviMC, LeviLamina and LeviLauncher remain
+the property of their respective owners.

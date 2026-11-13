@@ -1,257 +1,427 @@
-const $ = (selector, root = document) => root.querySelector(selector);
-const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+/* LeviMC icon review — data-driven comparison app.
+   Everything it shows comes from data.json. Add an icon, add an entry, it appears. */
 
-let websiteData = [];
-let projectData = [];
-let websiteStyle = 'multicolor';
+const $ = (sel, root = document) => root.querySelector(sel);
+const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+const STORE = 'levi-icon-review-v1';
 
-const ASSET_LABELS = {
-  icon: {label:'Icon SVG', caption:'512 × 512 transparent SVG master', ext:'svg'},
-  banner: {label:'Banner SVG', caption:'Transparent SVG lockup · icon and project name', ext:'svg'},
-  favicon: {label:'Favicon', caption:'Multi-resolution ICO · 16, 32, 48, 64, 128 and 256 px', ext:'ico'},
-  apple: {label:'Apple touch icon', caption:'180 × 180 PNG', ext:'png'},
-  og: {label:'Open Graph image', caption:'1200 × 630 PNG · social-sharing preview', ext:'png'}
+const state = {
+  data: null,
+  collection: null,
+  decisions: {},
+  activeId: null,
+  preview: {},
+  filter: 'all',
 };
 
-function setTheme(mode, persist = true) {
-  const theme = mode === 'oled' ? 'oled' : 'light';
-  document.documentElement.dataset.theme = theme;
-  $('#theme-toggle').setAttribute('aria-pressed', String(theme === 'oled'));
-  $('#theme-label').textContent = theme === 'oled' ? 'White' : 'OLED black';
-  $('#theme-icon').textContent = theme === 'oled' ? '☼' : '◐';
-  $('meta[name="theme-color"]').content = theme === 'oled' ? '#000000' : '#ffffff';
-  if (persist) {
-    try { localStorage.setItem('levi-icon-study-theme', theme); } catch { /* Storage can be unavailable in private mode. */ }
-  }
+/* ------------------------------------------------------------ helpers */
+
+const kebab = (name) => String(name).replace(/[A-Z]/g, (m) => '-' + m.toLowerCase());
+
+function items() {
+  return state.collection.groups.flatMap((group) =>
+    group.items.map((item) => Object.assign({}, item, { group })),
+  );
 }
 
-try { setTheme(localStorage.getItem('levi-icon-study-theme') || 'light', false); }
-catch { setTheme('light', false); }
-$('#theme-toggle').addEventListener('click', () => {
-  setTheme(document.documentElement.dataset.theme === 'oled' ? 'light' : 'oled');
-});
-
-function setView(view, updateHash = true) {
-  const selected = ['website', 'projects', 'official'].includes(view) ? view : 'website';
-  $$('.view-tab').forEach((button) => {
-    const active = button.dataset.view === selected;
-    button.classList.toggle('is-active', active);
-    button.setAttribute('aria-selected', String(active));
-  });
-  $$('.view-section').forEach((section) => {
-    const active = section.id === selected;
-    section.hidden = !active;
-    section.classList.toggle('is-visible', active);
-  });
-  if (updateHash) history.replaceState(null, '', `#${selected}`);
+function activeItem() {
+  return items().find((item) => item.id === state.activeId) || items()[0];
 }
 
-$$('.view-tab').forEach((button) => button.addEventListener('click', () => setView(button.dataset.view)));
-function initialView() {
-  const hash = location.hash.slice(1);
-  if (['website', 'projects', 'official'].includes(hash)) return hash;
-  return 'website';
+function optionOf(item, name) {
+  return (item.options || []).find((o) => o.name === name || o.label === name);
 }
 
-function setWebsiteStyle(style) {
-  websiteStyle = style === 'filled' ? 'filled' : 'multicolor';
-  $$('.style-tab').forEach((button) => {
-    const active = button.dataset.style === websiteStyle;
-    button.classList.toggle('is-active', active);
-    button.setAttribute('aria-selected', String(active));
-  });
-  renderWebsiteIcons();
+function decisionOf(item) {
+  return state.decisions[item.id] || null;
 }
-$$('.style-tab').forEach((button) => button.addEventListener('click', () => setWebsiteStyle(button.dataset.style)));
 
-function websiteOption(option, item) {
-  const file = `assets/icons/styles/${websiteStyle}/${option.name}.svg`;
-  const best = option.name === item.recommended;
-  return `<article class="website-option ${best ? 'recommended' : ''}">
-    <div class="website-icon-surfaces">
-      <div class="mini-surface"><img src="${file}" alt="${escapeHtml(option.name)} on white" loading="lazy"></div>
-      <div class="mini-surface dark"><img src="${file}" alt="${escapeHtml(option.name)} on OLED black" loading="lazy"></div>
+function optionSrc(option) {
+  if (option.src) return option.src;
+  return `${state.collection.optionBase}/${option.name}.svg`;
+}
+
+function tintOf(option) {
+  const tokens = state.data.tokens || {};
+  return option.color || tokens[option.token] || 'currentColor';
+}
+
+/* current icon: hotlinked from the source repository, never copied */
+function spriteHTML(item, size, cls = '') {
+  const c = item.current;
+  const base = state.collection.currentBase;
+  const fallback = state.collection.currentFallback || base;
+  const file = kebab(c.name);
+  const mono = (c.palette || [])[0] === 'currentColor' ? ' mono' : '';
+  return `<img class="sprite${mono} ${cls}" src="${base}/${file}.svg" data-fallback="${fallback}/${file}.svg"
+    onerror="if(this.dataset.retried){this.style.visibility='hidden'}else{this.dataset.retried=1;this.src=this.dataset.fallback}"
+    width="${size}" height="${size}" alt="" draggable="false">`;
+}
+
+/* candidate icon: masked so one file can carry any token colour */
+function maskHTML(option, size, cls = '') {
+  return `<span class="mask ${cls}" style="--src:url('${optionSrc(option)}');--tint:${tintOf(option)};width:${size}px;height:${size}px" aria-hidden="true"></span>`;
+}
+
+function chosenHTML(item, size, cls = '') {
+  const choice = decisionOf(item);
+  if (!choice) return '<span class="chip-tag">—</span>';
+  if (choice === 'keep') return spriteHTML(item, size, cls);
+  const option = optionOf(item, choice);
+  return option ? maskHTML(option, size, cls) : '<span class="chip-tag">—</span>';
+}
+
+/* ------------------------------------------------------------ persistence */
+
+function load() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(STORE) || '{}');
+    state.decisions = raw[state.collection.id] || {};
+  } catch { state.decisions = {}; }
+}
+
+function save() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(STORE) || '{}');
+    raw[state.collection.id] = state.decisions;
+    localStorage.setItem(STORE, JSON.stringify(raw));
+  } catch { /* private mode: decisions stay in memory */ }
+}
+
+/* ------------------------------------------------------------ chrome */
+
+function renderGroups() {
+  const nav = $('#groups');
+  const groups = state.collection.groups;
+  const all = [{ id: 'all', title: 'All' }].concat(groups);
+  nav.innerHTML = all
+    .map((g) => `<button type="button" data-group="${g.id}" aria-current="${state.filter === g.id}">${g.title}</button>`)
+    .join('');
+  $$('button', nav).forEach((btn) =>
+    btn.addEventListener('click', () => {
+      state.filter = btn.dataset.group;
+      renderGroups();
+      renderRail();
+      const first = visibleItems()[0];
+      if (first) setActive(first.id);
+    }),
+  );
+}
+
+function visibleItems() {
+  const list = items();
+  return state.filter === 'all' ? list : list.filter((i) => i.group.id === state.filter);
+}
+
+function renderRail() {
+  const rail = $('#rail');
+  const groups = state.collection.groups.filter((g) => state.filter === 'all' || g.id === state.filter);
+  rail.innerHTML = groups
+    .map((group) => {
+      const rows = group.items
+        .map((item) => {
+          const choice = decisionOf(item);
+          const dotState = !choice ? '' : choice === 'keep' ? 'keep' : 'set';
+          return `<button class="row" type="button" data-id="${item.id}" aria-current="${item.id === state.activeId}">
+            <span class="row-thumb">${spriteHTML(item, 24)}</span>
+            <span class="row-text">
+              <span class="row-title">${item.title}</span>
+              <span class="row-ref">${item.ref || ''}</span>
+            </span>
+            <span class="row-dot" data-state="${dotState}"></span>
+          </button>`;
+        })
+        .join('');
+      return `<p class="rail-group">${group.title}</p>${rows}`;
+    })
+    .join('');
+
+  $$('.row', rail).forEach((row) =>
+    row.addEventListener('click', () => setActive(row.dataset.id)),
+  );
+}
+
+function setActive(id) {
+  state.activeId = id;
+  if (state.preview[id] === undefined) state.preview[id] = 0;
+  renderRail();
+  renderStage();
+  const current = $(`.row[data-id="${id}"]`);
+  if (current && current.scrollIntoView) current.scrollIntoView({ block: 'nearest' });
+}
+
+function renderProgress() {
+  const total = items().length;
+  const done = items().filter((i) => decisionOf(i)).length;
+  $('#progress-count').textContent = `${done} / ${total}`;
+  $('#progress-fill').style.width = total ? `${(done / total) * 100}%` : '0';
+}
+
+/* ------------------------------------------------------------ stage */
+
+function renderStage() {
+  const item = activeItem();
+  if (!item) return;
+  const group = item.group;
+  const index = state.preview[item.id] || 0;
+  const option = item.options[index];
+  const choice = decisionOf(item);
+  const list = visibleItems();
+  const pos = list.findIndex((i) => i.id === item.id) + 1;
+
+  const ladderSizes = [16, 24, 32, 64];
+
+  $('#stage').innerHTML = `
+    <div class="stage-head">
+      <div>
+        <p class="eyebrow">${group.title}</p>
+        <h1>${item.title}</h1>
+        <p class="stage-meta">
+          <code>${item.ref || ''}</code>
+          <span>${item.size} px on the site</span>
+          ${choice ? `<span class="chip-tag">${choice === 'keep' ? 'keeping current' : 'chosen: ' + choice}</span>` : ''}
+        </p>
+      </div>
+      <div class="counter"><b>${String(pos).padStart(2, '0')}</b> / ${String(list.length).padStart(2, '0')}</div>
     </div>
-    <strong>${escapeHtml(option.name)}</strong>
-    <span class="option-status">${best ? 'Best fit for this placement' : 'Other option'}</span>
-    <p>${escapeHtml(option.reason)}</p>
-    <a class="text-link" href="${file}" download>Download SVG ↗</a>
-  </article>`;
-}
 
-function renderWebsiteIcons() {
-  const query = $('#website-search').value.trim().toLowerCase();
-  const filtered = websiteData.filter((item) => [
-    item.area, item.title, item.file, item.current, item.recommended,
-    ...item.options.flatMap((option) => [option.name, option.reason])
-  ].join(' ').toLowerCase().includes(query));
+    <div class="compare">
+      <section class="pane">
+        <p class="pane-label">Now <b>${item.current.name}</b></p>
+        <div class="big">${spriteHTML(item, 150)}</div>
+        <div class="ladder">${ladderSizes
+          .map((s) => `<div>${spriteHTML(item, s)}<span>${s}px</span></div>`)
+          .join('')}</div>
+      </section>
+      <section class="pane pane-prop">
+        <p class="pane-label">Proposed <b>${option.name}</b></p>
+        <div class="big">${maskHTML(option, 150)}</div>
+        <div class="ladder">${ladderSizes
+          .map((s) => `<div>${maskHTML(option, s)}<span>${s}px</span></div>`)
+          .join('')}</div>
+      </section>
+    </div>
 
-  $('#website-list').innerHTML = filtered.map((item) => {
-    const currentFile = `assets/icons/current/${item.current}.svg`;
-    return `<article class="website-card">
-      <header class="card-heading">
-        <div><span class="group-label">${escapeHtml(item.area)}</span><h3>${escapeHtml(item.title)}</h3><span class="source-file">${escapeHtml(item.file)}</span></div>
-      </header>
-      <div class="current-icon-row">
-        <div class="current-icon-tile"><img src="${currentFile}" alt="Original ${escapeHtml(item.current)} icon" loading="lazy"></div>
-        <div class="current-icon-copy"><strong>Current icon · original pixel artwork</strong><span>Original source SVG copied unchanged from <code>kit/assets/icons/${escapeHtml(item.current)}.svg</code></span></div>
-        <a class="text-link" href="${currentFile}" download>Download original ↗</a>
+    <div class="tray">
+      <div class="tray-items">
+        <button class="chip" type="button" data-pick="keep" aria-pressed="${choice === 'keep'}">
+          ${spriteHTML(item, 18)}
+          <span class="chip-name">Keep current</span>
+        </button>
+        ${item.options
+          .map(
+            (o, i) => `<button class="chip" type="button" data-pick="${o.name}" data-verdict="${o.verdict || ''}"
+              aria-pressed="${index === i}">
+              ${maskHTML(o, 18)}
+              <span class="chip-name">${o.name}</span>
+              ${o.verdict === 'best' ? '<span class="chip-tag">best</span>' : ''}
+            </button>`,
+          )
+          .join('')}
       </div>
-      <div class="website-options">${item.options.map((option) => websiteOption(option, item)).join('')}</div>
-    </article>`;
-  }).join('');
-  $('#website-empty').hidden = filtered.length !== 0;
-}
-$('#website-search').addEventListener('input', renderWebsiteIcons);
-
-function paletteDots(palette = []) {
-  return `<div class="palette-dots" aria-label="Project-specific palette">${palette.map((colour) => `<span style="background:${escapeHtml(colour)}"></span>`).join('')}</div>`;
-}
-function assetPath(variant, asset) {
-  if (asset === 'icon') return variant.file;
-  if (asset === 'banner') return variant.banner;
-  if (asset === 'favicon') return variant.favicon.replace(/\.ico$/i, '-256x256.png');
-  if (asset === 'apple') return variant.apple_touch_icon;
-  return variant.og_image;
-}
-
-function proposedPreview(project, variant, asset) {
-  const src = assetPath(variant, asset);
-  const alt = `${project.name} proposed ${variant.label} ${ASSET_LABELS[asset].label}`;
-  const previewClass = asset;
-  const downloadHref = asset === 'favicon' ? variant.favicon : src;
-  const sourceHref = asset === 'og' ? variant.og_image_svg : '';
-  const sizeLinks = asset === 'favicon'
-    ? `<div class="asset-size-links"><a href="${escapeHtml(variant.favicon)}" download>ICO</a>${[16,32,48,64,128,256].map((size) => {
-        const base = variant.favicon.replace(/\.ico$/i, '');
-        const png = variant.favicon.includes('/variants/')
-          ? `${base}-${size}x${size}.png`
-          : `${base.replace(/favicon$/, 'favicon')}-${size}x${size}.png`;
-        return `<a href="${escapeHtml(png)}" download>${size}px PNG</a>`;
-      }).join('')}</div>`
-    : '';
-  return `<div class="asset-preview ${previewClass}"><img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" loading="lazy"></div>
-    <div class="asset-meta">
-      <span class="asset-caption">${ASSET_LABELS[asset].caption}</span>
-      <div class="asset-actions">
-        <a href="${escapeHtml(downloadHref)}" download>Download ${asset === 'favicon' ? 'ICO' : ASSET_LABELS[asset].ext.toUpperCase()}</a>
-        ${sourceHref ? `<a href="${escapeHtml(sourceHref)}" download>Download OG SVG source</a>` : ''}
+      <div class="tray-actions">
+        <button class="btn ghost sm" type="button" id="prev" ${pos === 1 ? 'disabled' : ''}>←</button>
+        <button class="btn primary" type="button" id="choose">Choose ${option.name}</button>
+        <button class="btn ghost sm" type="button" id="next" ${pos === list.length ? 'disabled' : ''}>→</button>
       </div>
-      ${sizeLinks}
     </div>`;
+
+  $$('.chip[data-pick]', $('#stage')).forEach((chip) => {
+    const value = chip.dataset.pick;
+    chip.addEventListener('click', () => {
+      if (value === 'keep') {
+        choose('keep');
+      } else {
+        const i = item.options.findIndex((o) => o.name === value);
+        state.preview[item.id] = i;
+        renderStage();
+      }
+    });
+  });
+
+  $('#choose').addEventListener('click', () => choose(option.name));
+  $('#prev').addEventListener('click', () => step(-1));
+  $('#next').addEventListener('click', () => step(1));
+  renderProgress();
 }
 
-function projectCard(project, index) {
-  const variantTabs = project.variants.map((variant) => `<button class="variant-tab" type="button" role="tab" data-variant="${escapeHtml(variant.slug)}" aria-selected="false">${escapeHtml(variant.label)}</button>`).join('');
-  const assetTabs = Object.entries(ASSET_LABELS).map(([key, meta], position) => `<button class="asset-tab" type="button" role="tab" data-asset="${key}" aria-selected="${position === 0}">${meta.label}</button>`).join('');
-  return `<article class="project-card" data-project="${escapeHtml(project.slug)}" data-variant="" data-asset="icon">
-    <header class="project-head">
-      <div><span class="project-index">PROJECT ${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(project.name)}</h3><p class="project-summary">${escapeHtml(project.summary)}</p></div>
-      ${paletteDots(project.palette)}
-    </header>
-    <div class="variant-picker">
-      <span class="picker-label">Select a proposed direction</span>
-      <div class="variant-tabs" role="tablist" aria-label="${escapeHtml(project.name)} proposed logo concepts">${variantTabs}</div>
-    </div>
-    <div class="logo-comparison">
-      <section class="logo-column current-column">
-        <div class="column-heading"><strong>Current logo</strong><a href="${escapeHtml(project.current_source)}" target="_blank" rel="noreferrer">Original source ↗</a></div>
-        <div class="current-logo-stage"><img src="${escapeHtml(project.current_icon)}" alt="Current ${escapeHtml(project.name)} logo" loading="lazy" data-current-logo></div>
-        <p class="column-note">Existing project artwork · displayed as published</p>
-      </section>
-      <section class="logo-column proposed-column">
-        <div class="column-heading"><strong>Proposed logo</strong><span class="proposed-label">Choose a direction</span></div>
-        <div class="proposed-empty"><span class="empty-mark">＋</span><strong>No concept selected</strong><p>Select one of the proposed directions above to compare it with the current logo.</p></div>
-        <div class="proposed-output" hidden>
-          <div class="proposed-description"></div>
-          <div class="asset-tabs" role="tablist" aria-label="${escapeHtml(project.name)} proposed assets">${assetTabs}</div>
-          <div class="preview-slot"></div>
-          <div class="project-detail"><a class="text-link" href="${escapeHtml(project.asset_bundle)}" download>Download complete project asset family ↗</a></div>
+function choose(value) {
+  const item = activeItem();
+  if (!item) return;
+  state.decisions[item.id] = value;
+  save();
+  renderRail();
+  renderStage();
+  const list = visibleItems();
+  const pos = list.findIndex((i) => i.id === item.id);
+  if (pos < list.length - 1) step(1);
+}
+
+function step(delta) {
+  const list = visibleItems();
+  const pos = list.findIndex((i) => i.id === state.activeId);
+  const next = list[pos + delta];
+  if (next) setActive(next.id);
+}
+
+/* ------------------------------------------------------------ sheet */
+
+function renderSheet() {
+  const list = items();
+  const rows = list
+    .map((item) => {
+      const choice = decisionOf(item);
+      const label = !choice ? 'not decided' : choice === 'keep' ? 'keep current' : choice;
+      return `<div class="sheet-row">
+        <div>
+          <h3>${item.title}</h3>
+          <p>${item.group.title} · ${item.ref || ''}</p>
         </div>
-      </section>
-    </div>
-  </article>`;
+        <div class="cell">${spriteHTML(item, 22)}</div>
+        <div class="cell">${chosenHTML(item, 22)}</div>
+        <div class="picked"><b>${label}</b></div>
+      </div>`;
+    })
+    .join('');
+
+  $('#sheet-body').innerHTML = rows || '<p class="empty">Nothing to review yet.</p>';
+
+  const done = list.filter((i) => decisionOf(i)).length;
+  $('#sheet-hint').textContent = `${done} of ${list.length} decided · choices are saved in this browser`;
+
+  $('#export-copy').onclick = () => {
+    const text = JSON.stringify(exportData(), null, 2);
+    navigator.clipboard.writeText(text).then(
+      () => { $('#sheet-hint').textContent = 'JSON copied to the clipboard.'; },
+      () => { $('#sheet-hint').textContent = 'Clipboard blocked — use Download JSON.'; },
+    );
+  };
+
+  $('#export-file').onclick = () => {
+    const blob = new Blob([JSON.stringify(exportData(), null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${state.collection.id}-decisions.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  $('#reset').onclick = () => {
+    state.decisions = {};
+    save();
+    renderSheet();
+    renderRail();
+    renderStage();
+  };
 }
 
-function renderProjects() {
-  const query = $('#project-search').value.trim().toLowerCase();
-  const filtered = projectData.filter((project) => [
-    project.name, project.summary, project.subtitle,
-    ...project.variants.flatMap((variant) => [variant.label, variant.description, variant.slug])
-  ].join(' ').toLowerCase().includes(query));
-  $('#project-list').innerHTML = filtered.map(projectCard).join('');
-  $('#project-empty').hidden = filtered.length !== 0;
+function exportData() {
+  const choices = {};
+  items().forEach((item) => {
+    const choice = decisionOf(item);
+    if (!choice) return;
+    choices[item.id] = {
+      choice,
+      verdict: choice === 'keep' ? 'keep' : (optionOf(item, choice) || {}).verdict || null,
+    };
+  });
+  return {
+    collection: state.collection.id,
+    source: state.data.source,
+    decided: Object.keys(choices).length,
+    total: items().length,
+    choices,
+  };
 }
 
-function updateProjectCard(card) {
-  const project = projectData.find((entry) => entry.slug === card.dataset.project);
-  if (!project || !card.dataset.variant) return;
-  const variant = project.variants.find((entry) => entry.slug === card.dataset.variant);
-  if (!variant) return;
-  const asset = card.dataset.asset || 'icon';
-  const proposed = $('.proposed-output', card);
-  $('.proposed-empty', card).hidden = true;
-  proposed.hidden = false;
-  $('.proposed-label', card).textContent = variant.label;
-  $('.proposed-description', card).innerHTML = `<strong>${escapeHtml(variant.label)}</strong><p>${escapeHtml(variant.description)}</p>`;
-  $$('.asset-tab', card).forEach((button) => button.setAttribute('aria-selected', String(button.dataset.asset === asset)));
-  $('.preview-slot', card).innerHTML = proposedPreview(project, variant, asset);
+function openSheet() {
+  renderSheet();
+  $('#sheet').hidden = false;
+  $('#sheet-close').focus();
 }
 
-$('#project-search').addEventListener('input', renderProjects);
-$('#project-list').addEventListener('click', (event) => {
-  const card = event.target.closest('.project-card');
-  if (!card) return;
-  const variantButton = event.target.closest('.variant-tab');
-  const assetButton = event.target.closest('.asset-tab');
-  if (variantButton) {
-    card.dataset.variant = variantButton.dataset.variant;
-    card.dataset.asset = 'icon';
-    $$('.variant-tab', card).forEach((button) => button.setAttribute('aria-selected', String(button === variantButton)));
-    updateProjectCard(card);
-  } else if (assetButton && card.dataset.variant) {
-    card.dataset.asset = assetButton.dataset.asset;
-    updateProjectCard(card);
+function closeSheet() {
+  $('#sheet').hidden = true;
+}
+
+/* ------------------------------------------------------------ theme */
+
+function setTheme(theme, persist = true) {
+  const value = theme === 'oled' ? 'oled' : 'light';
+  document.documentElement.dataset.theme = value;
+  $('#theme-label').textContent = value === 'oled' ? 'Light' : 'Dark';
+  $('#theme-btn').setAttribute('aria-pressed', String(value === 'oled'));
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.content = value === 'oled' ? '#0b1015' : '#f7f3e8';
+  if (persist) {
+    try { localStorage.setItem(STORE + '-theme', value); } catch { /* ignore */ }
+  }
+}
+
+/* ------------------------------------------------------------ keys */
+
+document.addEventListener('keydown', (event) => {
+  if (event.metaKey || event.ctrlKey || event.altKey) return;
+  const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(event.target.tagName);
+
+  if (event.key === 'Escape') {
+    if (!$('#sheet').hidden) closeSheet();
+    return;
+  }
+  if (typing) return;
+
+  if (event.key === 'ArrowRight') { step(1); event.preventDefault(); }
+  else if (event.key === 'ArrowLeft') { step(-1); event.preventDefault(); }
+  else if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+    const item = activeItem();
+    if (!item) return;
+    const count = item.options.length;
+    const index = state.preview[item.id] || 0;
+    const next = (index + (event.key === 'ArrowDown' ? 1 : -1) + count) % count;
+    state.preview[item.id] = next;
+    renderStage();
+    event.preventDefault();
+  } else if (event.key === 'Enter') {
+    const item = activeItem();
+    if (item) choose(item.options[state.preview[item.id] || 0].name);
+    event.preventDefault();
+  } else if (event.key.toLowerCase() === 'k') {
+    choose('keep');
   }
 });
 
-$('#project-list').addEventListener('error', (event) => {
-  if (event.target.matches('[data-current-logo]')) {
-    event.target.classList.add('logo-load-failed');
-    const stage = event.target.closest('.current-logo-stage');
-    if (stage) stage.insertAdjacentHTML('beforeend', '<span class="logo-fallback">Current logo could not be loaded. Use the original source link above.</span>');
+/* ------------------------------------------------------------ boot */
+
+async function boot() {
+  try {
+    state.data = await (await fetch('data.json', { cache: 'no-cache' })).json();
+  } catch (error) {
+    $('#rail').innerHTML = '<p class="empty">Could not load data.json. Serve the folder over HTTP (for example <code>python3 -m http.server</code>) rather than opening the file directly.</p>';
+    return;
   }
-}, true);
 
-function renderOfficialQuickLinks() {
-  $('#official-project-links').innerHTML = projectData.map((project) => `<button class="quick-project" type="button" data-go-project="${escapeHtml(project.slug)}"><img src="${escapeHtml(project.icon)}" alt="" loading="lazy"><span>${escapeHtml(project.name)}</span></button>`).join('');
+  state.collection = state.data.collections[0];
+  load();
+  setTheme(localStorage.getItem(STORE + '-theme') || 'light', false);
+
+  $('#theme-btn').addEventListener('click', () =>
+    setTheme(document.documentElement.dataset.theme === 'oled' ? 'light' : 'oled'),
+  );
+  $('#summary-btn').addEventListener('click', openSheet);
+  $('#sheet-close').addEventListener('click', closeSheet);
+  $('#sheet').addEventListener('click', (event) => {
+    if (event.target.id === 'sheet') closeSheet();
+  });
+
+  if (location.hash === '#review') openSheet();
+
+  renderGroups();
+  const first = visibleItems()[0];
+  state.activeId = first ? first.id : null;
+  renderRail();
+  renderStage();
+  renderProgress();
 }
-$('#official-project-links').addEventListener('click', (event) => {
-  const button = event.target.closest('[data-go-project]');
-  if (!button) return;
-  $('#project-search').value = '';
-  renderProjects();
-  setView('projects');
-  const target = $(`[data-project="${CSS.escape(button.dataset.goProject)}"]`, $('#project-list'));
-  target?.scrollIntoView({behavior:'smooth', block:'center'});
-});
 
-Promise.all([
-  fetch('data.json').then((response) => { if (!response.ok) throw new Error('Website icon data failed to load'); return response.json(); }),
-  fetch('official/manifest.json').then((response) => { if (!response.ok) throw new Error('Project logo manifest failed to load'); return response.json(); })
-]).then(([websiteIcons, manifest]) => {
-  websiteData = websiteIcons;
-  projectData = manifest.projects;
-  $('#website-count').textContent = String(websiteIcons.length);
-  $('#website-icon-count').textContent = String(websiteIcons.reduce((sum, item) => sum + item.options.length, 0));
-  $('#project-count').textContent = String(projectData.length);
-  $('#project-icon-count').textContent = String(manifest.icons.length);
-  renderWebsiteIcons();
-  renderProjects();
-  renderOfficialQuickLinks();
-  setView(initialView(), false);
-}).catch((error) => {
-  $('#website-list').innerHTML = `<p class="empty">${escapeHtml(error.message)}. Open the gallery through a local HTTP server, not a file URL.</p>`;
-  $('#project-list').innerHTML = `<p class="empty">${escapeHtml(error.message)}.</p>`;
-});
+boot();

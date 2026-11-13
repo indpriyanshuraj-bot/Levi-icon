@@ -18,17 +18,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
+      - uses: actions/checkout@v6
+
+      - name: Validate data.json
+        run: node scripts/validate.mjs
+
+      - uses: actions/configure-pages@v5
+
       - name: Stage static site
         run: |
           mkdir -p _site
-          rsync -a --exclude='.git/' --exclude='.github/' --exclude='_site/' ./ _site/
+          cp index.html styles.css app.js data.json _site/
+          cp -r assets _site/assets
           touch _site/.nojekyll
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: _site
 

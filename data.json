@@ -101,7 +101,7 @@
                   "verdict": "best"
                 },
                 {
-                  "name": "braces",
+                  "name": "languages",
                   "token": "pond",
                   "verdict": "alt"
                 }
@@ -240,12 +240,12 @@
               },
               "options": [
                 {
-                  "name": "layers",
+                  "name": "versions",
                   "token": "primary",
                   "verdict": "best"
                 },
                 {
-                  "name": "blocks",
+                  "name": "layers",
                   "token": "primary",
                   "verdict": "alt"
                 }
@@ -438,7 +438,7 @@
               },
               "options": [
                 {
-                  "name": "heart-handshake",
+                  "name": "hand-heart",
                   "token": "rose",
                   "verdict": "best"
                 },
@@ -498,12 +498,12 @@
               },
               "options": [
                 {
-                  "name": "folder",
+                  "name": "bookshelf",
                   "token": "wisteria",
                   "verdict": "best"
                 },
                 {
-                  "name": "grid",
+                  "name": "folder",
                   "token": "wisteria",
                   "verdict": "alt"
                 }
@@ -554,7 +554,7 @@
                   "verdict": "best"
                 },
                 {
-                  "name": "heart-handshake",
+                  "name": "hand-heart",
                   "token": "rose",
                   "verdict": "alt"
                 }
@@ -585,7 +585,12 @@
                   "name": "grid",
                   "token": "primary",
                   "verdict": "best"
-                },                { "name": "folder", "token": "primary", "verdict": "alt" }
+                },
+                {
+                  "name": "folder",
+                  "token": "primary",
+                  "verdict": "alt"
+                }
               ]
             }
           ]

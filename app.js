@@ -5,6 +5,7 @@ const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 const STORE = 'levi-icon-review-v1';
 const BUILD = '2';
+const CHECK = '<svg class="chip-check" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8.5 6.2 12 13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
 const state = {
   data: null,
@@ -60,8 +61,23 @@ function spriteHTML(item, size, cls = '') {
 }
 
 /* candidate icon: masked so one file can carry any token colour */
+function shade(hex, amount) {
+  const clean = String(hex).replace('#', '');
+  const full = clean.length === 3 ? clean.split('').map((c) => c + c).join('') : clean;
+  const num = parseInt(full, 16);
+  const clamp = (v) => Math.max(0, Math.min(255, Math.round(v)));
+  const r = clamp(((num >> 16) & 255) + amount);
+  const g = clamp(((num >> 8) & 255) + amount);
+  const b = clamp((num & 255) + amount);
+  return '#' + ((r << 16) | (g << 8) | b).toString(16).padStart(6, '0');
+}
+
+/* one gradient per token: light edge, token in the middle, shadowed edge */
 function maskHTML(option, size, cls = '') {
-  return `<span class="mask ${cls}" style="--src:url('${optionSrc(option)}');--tint:${tintOf(option)};width:${size}px;height:${size}px" aria-hidden="true"></span>`;
+  const base = tintOf(option);
+  const light = shade(base, 66);
+  const dark = shade(base, -52);
+  return `<span class="mask ${cls}" style="--src:url('${optionSrc(option)}');--tint-a:${light};--tint-b:${base};--tint-c:${dark};width:${size}px;height:${size}px" aria-hidden="true"></span>`;
 }
 
 function chosenHTML(item, size, cls = '') {
@@ -205,24 +221,32 @@ function renderStage() {
 
     <div class="tray">
       <div class="tray-items">
-        <button class="chip" type="button" data-pick="keep" aria-pressed="${choice === 'keep'}">
-          ${spriteHTML(item, 18)}
-          <span class="chip-name">Keep current</span>
+        <button class="chip${choice === 'keep' ? ' is-chosen' : ''}" type="button" data-pick="keep"
+          aria-pressed="${index === -1}" title="Leave this icon as it is">
+          <span class="chip-ic">${spriteHTML(item, 22)}</span>
+          <span class="chip-body">
+            <span class="chip-name">Keep current</span>
+            <span class="chip-tag">${item.current.name}</span>
+          </span>
+          ${choice === 'keep' ? CHECK : ''}
         </button>
         ${item.options
           .map(
-            (o, i) => `<button class="chip" type="button" data-pick="${o.name}" data-verdict="${o.verdict || ''}"
-              aria-pressed="${index === i}">
-              ${maskHTML(o, 18)}
-              <span class="chip-name">${o.name}</span>
-              ${o.verdict === 'best' ? '<span class="chip-tag">best</span>' : ''}
+            (o, i) => `<button class="chip${choice === o.name ? ' is-chosen' : ''}" type="button" data-pick="${o.name}"
+              data-verdict="${o.verdict || ''}" aria-pressed="${index === i}">
+              <span class="chip-ic">${maskHTML(o, 22)}</span>
+              <span class="chip-body">
+                <span class="chip-name">${o.name}</span>
+                <span class="chip-tag">${o.verdict === 'best' ? 'recommended' : 'alternative'}</span>
+              </span>
+              ${choice === o.name ? CHECK : ''}
             </button>`,
           )
           .join('')}
       </div>
       <div class="tray-actions">
         <button class="btn ghost sm" type="button" id="prev" ${pos === 1 ? 'disabled' : ''}>←</button>
-        <button class="btn primary" type="button" id="choose">Choose ${option.name}</button>
+        <button class="btn primary" type="button" id="choose">${choice === option.name ? 'Chosen · ' + option.name : 'Choose ' + option.name}</button>
         <button class="btn ghost sm" type="button" id="next" ${pos === list.length ? 'disabled' : ''}>→</button>
       </div>
     </div>`;
@@ -298,15 +322,7 @@ function renderSheet() {
     );
   };
 
-  $('#export-file').onclick = () => {
-    const blob = new Blob([JSON.stringify(exportData(), null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${state.collection.id}-decisions.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
+  $('#export-file').onclick = downloadJSON;
 
   $('#reset').onclick = () => {
     state.decisions = {};
@@ -318,22 +334,47 @@ function renderSheet() {
 }
 
 function exportData() {
-  const choices = {};
+  const changes = [];
   items().forEach((item) => {
     const choice = decisionOf(item);
     if (!choice) return;
-    choices[item.id] = {
-      choice,
-      verdict: choice === 'keep' ? 'keep' : (optionOf(item, choice) || {}).verdict || null,
-    };
+    const option = choice === 'keep' ? null : optionOf(item, choice);
+    changes.push({
+      id: item.id,
+      placement: item.title,
+      page: item.group.title,
+      ref: item.ref || null,
+      size: item.size,
+      from: item.current.name,
+      to: option ? option.name : item.current.name,
+      action: option ? 'replace' : 'keep',
+      file: option ? `assets/icons/${option.name}.svg` : null,
+      token: option ? option.token || null : null,
+      colour: option ? tintOf(option) : null,
+      verdict: option ? option.verdict || null : null,
+    });
   });
+
   return {
     collection: state.collection.id,
+    generated: new Date().toISOString(),
     source: state.data.source,
-    decided: Object.keys(choices).length,
+    decided: changes.length,
     total: items().length,
-    choices,
+    instructions:
+      'For every entry with action "replace", swap the icon rendered at `ref` (size px) for `file`, tinted with `colour`. Entries with action "keep" stay as they are.',
+    changes,
   };
+}
+
+function downloadJSON() {
+  const blob = new Blob([JSON.stringify(exportData(), null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `levimc-icon-choices-${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
 }
 
 function openSheet() {
@@ -425,20 +466,22 @@ async function boot() {
     setTheme(document.documentElement.dataset.theme === 'oled' ? 'light' : 'oled'),
   );
   $('#summary-btn').addEventListener('click', openSheet);
+  $('#download-btn').addEventListener('click', downloadJSON);
   $('#sheet-close').addEventListener('click', closeSheet);
   $('#sheet').addEventListener('click', (event) => {
     if (event.target.id === 'sheet') closeSheet();
   });
 
-  if (location.hash === '#review') openSheet();
-
   try {
     renderGroups();
     const first = visibleItems()[0];
-    state.activeId = first ? first.id : null;
+    const hash = location.hash.slice(1);
+    const deep = items().find((i) => i.id === hash);
+    state.activeId = deep ? deep.id : first ? first.id : null;
     renderRail();
     renderStage();
     renderProgress();
+    if (location.hash === '#review') openSheet();
   } catch (error) {
     fail('The review could not start', `Something in the data did not load: ${error.message}`);
   }

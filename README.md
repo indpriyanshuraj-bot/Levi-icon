@@ -21,7 +21,8 @@ The current icons are **not stored here**. They are hotlinked from the `LiteLDev
 what is live in the source rather than a copy that can drift.
 
 Candidates are drawn through a CSS mask, which is why one single-colour SVG can carry any token colour without
-being duplicated per palette.
+being duplicated per palette. The tint is a three-stop gradient built from the token at runtime (light edge, token,
+shadowed edge), so the artwork stays colourless and the palette stays in `data.json`.
 
 ## Adding to it
 
@@ -65,8 +66,10 @@ Then open `http://localhost:8000/`. Opening `index.html` from the file system wi
 
 - Click a placement in the left rail, or step through with `←` `→`.
 - `↑` `↓` switch between the proposed options; `Enter` chooses the one on screen; `K` keeps the current icon.
-- Decisions are stored in the browser. **Review** shows the sheet, with copy/download JSON for handing the result to
-  the maintainer.
+- Decisions are stored in the browser. **Review** shows the sheet; **Download** in the header writes
+  `levimc-icon-choices-<date>.json` at any time.
+- That JSON is written to be handed straight to a maintainer or an AI: one entry per decided placement with `ref`,
+  `size`, `from`, `to`, `file`, `colour` and an `instructions` line.
 
 ## Provenance
 

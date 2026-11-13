@@ -1,15 +1,17 @@
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (char) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-let v1Data = [];
+
+let websiteData = [];
 let projectData = [];
+let websiteStyle = 'multicolor';
 
 const ASSET_LABELS = {
-  icon: {label:'Main SVG icon', caption:'512 × 512 transparent SVG master', ext:'svg'},
-  banner: {label:'Icon banner', caption:'Transparent SVG lockup with project name', ext:'svg'},
-  favicon: {label:'Multi-resolution favicon', caption:'ICO containing 16, 32, 48, 64, 128 and 256 px images', ext:'ico'},
+  icon: {label:'Icon SVG', caption:'512 × 512 transparent SVG master', ext:'svg'},
+  banner: {label:'Banner SVG', caption:'Transparent SVG lockup · icon and project name', ext:'svg'},
+  favicon: {label:'Favicon', caption:'Multi-resolution ICO · 16, 32, 48, 64, 128 and 256 px', ext:'ico'},
   apple: {label:'Apple touch icon', caption:'180 × 180 PNG', ext:'png'},
-  og: {label:'Open Graph image', caption:'1200 × 630 PNG · social preview', ext:'png'}
+  og: {label:'Open Graph image', caption:'1200 × 630 PNG · social-sharing preview', ext:'png'}
 };
 
 function setTheme(mode, persist = true) {
@@ -19,144 +21,237 @@ function setTheme(mode, persist = true) {
   $('#theme-label').textContent = theme === 'oled' ? 'White' : 'OLED black';
   $('#theme-icon').textContent = theme === 'oled' ? '☼' : '◐';
   $('meta[name="theme-color"]').content = theme === 'oled' ? '#000000' : '#ffffff';
-  if (persist) { try { localStorage.setItem('levi-icon-study-theme', theme); } catch {} }
+  if (persist) {
+    try { localStorage.setItem('levi-icon-study-theme', theme); } catch { /* Storage can be unavailable in private mode. */ }
+  }
 }
-try { setTheme(localStorage.getItem('levi-icon-study-theme') || 'light', false); } catch { setTheme('light', false); }
-$('#theme-toggle').addEventListener('click', () => setTheme(document.documentElement.dataset.theme === 'oled' ? 'light' : 'oled'));
+
+try { setTheme(localStorage.getItem('levi-icon-study-theme') || 'light', false); }
+catch { setTheme('light', false); }
+$('#theme-toggle').addEventListener('click', () => {
+  setTheme(document.documentElement.dataset.theme === 'oled' ? 'light' : 'oled');
+});
 
 function setView(view, updateHash = true) {
-  const selected = ['v1','projects','official'].includes(view) ? view : 'v1';
-  $$('.view-tab').forEach(button => {
+  const selected = ['website', 'projects', 'official'].includes(view) ? view : 'website';
+  $$('.view-tab').forEach((button) => {
     const active = button.dataset.view === selected;
     button.classList.toggle('is-active', active);
     button.setAttribute('aria-selected', String(active));
   });
-  $$('.view-section').forEach(section => {
+  $$('.view-section').forEach((section) => {
     const active = section.id === selected;
     section.hidden = !active;
     section.classList.toggle('is-visible', active);
   });
   if (updateHash) history.replaceState(null, '', `#${selected}`);
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-$$('.view-tab').forEach(button => button.addEventListener('click', () => setView(button.dataset.view)));
-function initialView() {
-  const hash = location.hash.replace('#','');
-  if (hash === 'official') return 'official';
-  if (hash === 'projects' || hash === 'v2') return 'projects';
-  return 'v1';
 }
 
-function v1Option(option, item) {
-  const file = `assets/icons/${option.name}.svg`;
+$$('.view-tab').forEach((button) => button.addEventListener('click', () => setView(button.dataset.view)));
+function initialView() {
+  const hash = location.hash.slice(1);
+  if (['website', 'projects', 'official'].includes(hash)) return hash;
+  return 'website';
+}
+
+function setWebsiteStyle(style) {
+  websiteStyle = style === 'filled' ? 'filled' : 'multicolor';
+  $$('.style-tab').forEach((button) => {
+    const active = button.dataset.style === websiteStyle;
+    button.classList.toggle('is-active', active);
+    button.setAttribute('aria-selected', String(active));
+  });
+  renderWebsiteIcons();
+}
+$$('.style-tab').forEach((button) => button.addEventListener('click', () => setWebsiteStyle(button.dataset.style)));
+
+function websiteOption(option, item) {
+  const file = `assets/icons/styles/${websiteStyle}/${option.name}.svg`;
   const best = option.name === item.recommended;
-  return `<article class="v1-option ${best ? 'recommended' : ''}">
-    <div class="v1-icon-surfaces">
+  return `<article class="website-option ${best ? 'recommended' : ''}">
+    <div class="website-icon-surfaces">
       <div class="mini-surface"><img src="${file}" alt="${escapeHtml(option.name)} on white" loading="lazy"></div>
       <div class="mini-surface dark"><img src="${file}" alt="${escapeHtml(option.name)} on OLED black" loading="lazy"></div>
     </div>
     <strong>${escapeHtml(option.name)}</strong>
-    <span class="option-status">${best ? 'Recommended' : 'Alternative'}</span>
+    <span class="option-status">${best ? 'Best fit for this placement' : 'Other option'}</span>
     <p>${escapeHtml(option.reason)}</p>
     <a class="text-link" href="${file}" download>Download SVG ↗</a>
   </article>`;
 }
-function renderV1() {
-  const query = $('#v1-search').value.trim().toLowerCase();
-  const filtered = v1Data.filter(item => [item.area,item.title,item.file,item.current,item.recommended,...item.options.flatMap(x=>[x.name,x.reason])].join(' ').toLowerCase().includes(query));
-  $('#v1-list').innerHTML = filtered.map(item => {
+
+function renderWebsiteIcons() {
+  const query = $('#website-search').value.trim().toLowerCase();
+  const filtered = websiteData.filter((item) => [
+    item.area, item.title, item.file, item.current, item.recommended,
+    ...item.options.flatMap((option) => [option.name, option.reason])
+  ].join(' ').toLowerCase().includes(query));
+
+  $('#website-list').innerHTML = filtered.map((item) => {
     const currentFile = `assets/icons/current/${item.current}.svg`;
-    return `<article class="v1-card">
-      <header class="card-heading"><div><span class="group-label">${escapeHtml(item.area)}</span><h3>${escapeHtml(item.title)}</h3><span class="source-file">${escapeHtml(item.file)}</span></div></header>
+    return `<article class="website-card">
+      <header class="card-heading">
+        <div><span class="group-label">${escapeHtml(item.area)}</span><h3>${escapeHtml(item.title)}</h3><span class="source-file">${escapeHtml(item.file)}</span></div>
+      </header>
       <div class="current-icon-row">
         <div class="current-icon-tile"><img src="${currentFile}" alt="Original ${escapeHtml(item.current)} icon" loading="lazy"></div>
-        <div class="current-icon-copy"><strong>Current icon · original source SVG</strong><span>Copied unchanged from <code>kit/assets/icons/${escapeHtml(item.current)}.svg</code></span></div>
+        <div class="current-icon-copy"><strong>Current icon · original pixel artwork</strong><span>Original source SVG copied unchanged from <code>kit/assets/icons/${escapeHtml(item.current)}.svg</code></span></div>
         <a class="text-link" href="${currentFile}" download>Download original ↗</a>
       </div>
-      <div class="v1-options">${item.options.map(option => v1Option(option,item)).join('')}</div>
+      <div class="website-options">${item.options.map((option) => websiteOption(option, item)).join('')}</div>
     </article>`;
   }).join('');
-  $('#v1-empty').hidden = filtered.length !== 0;
+  $('#website-empty').hidden = filtered.length !== 0;
 }
-$('#v1-search').addEventListener('input', renderV1);
+$('#website-search').addEventListener('input', renderWebsiteIcons);
 
-function paletteDots(palette = []) { return `<div class="palette-dots" aria-label="Project palette">${palette.map(colour=>`<span style="background:${escapeHtml(colour)}"></span>`).join('')}</div>`; }
-function v2Path(path) { return `official/${String(path).replace(/^\/+/, '')}`; }
-
-function previewHtml(project, selectedVariant, asset) {
-  const master = project.variants.find(v=>v.recommended) || project.variants[0];
-  const variant = project.variants.find(v=>v.slug===selectedVariant) || master;
-  let src = project.icon;
-  let download = project.icon;
-  let alt = `${project.name} ${variant.label}`;
-  let klass = asset;
-  if (asset === 'icon') { src = v2Path(variant.file); download = v2Path(variant.file); }
-  if (asset === 'banner') { src = v2Path(project.banner); download = v2Path(project.banner); }
-  if (asset === 'favicon') { src = v2Path(project.favicon_png); download = v2Path(project.favicon); }
-  if (asset === 'apple') { src = v2Path(project.apple_touch_icon); download = v2Path(project.apple_touch_icon); }
-  if (asset === 'og') { src = v2Path(project.og_image); download = v2Path(project.og_image); alt = `${project.name} social preview`; }
-  const external = asset === 'og' ? `<a href="${escapeHtml(v2Path(project.og_image_svg))}" download>OG SVG source</a>` : '';
-  return `<div class="asset-preview ${klass}"><img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" loading="lazy"></div>
-    <div class="asset-meta"><span class="asset-caption">${ASSET_LABELS[asset].caption}</span><div class="asset-actions"><a href="${escapeHtml(download)}" download>Download ${ASSET_LABELS[asset].ext.toUpperCase()}</a>${external}</div></div>`;
+function paletteDots(palette = []) {
+  return `<div class="palette-dots" aria-label="Project-specific palette">${palette.map((colour) => `<span style="background:${escapeHtml(colour)}"></span>`).join('')}</div>`;
 }
+function assetPath(variant, asset) {
+  if (asset === 'icon') return variant.file;
+  if (asset === 'banner') return variant.banner;
+  if (asset === 'favicon') return variant.favicon.replace(/\.ico$/i, '-256x256.png');
+  if (asset === 'apple') return variant.apple_touch_icon;
+  return variant.og_image;
+}
+
+function proposedPreview(project, variant, asset) {
+  const src = assetPath(variant, asset);
+  const alt = `${project.name} proposed ${variant.label} ${ASSET_LABELS[asset].label}`;
+  const previewClass = asset;
+  const downloadHref = asset === 'favicon' ? variant.favicon : src;
+  const sourceHref = asset === 'og' ? variant.og_image_svg : '';
+  const sizeLinks = asset === 'favicon'
+    ? `<div class="asset-size-links"><a href="${escapeHtml(variant.favicon)}" download>ICO</a>${[16,32,48,64,128,256].map((size) => {
+        const base = variant.favicon.replace(/\.ico$/i, '');
+        const png = variant.favicon.includes('/variants/')
+          ? `${base}-${size}x${size}.png`
+          : `${base.replace(/favicon$/, 'favicon')}-${size}x${size}.png`;
+        return `<a href="${escapeHtml(png)}" download>${size}px PNG</a>`;
+      }).join('')}</div>`
+    : '';
+  return `<div class="asset-preview ${previewClass}"><img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" loading="lazy"></div>
+    <div class="asset-meta">
+      <span class="asset-caption">${ASSET_LABELS[asset].caption}</span>
+      <div class="asset-actions">
+        <a href="${escapeHtml(downloadHref)}" download>Download ${asset === 'favicon' ? 'ICO' : ASSET_LABELS[asset].ext.toUpperCase()}</a>
+        ${sourceHref ? `<a href="${escapeHtml(sourceHref)}" download>Download OG SVG source</a>` : ''}
+      </div>
+      ${sizeLinks}
+    </div>`;
+}
+
 function projectCard(project, index) {
-  const master = project.variants.find(v=>v.recommended) || project.variants[0];
-  const variants = project.variants.map(v=>`<button class="variant-button" type="button" data-variant="${escapeHtml(v.slug)}" aria-pressed="${v.slug===master.slug}">${escapeHtml(v.label)}</button>`).join('');
-  const tabs = Object.entries(ASSET_LABELS).map(([id,meta],i)=>`<button class="asset-tab" type="button" role="tab" data-asset="${id}" aria-selected="${i===0}">${meta.label}</button>`).join('');
-  return `<article class="project-card" data-project="${escapeHtml(project.slug)}" data-variant="${escapeHtml(master.slug)}" data-asset="icon">
-    <header class="project-head"><div><span class="project-index">PROJECT ${String(index+1).padStart(2,'0')}</span><h3>${escapeHtml(project.name)}</h3><p class="project-summary">${escapeHtml(project.summary)}</p></div>${paletteDots(project.palette)}</header>
-    <div class="variant-row">${variants}</div>
-    <div class="asset-tabs" role="tablist" aria-label="${escapeHtml(project.name)} assets">${tabs}</div>
-    <div class="preview-slot">${previewHtml(project,master.slug,'icon')}</div>
-    <div class="project-detail"><strong>Direction:</strong> ${escapeHtml(master.description)} <span> · </span><a class="text-link" href="${escapeHtml(v2Path(project.asset_bundle))}" download>Download complete asset family ↗</a></div>
+  const variantTabs = project.variants.map((variant) => `<button class="variant-tab" type="button" role="tab" data-variant="${escapeHtml(variant.slug)}" aria-selected="false">${escapeHtml(variant.label)}</button>`).join('');
+  const assetTabs = Object.entries(ASSET_LABELS).map(([key, meta], position) => `<button class="asset-tab" type="button" role="tab" data-asset="${key}" aria-selected="${position === 0}">${meta.label}</button>`).join('');
+  return `<article class="project-card" data-project="${escapeHtml(project.slug)}" data-variant="" data-asset="icon">
+    <header class="project-head">
+      <div><span class="project-index">PROJECT ${String(index + 1).padStart(2, '0')}</span><h3>${escapeHtml(project.name)}</h3><p class="project-summary">${escapeHtml(project.summary)}</p></div>
+      ${paletteDots(project.palette)}
+    </header>
+    <div class="variant-picker">
+      <span class="picker-label">Select a proposed direction</span>
+      <div class="variant-tabs" role="tablist" aria-label="${escapeHtml(project.name)} proposed logo concepts">${variantTabs}</div>
+    </div>
+    <div class="logo-comparison">
+      <section class="logo-column current-column">
+        <div class="column-heading"><strong>Current logo</strong><a href="${escapeHtml(project.current_source)}" target="_blank" rel="noreferrer">Original source ↗</a></div>
+        <div class="current-logo-stage"><img src="${escapeHtml(project.current_icon)}" alt="Current ${escapeHtml(project.name)} logo" loading="lazy" data-current-logo></div>
+        <p class="column-note">Existing project artwork · displayed as published</p>
+      </section>
+      <section class="logo-column proposed-column">
+        <div class="column-heading"><strong>Proposed logo</strong><span class="proposed-label">Choose a direction</span></div>
+        <div class="proposed-empty"><span class="empty-mark">＋</span><strong>No concept selected</strong><p>Select one of the proposed directions above to compare it with the current logo.</p></div>
+        <div class="proposed-output" hidden>
+          <div class="proposed-description"></div>
+          <div class="asset-tabs" role="tablist" aria-label="${escapeHtml(project.name)} proposed assets">${assetTabs}</div>
+          <div class="preview-slot"></div>
+          <div class="project-detail"><a class="text-link" href="${escapeHtml(project.asset_bundle)}" download>Download complete project asset family ↗</a></div>
+        </div>
+      </section>
+    </div>
   </article>`;
 }
+
 function renderProjects() {
   const query = $('#project-search').value.trim().toLowerCase();
-  const filtered = projectData.filter(p => [p.name,p.summary,p.subtitle,...p.variants.flatMap(v=>[v.label,v.description,v.slug])].join(' ').toLowerCase().includes(query));
+  const filtered = projectData.filter((project) => [
+    project.name, project.summary, project.subtitle,
+    ...project.variants.flatMap((variant) => [variant.label, variant.description, variant.slug])
+  ].join(' ').toLowerCase().includes(query));
   $('#project-list').innerHTML = filtered.map(projectCard).join('');
   $('#project-empty').hidden = filtered.length !== 0;
 }
+
+function updateProjectCard(card) {
+  const project = projectData.find((entry) => entry.slug === card.dataset.project);
+  if (!project || !card.dataset.variant) return;
+  const variant = project.variants.find((entry) => entry.slug === card.dataset.variant);
+  if (!variant) return;
+  const asset = card.dataset.asset || 'icon';
+  const proposed = $('.proposed-output', card);
+  $('.proposed-empty', card).hidden = true;
+  proposed.hidden = false;
+  $('.proposed-label', card).textContent = variant.label;
+  $('.proposed-description', card).innerHTML = `<strong>${escapeHtml(variant.label)}</strong><p>${escapeHtml(variant.description)}</p>`;
+  $$('.asset-tab', card).forEach((button) => button.setAttribute('aria-selected', String(button.dataset.asset === asset)));
+  $('.preview-slot', card).innerHTML = proposedPreview(project, variant, asset);
+}
+
 $('#project-search').addEventListener('input', renderProjects);
-$('#project-list').addEventListener('click', event => {
+$('#project-list').addEventListener('click', (event) => {
   const card = event.target.closest('.project-card');
   if (!card) return;
-  const project = projectData.find(p=>p.slug===card.dataset.project);
-  if (!project) return;
-  const variantButton = event.target.closest('[data-variant]');
-  const assetButton = event.target.closest('[data-asset]');
+  const variantButton = event.target.closest('.variant-tab');
+  const assetButton = event.target.closest('.asset-tab');
   if (variantButton) {
     card.dataset.variant = variantButton.dataset.variant;
-    $$('.variant-button',card).forEach(btn=>btn.setAttribute('aria-pressed',String(btn===variantButton)));
-  }
-  if (assetButton) {
+    card.dataset.asset = 'icon';
+    $$('.variant-tab', card).forEach((button) => button.setAttribute('aria-selected', String(button === variantButton)));
+    updateProjectCard(card);
+  } else if (assetButton && card.dataset.variant) {
     card.dataset.asset = assetButton.dataset.asset;
-    $$('.asset-tab',card).forEach(btn=>btn.setAttribute('aria-selected',String(btn===assetButton)));
+    updateProjectCard(card);
   }
-  const selected = project.variants.find(v=>v.slug===card.dataset.variant) || project.variants[0];
-  card.querySelector('.preview-slot').innerHTML = previewHtml(project,selected.slug,card.dataset.asset);
-  card.querySelector('.project-detail').innerHTML = `<strong>Direction:</strong> ${escapeHtml(selected.description)} <span> · </span><a class="text-link" href="${escapeHtml(v2Path(project.asset_bundle))}" download>Download complete asset family ↗</a>`;
 });
+
+$('#project-list').addEventListener('error', (event) => {
+  if (event.target.matches('[data-current-logo]')) {
+    event.target.classList.add('logo-load-failed');
+    const stage = event.target.closest('.current-logo-stage');
+    if (stage) stage.insertAdjacentHTML('beforeend', '<span class="logo-fallback">Current logo could not be loaded. Use the original source link above.</span>');
+  }
+}, true);
 
 function renderOfficialQuickLinks() {
-  $('#official-project-links').innerHTML = projectData.map(p=>`<button class="quick-project" type="button" data-go-project="${escapeHtml(p.slug)}"><img src="${escapeHtml(v2Path(p.icon))}" alt="" loading="lazy"><span>${escapeHtml(p.name)}</span></button>`).join('');
+  $('#official-project-links').innerHTML = projectData.map((project) => `<button class="quick-project" type="button" data-go-project="${escapeHtml(project.slug)}"><img src="${escapeHtml(project.icon)}" alt="" loading="lazy"><span>${escapeHtml(project.name)}</span></button>`).join('');
 }
-$('#official-project-links').addEventListener('click', event => {
-  const btn = event.target.closest('[data-go-project]');
-  if (!btn) return;
+$('#official-project-links').addEventListener('click', (event) => {
+  const button = event.target.closest('[data-go-project]');
+  if (!button) return;
+  $('#project-search').value = '';
+  renderProjects();
   setView('projects');
-  const target = $(`[data-project="${CSS.escape(btn.dataset.goProject)}"]`, $('#project-list'));
-  if (target) target.scrollIntoView({behavior:'smooth',block:'center'});
+  const target = $(`[data-project="${CSS.escape(button.dataset.goProject)}"]`, $('#project-list'));
+  target?.scrollIntoView({behavior:'smooth', block:'center'});
 });
 
-Promise.all([fetch('data.json').then(r=>{if(!r.ok)throw new Error('V1 data failed to load');return r.json();}),fetch('official/manifest.json').then(r=>{if(!r.ok)throw new Error('V2 manifest failed to load');return r.json();})]).then(([v1,manifest])=>{
-  v1Data=v1; projectData=manifest.projects.map(p=>({...p, favicon_png:p.favicon.replace('favicon.ico','favicon-256x256.png')}));
-  $('#v1-count').textContent=String(v1.length);
-  $('#v1-icon-count').textContent=String(v1.reduce((sum,x)=>sum+x.options.length,0));
-  $('#project-count').textContent=String(projectData.length);
-  $('#project-icon-count').textContent=String(manifest.icons.length);
-  renderV1();renderProjects();renderOfficialQuickLinks();setView(initialView(),false);
-}).catch(error=>{
-  $('#v1-list').innerHTML=`<p class="empty">${escapeHtml(error.message)}. Run the site through a local HTTP server rather than a file URL.</p>`;
-  $('#project-list').innerHTML=`<p class="empty">${escapeHtml(error.message)}.</p>`;
+Promise.all([
+  fetch('data.json').then((response) => { if (!response.ok) throw new Error('Website icon data failed to load'); return response.json(); }),
+  fetch('official/manifest.json').then((response) => { if (!response.ok) throw new Error('Project logo manifest failed to load'); return response.json(); })
+]).then(([websiteIcons, manifest]) => {
+  websiteData = websiteIcons;
+  projectData = manifest.projects;
+  $('#website-count').textContent = String(websiteIcons.length);
+  $('#website-icon-count').textContent = String(websiteIcons.reduce((sum, item) => sum + item.options.length, 0));
+  $('#project-count').textContent = String(projectData.length);
+  $('#project-icon-count').textContent = String(manifest.icons.length);
+  renderWebsiteIcons();
+  renderProjects();
+  renderOfficialQuickLinks();
+  setView(initialView(), false);
+}).catch((error) => {
+  $('#website-list').innerHTML = `<p class="empty">${escapeHtml(error.message)}. Open the gallery through a local HTTP server, not a file URL.</p>`;
+  $('#project-list').innerHTML = `<p class="empty">${escapeHtml(error.message)}.</p>`;
 });

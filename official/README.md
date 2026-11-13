@@ -1,38 +1,24 @@
-# V2 project identity concepts
+# Project and application logo concepts
 
-This directory stores SVG masters, alternative directions and exported assets for seven LeviMC project identity concepts. Its `/official/` route is only a convenient collection path; **it does not mean the designs have been approved as official LeviMC branding**.
+This directory stores SVG masters, proposed logo directions and their complete asset exports for seven LeviMC-related projects. The name `/official/` is a convenient collection path and **does not mean the designs are approved official branding**.
 
-The gallery is shared with the repository root. Open `/official/` to jump directly to the V2 tab; all styling, theme switching, search and preview code is in the repository root.
+Open `/official/` in a browser to redirect to the Project / app logos category in the shared root gallery. The root website owns the navigation, search, theme control and preview UI.
 
-## Project asset families
+Each project has three selectable directions. The project card keeps its current repository logo visible, then lets you select a proposed design. Each selected design has its own icon, banner, favicon, Apple touch icon and Open Graph image. No variant is tagged recommended or alternative.
 
-Each `logos/<project>/` directory includes:
+## Asset structure
 
-- `icon.svg` — 512 × 512 transparent vector master.
-- `variants/*.svg` — two independent alternative directions.
-- `icon-banner.svg` — 1200 × 240 transparent lockup.
-- `favicon.ico` — multi-resolution ICO (16, 32, 48, 64, 128, 256 px).
-- `favicon-*.png` — explicit PNG sizes.
-- `apple-touch-icon.png` — 180 × 180 PNG.
-- `og-image.svg` and `og-image.png` — editable source and 1200 × 630 export.
-- `asset-family.zip` — complete per-project export bundle.
+Each project folder includes three equal SVG directions. The first uses the standard root `icon.svg` path for export compatibility; the other two live under `variants/`. The gallery does not rank them. Banner lockups place the only accent rule below the subtitle, never through the lettering. Open Graph images use neutral backgrounds and project-specific accents, not a default green circle.
 
-The website's project cards provide tabs to preview and download each format. No `icon.png` is generated.
+There is no local `icon.png` asset. The current project logos in the comparison are read from their original public repository URLs; the source link is shown alongside each one.
 
-## Colour and family system
+## Regenerate
 
-The current LeviLamina SVG is kept unchanged at `references/levilamina-logo.svg`. Its green leaf motif is a secondary family cue. Each V2 symbol has its own colour system: teal/navy for lip; navy/blue/coral for LeviAntiCheat; navy/cyan/violet for LeviOptimize; indigo/violet/cyan for MoreDimensions; blue/teal for bedboo; indigo/amber for LeviMC Mods; and the original botanical green family for LegacyScriptEngine.
-
-## Regeneration
-
-From repository root:
+From the repository root:
 
 ```sh
 python -m pip install -r official/tools/requirements.txt
 python official/tools/generate-identity-assets.py
-python official/tools/retheme-projects.py
 ```
 
-Always run the retheme/export pass after the source generator. It restores the project-specific palettes and updates all raster derivatives and project ZIP bundles.
-
-The concepts remain unofficial and require maintainer review before any project adopts them.
+The generator creates all project assets, per-variant exports, manifest metadata and project ZIP bundles.

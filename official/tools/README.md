@@ -1,13 +1,11 @@
-# V2 asset generation
+# SVG and asset generation
 
-From the repository root, run:
+Run these commands from the repository root.
 
 ```sh
 python -m pip install -r official/tools/requirements.txt
 python official/tools/generate-identity-assets.py
-python official/tools/retheme-projects.py
+python official/tools/generate-website-icon-styles.py
 ```
 
-The first script builds the three SVG directions and base exports. The second script keeps the embedded LeviLamina leaf green, applies project-specific colours, adds extra detail to the preferred lip, LeviAntiCheat and LeviOptimize marks, and regenerates PNG/ICO derivatives and project bundles. Run both in order.
-
-The gallery UI is shared with the root `index.html`, `styles.css` and `app.js`. `/official/` redirects to the V2 tab and does not contain a separate UI implementation.
+`generate-identity-assets.py` builds all project-logo SVG directions and their banner, favicon, Apple touch icon, OG and per-project ZIP exports. `generate-website-icon-styles.py` creates multicolour outline and multicolour filled derivatives of the website icon candidates while leaving original source SVGs untouched.

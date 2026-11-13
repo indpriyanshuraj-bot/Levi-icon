@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">LeviAntiCheat — Proof lattice</title>
+  <desc id="desc">A compact integrity lattice uses interrupted paths and differently coloured verification nodes to represent cross-checking and tamper detection.</desc>
+  <defs>
+    <clipPath id="markClip"><rect x="0" y="0" width="512" height="512"/></clipPath>
+  </defs>
+  <g stroke-linecap="round" stroke-linejoin="round" clip-path="url(#markClip)"><polygon points="256,58 410,147 410,325 256,414 102,325 102,147" fill="#e9eff5" stroke="#172d45" stroke-width="15" stroke-linejoin="round" /><path d="M256 58 V414 M102 147 L410 325 M410 147 L102 325 M102 236 H410" fill="none" stroke="#537da4" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" /><path d="M178 102 L178 370 M334 102 L334 370" fill="none" stroke="#26a9c4" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" /><polygon points="256,184 324,223 324,301 256,340 188,301 188,223" fill="#e36e70" stroke="#172d45" stroke-width="12" stroke-linejoin="round" /><path d="M220 262 L246 287 L294 232" fill="none" stroke="#f7f0e6" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" /><g transform="translate(256 264) rotate(-8) scale(0.085)" opacity="1.0">
+      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#e36e70" stroke="#172d45" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#e8f1f5" stroke="#2c5e8a" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#172d45" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#2c5e8a" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#172d45" stroke-width="10" stroke-linecap="round"/>
+      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#26a9c4" stroke-width="5" stroke-linecap="round"/>
+    </g><circle cx="102" cy="147" r="12" fill="#26a9c4" stroke="#172d45" stroke-width="6" /><circle cx="410" cy="147" r="12" fill="#e36e70" stroke="#172d45" stroke-width="6" /><circle cx="102" cy="325" r="12" fill="#e9eff5" stroke="#537da4" stroke-width="6" /><circle cx="410" cy="325" r="12" fill="#e9eff5" stroke="#537da4" stroke-width="6" /></g>
+</svg>

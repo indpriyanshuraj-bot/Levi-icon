@@ -1,37 +1,32 @@
-# V2 project identity asset index
+# Project identity asset index
 
-All seven projects have a main SVG, two alternative SVG concepts and a complete set of derivatives. The preferred project SVG is always `icon.svg`; no raster `icon.png` is generated.
+Seven projects have three selectable logo concepts each. Every concept has its own full set of exports. The root `icon.svg` path is the standard export path; the other two directions are in the `variants/` folder. The gallery presents every direction equally.
 
-| Project | Main SVG | Banner | Favicon | Apple touch | Open Graph | Asset ZIP |
-|---|---|---|---|---|---|---|
-| LegacyScriptEngine | `logos/legacy-script-engine/icon.svg` | `icon-banner.svg` | `favicon.ico` | `apple-touch-icon.png` | `og-image.png` | `asset-family.zip` |
-| lip | `logos/lip/icon.svg` | `icon-banner.svg` | `favicon.ico` | `apple-touch-icon.png` | `og-image.png` | `asset-family.zip` |
-| LeviAntiCheat | `logos/levi-anticheat/icon.svg` | `icon-banner.svg` | `favicon.ico` | `apple-touch-icon.png` | `og-image.png` | `asset-family.zip` |
-| LeviOptimize | `logos/levioptimize/icon.svg` | `icon-banner.svg` | `favicon.ico` | `apple-touch-icon.png` | `og-image.png` | `asset-family.zip` |
-| MoreDimensions | `logos/moredimensions/icon.svg` | `icon-banner.svg` | `favicon.ico` | `apple-touch-icon.png` | `og-image.png` | `asset-family.zip` |
-| bedboo | `logos/bedboo/icon.svg` | `icon-banner.svg` | `favicon.ico` | `apple-touch-icon.png` | `og-image.png` | `asset-family.zip` |
-| LeviMC Mods | `logos/levimc-mods/icon.svg` | `icon-banner.svg` | `favicon.ico` | `apple-touch-icon.png` | `og-image.png` | `asset-family.zip` |
+| Project | Primary icon master | Current logo comparison |
+|---|---|---|
+| LegacyScriptEngine | `logos/legacy-script-engine/icon.svg` | `LiteLDev/LegacyScriptEngine` docs logo |
+| lip | `logos/lip/icon.svg` | `LiteLDev/lip` docs logo |
+| LeviAntiCheat | `logos/levi-anticheat/icon.svg` | `LiteLDev/LeviAntiCheat` docs logo |
+| LeviOptimize | `logos/levioptimize/icon.svg` | `LiteLDev/LeviOptimize` docs logo |
+| MoreDimensions | `logos/moredimensions/icon.svg` | `LiteLDev/MoreDimensions` docs logo |
+| bedboo | `logos/bedboo/icon.svg` | `LiteLDev/bedboo` docs logo |
+| LeviMC Mods | `logos/levimc-mods/icon.svg` | `LiteLDev/levimc.org` mods catalogue icon |
 
-Each path in the table is relative to that project's `logos/<slug>/` directory where the table gives only a filename.
+## Per-direction exports
 
-## Asset requirements
+For each direction, the manifest records exact paths for:
 
-- `icon.svg`: 512 × 512 viewBox, transparent canvas, editable vector shapes, no embedded raster.
-- `icon-banner.svg`: 1200 × 240 transparent lockup.
-- `favicon.ico`: embedded sizes 16, 32, 48, 64, 128 and 256 px.
-- `favicon-16x16.png`, `favicon-32x32.png`, `favicon-48x48.png`, `favicon-64x64.png`, `favicon-128x128.png`, `favicon-256x256.png`: explicit PNG sizes.
-- `apple-touch-icon.png`: 180 × 180.
-- `og-image.svg`: editable 1200 × 630 vector source.
-- `og-image.png`: 1200 × 630 social-sharing image.
-- `variants/*.svg`: two independently authored alternatives, each with a 512 × 512 viewBox.
-- `asset-family.zip`: includes all SVGs and derivatives for that one project.
+- `icon.svg` — 512 × 512 transparent vector master.
+- `icon-banner.svg` — 1200 × 240 transparent icon/name lockup; the accent line is below the subtitle.
+- `favicon.ico` — 16, 32, 48, 64, 128 and 256 px embedded sizes.
+- `favicon-16x16.png` through `favicon-256x256.png` — explicit PNG sizes.
+- `apple-touch-icon.png` — 180 × 180.
+- `og-image.svg` and `og-image.png` — editable SVG and 1200 × 630 PNG, neutral background, project-specific graphic accents, no circular green background.
 
-## Colour approach
-
-The LeviLamina leaf itself retains the original botanical green. The rest of each symbol uses a project-specific palette: navy/teal for lip, navy/blue/coral for LeviAntiCheat, navy/cyan/violet for LeviOptimize, indigo/violet/cyan for MoreDimensions, blue/teal for bedboo, and indigo/amber for LeviMC Mods. LegacyScriptEngine stays in the heritage-green family.
+Each project's `asset-family.zip` contains the asset exports for all three directions. No local `icon.png` is created.
 
 ## Reference provenance
 
-`references/levilamina-logo.svg` is an unchanged copy of `LiteLDev/LeviLamina/docs/main/contents/logo.svg`. The gallery also displays the current LeviLauncher leaf PNG directly from its official source URL for an exact comparison. V1's current-icon previews use unchanged copies of the source SVGs in `LiteLDev/levimc.org/kit/assets/icons/`. Neither official mark is recoloured or redrawn.
+`references/levilamina-logo.svg` is an unchanged copy of the current official `LiteLDev/LeviLamina/docs/main/contents/logo.svg`. The gallery displays the current LeviLauncher leaf asset directly from its official source URL. Website UI icon comparisons use unchanged SVG files from `LiteLDev/levimc.org/kit/assets/icons/`.
 
-All project artwork remains an unofficial proposal pending maintainer review.
+All proposed project artwork remains unofficial and requires maintainer review.

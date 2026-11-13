@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">LeviOptimize — Cache strata</title>
+  <desc id="desc">A tiered sequence of compressed processing plates narrows into a shared execution path. The asymmetric facets suggest batching and less repeated work.</desc>
+  <defs>
+    <clipPath id="markClip"><rect x="0" y="0" width="512" height="512"/></clipPath>
+  </defs>
+  <g stroke-linecap="round" stroke-linejoin="round" clip-path="url(#markClip)"><polygon points="256,70 420,157 256,244 92,157" fill="#25b8c7" stroke="#182d49" stroke-width="15" stroke-linejoin="round" /><polygon points="92,157 256,244 256,283 92,196" fill="#476fc0" stroke="#182d49" stroke-width="10" stroke-linejoin="round" /><polygon points="420,157 256,244 256,283 420,196" fill="#e5a34f" stroke="#182d49" stroke-width="10" stroke-linejoin="round" /><polygon points="256,221 420,308 256,395 92,308" fill="#8769d0" stroke="#182d49" stroke-width="15" stroke-linejoin="round" /><polygon points="92,308 256,395 256,430 92,343" fill="#25b8c7" stroke="#182d49" stroke-width="10" stroke-linejoin="round" /><polygon points="420,308 256,395 256,430 420,343" fill="#476fc0" stroke="#182d49" stroke-width="10" stroke-linejoin="round" /><path d="M256 244 V430 M142 157 L256 217 L370 157" fill="none" stroke="#f3f6fa" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" /><g transform="translate(256 326) rotate(0) scale(0.1)" opacity="1.0">
+      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#25b8c7" stroke="#182d49" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#e5a34f" stroke="#476fc0" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#182d49" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#476fc0" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#182d49" stroke-width="10" stroke-linecap="round"/>
+      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#8769d0" stroke-width="5" stroke-linecap="round"/>
+    </g><path d="M154 455 H358" fill="none" stroke="#e5a34f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" /></g>
+</svg>

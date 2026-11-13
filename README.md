@@ -1,86 +1,84 @@
 # LeviMC Icon Study
 
-An unofficial review repository for website icon replacements (V1) and project identity concepts (V2). **Nothing here is approved production branding unless the relevant LeviMC maintainers explicitly accept it.**
+An unofficial design review repository for website icons and project/application identities. **Nothing here is approved production branding unless the relevant maintainers explicitly accept it.**
 
-## One shared gallery
+## One shared, responsive gallery
 
-Run a local static server from the repository root:
+Run a static server from the repository root:
 
 ```sh
 python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000/`. The same page contains three tabs:
+Open `http://localhost:8000/`. The same interface contains three category tabs:
 
-- **V1 · Website** — the existing 15 website placements, the original source PixelIcon SVG for each current icon (copied unchanged, including its original colours), and all 45 proposed coloured SVG candidates.
-- **V2 · Projects** — seven project identities, three logo directions per project, and tabs for the icon, banner, favicon, Apple touch icon and Open Graph image.
-- **Official comparison** — the exact current LeviLamina SVG and the current LeviLauncher leaf asset, shown on white and OLED-black surfaces.
+- **Website / UI** — 15 website placements, original current PixelIcon SVGs copied unchanged from `LiteLDev/levimc.org/kit/assets/icons/`, and 45 candidate icons. Candidate SVGs can be previewed in **Multicolour outline** or **Multicolour filled** styles.
+- **Project / app logos** — seven project identities, three selectable concepts each. The current repository logo remains visible while you select a proposed mark. After selecting a concept, preview its icon SVG, banner SVG, multi-resolution favicon, Apple touch icon and OG image.
+- **Official references** — the original LeviLamina SVG and LeviLauncher leaf asset displayed on white and OLED-black surfaces.
 
-`/official/` redirects into the V2 tab of the same page. Both routes use one stylesheet, one script, one search/theme system and the same card components; there is no duplicate gallery implementation.
+The `/official/` route redirects into the project/app logo category of the same gallery. It does not maintain a second UI implementation.
 
-## Theme and preview behaviour
+## Theme and comparison behaviour
 
-The gallery has a global **White / OLED black** switch. It changes the website surface only. Each SVG is the same file in both modes. The V1 current-icon previews use the exact original 16 × 16 pixel-art SVGs from `LiteLDev/levimc.org/kit/assets/icons/`; the source files are preserved unchanged and shown on a neutral white tile for fidelity. Proposed V1 options and official-logo references are also tested against white and OLED-black surfaces.
+The global theme switch changes the website background between pure white and OLED black. It does not recolour SVG artwork. The current website icons are the exact original 16 × 16 pixel-art source SVGs; proposed website icons have both multi-colour and filled variants.
 
-The V2 project cards let you select one of the three concept directions, then preview:
+For project logos, each card always shows the existing project artwork from its source repository. A proposed logo is shown only after you select one of the unranked concept tabs. No concept is marked recommended or alternative.
 
-- `icon.svg` — 512 × 512 transparent vector master.
-- `icon-banner.svg` — 1200 × 240 transparent name lockup.
-- `favicon.ico` — 16, 32, 48, 64, 128 and 256 px embedded images.
-- `apple-touch-icon.png` — 180 × 180.
-- `og-image.png` — 1200 × 630; editable source is `og-image.svg`.
+## Project asset families
 
-Each project also has explicit PNG favicon derivatives and `asset-family.zip`. **There is no `icon.png` asset.**
+Every project has three logo directions. Each direction has its own complete derivative family:
 
-## Visual direction
+- `icon.svg` — 512 × 512 transparent vector master (standard root export path; the other two equal choices are in `variants/`).
+- `icon-banner.svg` — 1200 × 240 transparent icon and name lockup. The accent line sits below the subtitle, not through the text.
+- `favicon.ico` — multi-resolution ICO containing 16, 32, 48, 64, 128 and 256 px images.
+- `favicon-*.png` — explicit PNG favicon sizes.
+- `apple-touch-icon.png` — 180 × 180 PNG.
+- `og-image.svg` and `og-image.png` — editable source and 1200 × 630 export. OG artwork uses neutral backgrounds and project-specific graphic accents; it does not use a generic green circle.
+- `asset-family.zip` — complete per-project exports, including selected concept variants.
 
-The shared leaf motif and LeviLamina green reference are derived from the current official SVG at `official/references/levilamina-logo.svg` (copied unchanged from the official source). V2 geometry has separate project colour systems so projects do not all become green variations:
+There is no local `icon.png` asset.
 
-- LegacyScriptEngine — heritage greens.
-- lip — deep blue, teal and amber dependency accents.
-- LeviAntiCheat — navy, detection blue and coral alert accents.
-- LeviOptimize — technical navy, electric cyan and violet telemetry accents.
-- MoreDimensions — indigo, dimensional violet and cyan.
-- bedboo — blue, teal and warm connector accents.
-- LeviMC Mods — indigo, amber and green catalogue accents.
+## Brand and colour direction
 
-The original LeviLamina leaf motif remains green as a secondary family cue. Project-specific colour belongs to the surrounding symbol, not to the copied reference logo.
+The LeviLamina reference is copied unchanged to `official/references/levilamina-logo.svg`. Its green leaf remains a secondary family motif. Project marks use distinct palettes: heritage greens for LegacyScriptEngine; teal/navy for lip; navy/blue/coral for LeviAntiCheat; navy/cyan/violet/amber for LeviOptimize; indigo/violet/cyan for MoreDimensions; blue/teal for bedboo; and indigo/amber for LeviMC Mods.
 
-## Regenerate V2 artwork
+## Regenerate assets
 
-Install the listed Python dependencies, then run the generator and the palette/export pass:
+Install dependencies and run both generators from the repository root:
 
 ```sh
 python -m pip install -r official/tools/requirements.txt
 python official/tools/generate-identity-assets.py
-python official/tools/retheme-projects.py
+python official/tools/generate-website-icon-styles.py
 ```
 
-The second script reapplies project-specific palettes, adds the additional detail to lip, LeviAntiCheat and LeviOptimize, and regenerates favicons, Apple touch icons, OG PNGs and per-project asset bundles. Do not run only the first script if you need the checked V2 colour treatment.
+The first script generates the project icon variants, banners, ICO/PNG derivatives, Apple touch icons, OG images, manifest and per-project ZIPs. The second generates the multicolour outline and multicolour filled styles for the website icon candidate icons.
 
 ## GitHub Pages
 
-The workflow in `.github/workflows/pages.yml` stages the static site without `.git` or workflow files, then deploys it with GitHub Pages. Set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**.
+The workflow in `.github/workflows/pages.yml` stages the static website and deploys it with GitHub Pages. Set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. The workflow uses `actions/checkout@v6`, `actions/configure-pages@v5`, `actions/upload-pages-artifact@v4` and `actions/deploy-pages@v4`.
 
-The workflow uses `actions/checkout@v6`, `actions/configure-pages@v5`, `actions/upload-pages-artifact@v4` and `actions/deploy-pages@v4`, matching the current GitHub Pages workflow guidance checked for this revision.
+## Full repository ZIP workflow
 
-## Repository ZIP and commit workflow
-
-The accompanying `Levi-icon-full-repository.zip` is a full working-tree snapshot based on the current `main` repository state plus this update. It intentionally excludes `.git/` so it can remain a clean, portable archive.
+The companion ZIP is a full repository working-tree snapshot based on the existing project files and this update. It intentionally excludes `.git/` so you can copy your existing Git metadata into it:
 
 1. Extract the ZIP into a new folder.
-2. Copy the `.git` directory from your existing `Levi-icon` clone into the extracted folder.
-3. From that folder, run:
+2. Copy the complete `.git` directory from your existing `Levi-icon` clone into the extracted folder, beside `README.md` and `index.html`.
+3. Open a terminal in that folder and run:
 
 ```sh
 git status --short
 git add -A
-git commit -m "Unify icon gallery and refine project identity previews"
+git commit -m "Refine icon comparisons and project logo concepts"
 git push origin HEAD
 ```
 
-No files need to be copied individually from the ZIP into your existing clone. The `.git` directory supplies the repository history and remote; the extracted working tree supplies the complete updated files.
+No individual files need to be copied into the old working tree.
 
 ## Status and ownership
 
-This repository is an independent, unofficial proposal. LeviMC, LeviLamina, LeviLauncher and project names/logos remain the property of their respective owners. The official reference marks are included or linked only for comparison, without modification or implied endorsement. The proposal website and authored concept assets are provided under the repository MIT License.
+This repository is an independent, unofficial proposal. LeviMC, LeviLamina, LeviLauncher and project names/logos remain the property of their respective owners. The official reference marks are included or linked only for comparison, without modification or implied endorsement. The proposal website and authored concepts are provided under the repository MIT License.
+
+## Preview sheets
+
+Static review sheets for the generated assets are available under [`previews/`](previews/): website icon styles, project logo directions, and banner examples. The interactive gallery remains the primary comparison interface.

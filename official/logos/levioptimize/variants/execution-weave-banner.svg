@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="240" viewBox="0 0 1200 240" role="img" aria-labelledby="title desc">
+<title id="title">LeviOptimize — Execution weave banner</title><desc id="desc">Performance and execution efficiency; project identity concept.</desc>
+<g transform="translate(28 17) scale(.38)"><path d="M64 135 C142 135 160 201 220 219 C244 226 268 222 291 208 C351 173 376 128 448 128" fill="none" stroke="#25b8c7" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" /><path d="M64 256 H448" fill="none" stroke="#476fc0" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" /><path d="M64 377 C142 377 160 311 220 293 C244 286 268 290 291 304 C351 339 376 384 448 384" fill="none" stroke="#e5a34f" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" /><polygon points="256,151 361,212 361,300 256,361 151,300 151,212" fill="#e9eff7" stroke="#182d49" stroke-width="15" stroke-linejoin="round" /><polygon points="256,192 309,223 309,289 256,320 203,289 203,223" fill="#8769d0" stroke="#182d49" stroke-width="10" stroke-linejoin="round" /><g transform="translate(256 264) rotate(0) scale(0.1)" opacity="1.0">
+      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#25b8c7" stroke="#182d49" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#e5a34f" stroke="#476fc0" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#182d49" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#476fc0" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#182d49" stroke-width="10" stroke-linecap="round"/>
+      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#8769d0" stroke-width="5" stroke-linecap="round"/>
+    </g><path d="M405 95 L448 128 L405 161 M405 351 L448 384 L405 417" fill="none" stroke="#182d49" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" /></g>
+<text x="268" y="112" fill="#182d49" stroke="#f2f5fa" stroke-width="4" stroke-linejoin="round" paint-order="stroke fill" font-family="Inter,Segoe UI,sans-serif" font-size="62" font-weight="760" letter-spacing="-1.4">LeviOptimize</text>
+<text x="271" y="157" fill="#182d49" stroke="#f2f5fa" stroke-width="2" stroke-linejoin="round" paint-order="stroke fill" font-family="Inter,Segoe UI,sans-serif" font-size="26" font-weight="620">Performance and execution efficiency</text>
+<path d="M271 216 H414" stroke="#25b8c7" stroke-width="5" stroke-linecap="round"/>
+</svg>

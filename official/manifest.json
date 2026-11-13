@@ -1,6 +1,6 @@
 {
   "title": "LeviMC project identity concepts",
-  "status": "Unofficial concepts for review. The /official/ route is a directory label, not an approval claim.",
+  "status": "Unofficial concepts for review. The /official/ route is a collection path, not an approval claim.",
   "reference": {
     "name": "LeviLamina official vector identity",
     "source": "https://github.com/LiteLDev/LeviLamina/blob/main/docs/main/contents/logo.svg",
@@ -16,7 +16,7 @@
       "white": "#f8faf5",
       "ink": "#1d3322"
     },
-    "style_note": "Organic botanical silhouettes, layered forest-green fills and restrained sage contrasts, based on the current official vector mark."
+    "style_note": "The original LeviLamina leaf silhouette and forest-green palette are used as a family reference; individual projects retain their own palettes."
   },
   "projects": [
     {
@@ -31,6 +31,8 @@
         "#90a08c",
         "#b9ccac"
       ],
+      "current_icon": "https://raw.githubusercontent.com/LiteLDev/LegacyScriptEngine/develop/docs/img/logo.png",
+      "current_source": "https://github.com/LiteLDev/LegacyScriptEngine/blob/develop/docs/img/logo.png",
       "icon": "logos/legacy-script-engine/icon.svg",
       "banner": "logos/legacy-script-engine/icon-banner.svg",
       "favicon": "logos/legacy-script-engine/favicon.ico",
@@ -44,28 +46,35 @@
           "label": "Heritage leaf",
           "description": "A maintained legacy crest: layered record plates, a mature botanical branch and a continuous lower stem express predecessor lineage without implying abandonment.",
           "file": "logos/legacy-script-engine/icon.svg",
-          "recommended": true
+          "banner": "logos/legacy-script-engine/icon-banner.svg",
+          "favicon": "logos/legacy-script-engine/favicon.ico",
+          "apple_touch_icon": "logos/legacy-script-engine/apple-touch-icon.png",
+          "og_image": "logos/legacy-script-engine/og-image.png",
+          "og_image_svg": "logos/legacy-script-engine/og-image.svg"
         },
         {
           "slug": "two-era-bridge",
           "label": "Two-era bridge",
           "description": "Two connected generations share one living stem, representing older scripts and APIs continuing inside the modern LeviLamina runtime.",
           "file": "logos/legacy-script-engine/variants/two-era-bridge.svg",
-          "recommended": false
+          "banner": "logos/legacy-script-engine/variants/two-era-bridge-banner.svg",
+          "favicon": "logos/legacy-script-engine/variants/two-era-bridge-favicon.ico",
+          "apple_touch_icon": "logos/legacy-script-engine/variants/two-era-bridge-apple-touch-icon.png",
+          "og_image": "logos/legacy-script-engine/variants/two-era-bridge-og-image.png",
+          "og_image_svg": "logos/legacy-script-engine/variants/two-era-bridge-og-image.svg"
         },
         {
           "slug": "runtime-strata",
           "label": "Runtime strata",
           "description": "Three substantial runtime strata are joined by a shared botanical spine to represent language and API compatibility.",
           "file": "logos/legacy-script-engine/variants/runtime-strata.svg",
-          "recommended": false
+          "banner": "logos/legacy-script-engine/variants/runtime-strata-banner.svg",
+          "favicon": "logos/legacy-script-engine/variants/runtime-strata-favicon.ico",
+          "apple_touch_icon": "logos/legacy-script-engine/variants/runtime-strata-apple-touch-icon.png",
+          "og_image": "logos/legacy-script-engine/variants/runtime-strata-og-image.png",
+          "og_image_svg": "logos/legacy-script-engine/variants/runtime-strata-og-image.svg"
         }
-      ],
-      "accent_palette": {
-        "primary": "#7ba46d",
-        "secondary": "#b9ccac",
-        "dark": "#203b25"
-      }
+      ]
     },
     {
       "name": "lip",
@@ -73,12 +82,14 @@
       "summary": "A general-purpose package installer that resolves packages and their dependencies through one command.",
       "subtitle": "Package and dependency installer",
       "palette": [
-        "#183247",
-        "#23647d",
+        "#17364b",
+        "#236f82",
         "#20a8a3",
-        "#75a9b3",
+        "#78aab4",
         "#d2ecee"
       ],
+      "current_icon": "https://raw.githubusercontent.com/LiteLDev/lip/main/docs/logo.png",
+      "current_source": "https://github.com/LiteLDev/lip/blob/main/docs/logo.png",
       "icon": "logos/lip/icon.svg",
       "banner": "logos/lip/icon-banner.svg",
       "favicon": "logos/lip/favicon.ico",
@@ -92,41 +103,50 @@
           "label": "Package lattice",
           "description": "Three interlocking isometric package modules form a compact dependency lattice; the Levi botanical mark is embedded into the central package face.",
           "file": "logos/lip/icon.svg",
-          "recommended": true
+          "banner": "logos/lip/icon-banner.svg",
+          "favicon": "logos/lip/favicon.ico",
+          "apple_touch_icon": "logos/lip/apple-touch-icon.png",
+          "og_image": "logos/lip/og-image.png",
+          "og_image_svg": "logos/lip/og-image.svg"
         },
         {
           "slug": "dependency-constellation",
           "label": "Dependency constellation",
           "description": "A rooted package graph connects a primary package to dependent modules, showing resolution and installation order rather than delivery or shopping.",
           "file": "logos/lip/variants/dependency-constellation.svg",
-          "recommended": false
+          "banner": "logos/lip/variants/dependency-constellation-banner.svg",
+          "favicon": "logos/lip/variants/dependency-constellation-favicon.ico",
+          "apple_touch_icon": "logos/lip/variants/dependency-constellation-apple-touch-icon.png",
+          "og_image": "logos/lip/variants/dependency-constellation-og-image.png",
+          "og_image_svg": "logos/lip/variants/dependency-constellation-og-image.svg"
         },
         {
           "slug": "modular-cube",
           "label": "Modular cube",
           "description": "A faceted installer core opens into three removable, linked modules; the central leaf acts as the package system's identity rather than a decorative sticker.",
           "file": "logos/lip/variants/modular-cube.svg",
-          "recommended": false
+          "banner": "logos/lip/variants/modular-cube-banner.svg",
+          "favicon": "logos/lip/variants/modular-cube-favicon.ico",
+          "apple_touch_icon": "logos/lip/variants/modular-cube-apple-touch-icon.png",
+          "og_image": "logos/lip/variants/modular-cube-og-image.png",
+          "og_image_svg": "logos/lip/variants/modular-cube-og-image.svg"
         }
-      ],
-      "accent_palette": {
-        "primary": "#20a8a3",
-        "secondary": "#e3a34f",
-        "dark": "#102536"
-      }
+      ]
     },
     {
       "name": "LeviAntiCheat",
       "slug": "levi-anticheat",
-      "summary": "A technical protection and detection identity for monitoring suspicious activity.",
-      "subtitle": "Protection and detection",
+      "summary": "A detection and integrity layer for identifying suspicious client and server behaviour.",
+      "subtitle": "Integrity monitoring and detection",
       "palette": [
-        "#1b2a45",
-        "#2c5f91",
-        "#e36a69",
-        "#7e9fbd",
-        "#e3ebf4"
+        "#172d45",
+        "#2c5e8a",
+        "#e36e70",
+        "#26a9c4",
+        "#e8f1f5"
       ],
+      "current_icon": "https://raw.githubusercontent.com/LiteLDev/LeviAntiCheat/release/docs/logo.png",
+      "current_source": "https://github.com/LiteLDev/LeviAntiCheat/blob/release/docs/logo.png",
       "icon": "logos/levi-anticheat/icon.svg",
       "banner": "logos/levi-anticheat/icon-banner.svg",
       "favicon": "logos/levi-anticheat/favicon.ico",
@@ -136,45 +156,54 @@
       "asset_bundle": "logos/levi-anticheat/asset-family.zip",
       "variants": [
         {
-          "slug": "guardian-aperture",
-          "label": "Guardian aperture",
-          "description": "A layered shield encloses a multi-ring scanning aperture with a leaf-shaped detection core, combining protection and active inspection.",
+          "slug": "integrity-fingerprint",
+          "label": "Integrity fingerprint",
+          "description": "A layered biometric-style trace pattern with a segmented scan pass. It communicates behavioural inspection and integrity analysis without defaulting to a shield or target.",
           "file": "logos/levi-anticheat/icon.svg",
-          "recommended": true
+          "banner": "logos/levi-anticheat/icon-banner.svg",
+          "favicon": "logos/levi-anticheat/favicon.ico",
+          "apple_touch_icon": "logos/levi-anticheat/apple-touch-icon.png",
+          "og_image": "logos/levi-anticheat/og-image.png",
+          "og_image_svg": "logos/levi-anticheat/og-image.svg"
         },
         {
-          "slug": "scan-vault",
-          "label": "Scan vault",
-          "description": "A sealed technical enclosure uses a rotating scan ring, radial notches and a protected leaf core to suggest integrity checks and detection.",
-          "file": "logos/levi-anticheat/variants/scan-vault.svg",
-          "recommended": false
+          "slug": "signal-weave",
+          "label": "Signal weave",
+          "description": "Three differently weighted signal paths weave across an inspection junction, showing continuous event observation and anomaly correlation.",
+          "file": "logos/levi-anticheat/variants/signal-weave.svg",
+          "banner": "logos/levi-anticheat/variants/signal-weave-banner.svg",
+          "favicon": "logos/levi-anticheat/variants/signal-weave-favicon.ico",
+          "apple_touch_icon": "logos/levi-anticheat/variants/signal-weave-apple-touch-icon.png",
+          "og_image": "logos/levi-anticheat/variants/signal-weave-og-image.png",
+          "og_image_svg": "logos/levi-anticheat/variants/signal-weave-og-image.svg"
         },
         {
-          "slug": "radar-sentinel",
-          "label": "Radar sentinel",
-          "description": "A segmented radial sweep sits behind a compact shield, giving the symbol a monitoring-first reading without weapon or combat cues.",
-          "file": "logos/levi-anticheat/variants/radar-sentinel.svg",
-          "recommended": false
+          "slug": "proof-lattice",
+          "label": "Proof lattice",
+          "description": "A compact integrity lattice uses interrupted paths and differently coloured verification nodes to represent cross-checking and tamper detection.",
+          "file": "logos/levi-anticheat/variants/proof-lattice.svg",
+          "banner": "logos/levi-anticheat/variants/proof-lattice-banner.svg",
+          "favicon": "logos/levi-anticheat/variants/proof-lattice-favicon.ico",
+          "apple_touch_icon": "logos/levi-anticheat/variants/proof-lattice-apple-touch-icon.png",
+          "og_image": "logos/levi-anticheat/variants/proof-lattice-og-image.png",
+          "og_image_svg": "logos/levi-anticheat/variants/proof-lattice-og-image.svg"
         }
-      ],
-      "accent_palette": {
-        "primary": "#e36a69",
-        "secondary": "#44b8d0",
-        "dark": "#111c31"
-      }
+      ]
     },
     {
       "name": "LeviOptimize",
       "slug": "levioptimize",
       "summary": "A performance optimization project for reducing overhead across computational hot paths.",
-      "subtitle": "Performance and efficiency",
+      "subtitle": "Performance and execution efficiency",
       "palette": [
-        "#1c2948",
-        "#416bb0",
-        "#27b6c8",
-        "#879bc8",
-        "#d6e5f6"
+        "#182d49",
+        "#476fc0",
+        "#25b8c7",
+        "#8769d0",
+        "#e5a34f"
       ],
+      "current_icon": "https://raw.githubusercontent.com/LiteLDev/LeviOptimize/main/docs/logo.png",
+      "current_source": "https://github.com/LiteLDev/LeviOptimize/blob/main/docs/logo.png",
       "icon": "logos/levioptimize/icon.svg",
       "banner": "logos/levioptimize/icon-banner.svg",
       "favicon": "logos/levioptimize/favicon.ico",
@@ -184,45 +213,54 @@
       "asset_bundle": "logos/levioptimize/asset-family.zip",
       "variants": [
         {
-          "slug": "processing-core",
-          "label": "Processing core",
-          "description": "A six-sided compute engine combines a layered central core, precision channels and a botanical processing motif. It signals system efficiency without a generic speedometer.",
+          "slug": "folded-impeller",
+          "label": "Folded impeller",
+          "description": "Four broad, offset execution blades form a compact computational rotor. Contrasting facets communicate reduced work and controlled throughput without a generic chip or speedometer.",
           "file": "logos/levioptimize/icon.svg",
-          "recommended": true
+          "banner": "logos/levioptimize/icon-banner.svg",
+          "favicon": "logos/levioptimize/favicon.ico",
+          "apple_touch_icon": "logos/levioptimize/apple-touch-icon.png",
+          "og_image": "logos/levioptimize/og-image.png",
+          "og_image_svg": "logos/levioptimize/og-image.svg"
         },
         {
-          "slug": "pipeline-flow",
-          "label": "Pipeline flow",
-          "description": "Three controlled execution channels converge through a compact leaf-bearing processor, representing streamlined work and reduced redundant processing.",
-          "file": "logos/levioptimize/variants/pipeline-flow.svg",
-          "recommended": false
+          "slug": "execution-weave",
+          "label": "Execution weave",
+          "description": "Three wide execution tracks merge through a faceted processor core, with a fourth return channel representing avoided repeated work.",
+          "file": "logos/levioptimize/variants/execution-weave.svg",
+          "banner": "logos/levioptimize/variants/execution-weave-banner.svg",
+          "favicon": "logos/levioptimize/variants/execution-weave-favicon.ico",
+          "apple_touch_icon": "logos/levioptimize/variants/execution-weave-apple-touch-icon.png",
+          "og_image": "logos/levioptimize/variants/execution-weave-og-image.png",
+          "og_image_svg": "logos/levioptimize/variants/execution-weave-og-image.svg"
         },
         {
-          "slug": "layered-engine",
-          "label": "Layered engine",
-          "description": "Nested computational plates and aligned routing channels depict optimizations applied across several hot paths, with a leaf at the shared execution junction.",
-          "file": "logos/levioptimize/variants/layered-engine.svg",
-          "recommended": false
+          "slug": "cache-strata",
+          "label": "Cache strata",
+          "description": "A tiered sequence of compressed processing plates narrows into a shared execution path. The asymmetric facets suggest batching and less repeated work.",
+          "file": "logos/levioptimize/variants/cache-strata.svg",
+          "banner": "logos/levioptimize/variants/cache-strata-banner.svg",
+          "favicon": "logos/levioptimize/variants/cache-strata-favicon.ico",
+          "apple_touch_icon": "logos/levioptimize/variants/cache-strata-apple-touch-icon.png",
+          "og_image": "logos/levioptimize/variants/cache-strata-og-image.png",
+          "og_image_svg": "logos/levioptimize/variants/cache-strata-og-image.svg"
         }
-      ],
-      "accent_palette": {
-        "primary": "#27b6c8",
-        "secondary": "#8568dc",
-        "dark": "#101a32"
-      }
+      ]
     },
     {
       "name": "MoreDimensions",
       "slug": "moredimensions",
       "summary": "A science-fiction dimensional architecture API for adding custom Bedrock dimensions.",
-      "subtitle": "Spatial and dimensional API",
+      "subtitle": "Spatial architecture and dimensional APIs",
       "palette": [
         "#25204d",
-        "#584b9b",
-        "#9b70df",
-        "#6caec5",
-        "#dce8f6"
+        "#51458e",
+        "#9b76df",
+        "#319dbb",
+        "#e47cc3"
       ],
+      "current_icon": "https://raw.githubusercontent.com/LiteLDev/MoreDimensions/develop/docs/logo.png",
+      "current_source": "https://github.com/LiteLDev/MoreDimensions/blob/develop/docs/logo.png",
       "icon": "logos/moredimensions/icon.svg",
       "banner": "logos/moredimensions/icon-banner.svg",
       "favicon": "logos/moredimensions/favicon.ico",
@@ -232,32 +270,39 @@
       "asset_bundle": "logos/moredimensions/asset-family.zip",
       "variants": [
         {
-          "slug": "dimensional-arch",
-          "label": "Dimensional arch",
-          "description": "A nested, engineered portal uses layered elliptical frames, coordinate markers and a floating dimensional core. The leaf is embedded as the transition anchor.",
+          "slug": "phase-prism",
+          "label": "Phase prism",
+          "description": "Offset coordinate planes and a fractured central prism create a layered science-fiction spatial object. The composition suggests multiple coexisting dimensional spaces, not a fantasy portal.",
           "file": "logos/moredimensions/icon.svg",
-          "recommended": true
+          "banner": "logos/moredimensions/icon-banner.svg",
+          "favicon": "logos/moredimensions/favicon.ico",
+          "apple_touch_icon": "logos/moredimensions/apple-touch-icon.png",
+          "og_image": "logos/moredimensions/og-image.png",
+          "og_image_svg": "logos/moredimensions/og-image.svg"
         },
         {
-          "slug": "coordinate-cube",
-          "label": "Coordinate cube",
-          "description": "A dimensional wireframe cube intersects multiple offset coordinate planes, with a living botanical core marking the stable point between spaces.",
-          "file": "logos/moredimensions/variants/coordinate-cube.svg",
-          "recommended": false
+          "slug": "coordinate-fold",
+          "label": "Coordinate fold",
+          "description": "Three displaced coordinate grids fold through a shared origin. Perspective offsets and interrupted edges give the symbol a precise dimensional-engineering feel.",
+          "file": "logos/moredimensions/variants/coordinate-fold.svg",
+          "banner": "logos/moredimensions/variants/coordinate-fold-banner.svg",
+          "favicon": "logos/moredimensions/variants/coordinate-fold-favicon.ico",
+          "apple_touch_icon": "logos/moredimensions/variants/coordinate-fold-apple-touch-icon.png",
+          "og_image": "logos/moredimensions/variants/coordinate-fold-og-image.png",
+          "og_image_svg": "logos/moredimensions/variants/coordinate-fold-og-image.svg"
         },
         {
-          "slug": "parallel-frames",
-          "label": "Parallel frames",
-          "description": "Three overlapping portal planes show parallel dimensional spaces and the transitions between them, avoiding a literal Nether-portal silhouette.",
-          "file": "logos/moredimensions/variants/parallel-frames.svg",
-          "recommended": false
+          "slug": "dimensional-shear",
+          "label": "Dimensional shear",
+          "description": "Offset slabs of space overlap at different depths. The diagonal shear and split facets represent transitions between coordinate systems and custom dimensions.",
+          "file": "logos/moredimensions/variants/dimensional-shear.svg",
+          "banner": "logos/moredimensions/variants/dimensional-shear-banner.svg",
+          "favicon": "logos/moredimensions/variants/dimensional-shear-favicon.ico",
+          "apple_touch_icon": "logos/moredimensions/variants/dimensional-shear-apple-touch-icon.png",
+          "og_image": "logos/moredimensions/variants/dimensional-shear-og-image.png",
+          "og_image_svg": "logos/moredimensions/variants/dimensional-shear-og-image.svg"
         }
-      ],
-      "accent_palette": {
-        "primary": "#9b70df",
-        "secondary": "#49b5d2",
-        "dark": "#171333"
-      }
+      ]
     },
     {
       "name": "bedboo",
@@ -271,6 +316,8 @@
         "#83a6b2",
         "#d7ebef"
       ],
+      "current_icon": "https://raw.githubusercontent.com/LiteLDev/bedboo/main/docs/public/logo.png",
+      "current_source": "https://github.com/LiteLDev/bedboo/blob/main/docs/public/logo.png",
       "icon": "logos/bedboo/icon.svg",
       "banner": "logos/bedboo/icon-banner.svg",
       "favicon": "logos/bedboo/favicon.ico",
@@ -284,28 +331,35 @@
           "label": "Bot bridge",
           "description": "A custom bot core is framed by API connection ports and a botanical antenna, conveying programmable agents and Mineflayer-compatible integration.",
           "file": "logos/bedboo/icon.svg",
-          "recommended": true
+          "banner": "logos/bedboo/icon-banner.svg",
+          "favicon": "logos/bedboo/favicon.ico",
+          "apple_touch_icon": "logos/bedboo/apple-touch-icon.png",
+          "og_image": "logos/bedboo/og-image.png",
+          "og_image_svg": "logos/bedboo/og-image.svg"
         },
         {
           "slug": "api-bridge",
           "label": "API bridge",
           "description": "A central agent node connects to three differently shaped API ports, making the integration and transport layer the main visual idea.",
           "file": "logos/bedboo/variants/api-bridge.svg",
-          "recommended": false
+          "banner": "logos/bedboo/variants/api-bridge-banner.svg",
+          "favicon": "logos/bedboo/variants/api-bridge-favicon.ico",
+          "apple_touch_icon": "logos/bedboo/variants/api-bridge-apple-touch-icon.png",
+          "og_image": "logos/bedboo/variants/api-bridge-og-image.png",
+          "og_image_svg": "logos/bedboo/variants/api-bridge-og-image.svg"
         },
         {
           "slug": "autonomous-agent",
           "label": "Autonomous agent",
           "description": "A compact modular agent silhouette includes directional sensor fins, an articulated base and a leaf-shaped status mark.",
           "file": "logos/bedboo/variants/autonomous-agent.svg",
-          "recommended": false
+          "banner": "logos/bedboo/variants/autonomous-agent-banner.svg",
+          "favicon": "logos/bedboo/variants/autonomous-agent-favicon.ico",
+          "apple_touch_icon": "logos/bedboo/variants/autonomous-agent-apple-touch-icon.png",
+          "og_image": "logos/bedboo/variants/autonomous-agent-og-image.png",
+          "og_image_svg": "logos/bedboo/variants/autonomous-agent-og-image.svg"
         }
-      ],
-      "accent_palette": {
-        "primary": "#27a9b5",
-        "secondary": "#eca65d",
-        "dark": "#112438"
-      }
+      ]
     },
     {
       "name": "LeviMC Mods",
@@ -313,12 +367,14 @@
       "summary": "A curated catalogue for discovering and browsing LeviMC-compatible mods and tools.",
       "subtitle": "Mod discovery and catalogue",
       "palette": [
-        "#2a3453",
-        "#6553a3",
-        "#e0a04b",
-        "#92a1be",
-        "#eee5f7"
+        "#362653",
+        "#68508d",
+        "#9877c7",
+        "#d79a4b",
+        "#e9dcf4"
       ],
+      "current_icon": "https://raw.githubusercontent.com/LiteLDev/levimc.org/main/mods/public/icon.png",
+      "current_source": "https://github.com/LiteLDev/levimc.org/blob/main/mods/public/icon.png",
       "icon": "logos/levimc-mods/icon.svg",
       "banner": "logos/levimc-mods/icon-banner.svg",
       "favicon": "logos/levimc-mods/favicon.ico",
@@ -332,28 +388,35 @@
           "label": "Curated catalogue",
           "description": "A structured catalogue of modular cards is arranged around a central discovery mark, balancing browsing, curation and the Levi botanical family cue.",
           "file": "logos/levimc-mods/icon.svg",
-          "recommended": true
+          "banner": "logos/levimc-mods/icon-banner.svg",
+          "favicon": "logos/levimc-mods/favicon.ico",
+          "apple_touch_icon": "logos/levimc-mods/apple-touch-icon.png",
+          "og_image": "logos/levimc-mods/og-image.png",
+          "og_image_svg": "logos/levimc-mods/og-image.svg"
         },
         {
           "slug": "discovery-orbit",
           "label": "Discovery orbit",
           "description": "A discovery lens follows a ring of modular entries, representing search, sorting and exploration across a growing mod ecosystem.",
           "file": "logos/levimc-mods/variants/discovery-orbit.svg",
-          "recommended": false
+          "banner": "logos/levimc-mods/variants/discovery-orbit-banner.svg",
+          "favicon": "logos/levimc-mods/variants/discovery-orbit-favicon.ico",
+          "apple_touch_icon": "logos/levimc-mods/variants/discovery-orbit-apple-touch-icon.png",
+          "og_image": "logos/levimc-mods/variants/discovery-orbit-og-image.png",
+          "og_image_svg": "logos/levimc-mods/variants/discovery-orbit-og-image.svg"
         },
         {
           "slug": "module-shelf",
           "label": "Module shelf",
           "description": "A tiered set of installed module tiles sits in a stable catalogue frame, with an embedded leaf marking the curated source.",
           "file": "logos/levimc-mods/variants/module-shelf.svg",
-          "recommended": false
+          "banner": "logos/levimc-mods/variants/module-shelf-banner.svg",
+          "favicon": "logos/levimc-mods/variants/module-shelf-favicon.ico",
+          "apple_touch_icon": "logos/levimc-mods/variants/module-shelf-apple-touch-icon.png",
+          "og_image": "logos/levimc-mods/variants/module-shelf-og-image.png",
+          "og_image_svg": "logos/levimc-mods/variants/module-shelf-og-image.svg"
         }
-      ],
-      "accent_palette": {
-        "primary": "#e0a04b",
-        "secondary": "#58a88c",
-        "dark": "#171f38"
-      }
+      ]
     }
   ],
   "icons": [
@@ -364,7 +427,11 @@
       "label": "Heritage leaf",
       "description": "A maintained legacy crest: layered record plates, a mature botanical branch and a continuous lower stem express predecessor lineage without implying abandonment.",
       "file": "logos/legacy-script-engine/icon.svg",
-      "recommended": true,
+      "banner": "logos/legacy-script-engine/icon-banner.svg",
+      "favicon": "logos/legacy-script-engine/favicon.ico",
+      "apple_touch_icon": "logos/legacy-script-engine/apple-touch-icon.png",
+      "og_image": "logos/legacy-script-engine/og-image.png",
+      "og_image_svg": "logos/legacy-script-engine/og-image.svg",
       "summary": "A maintained compatibility layer for mods from the earlier Bedrock loader ecosystem."
     },
     {
@@ -374,7 +441,11 @@
       "label": "Two-era bridge",
       "description": "Two connected generations share one living stem, representing older scripts and APIs continuing inside the modern LeviLamina runtime.",
       "file": "logos/legacy-script-engine/variants/two-era-bridge.svg",
-      "recommended": false,
+      "banner": "logos/legacy-script-engine/variants/two-era-bridge-banner.svg",
+      "favicon": "logos/legacy-script-engine/variants/two-era-bridge-favicon.ico",
+      "apple_touch_icon": "logos/legacy-script-engine/variants/two-era-bridge-apple-touch-icon.png",
+      "og_image": "logos/legacy-script-engine/variants/two-era-bridge-og-image.png",
+      "og_image_svg": "logos/legacy-script-engine/variants/two-era-bridge-og-image.svg",
       "summary": "A maintained compatibility layer for mods from the earlier Bedrock loader ecosystem."
     },
     {
@@ -384,7 +455,11 @@
       "label": "Runtime strata",
       "description": "Three substantial runtime strata are joined by a shared botanical spine to represent language and API compatibility.",
       "file": "logos/legacy-script-engine/variants/runtime-strata.svg",
-      "recommended": false,
+      "banner": "logos/legacy-script-engine/variants/runtime-strata-banner.svg",
+      "favicon": "logos/legacy-script-engine/variants/runtime-strata-favicon.ico",
+      "apple_touch_icon": "logos/legacy-script-engine/variants/runtime-strata-apple-touch-icon.png",
+      "og_image": "logos/legacy-script-engine/variants/runtime-strata-og-image.png",
+      "og_image_svg": "logos/legacy-script-engine/variants/runtime-strata-og-image.svg",
       "summary": "A maintained compatibility layer for mods from the earlier Bedrock loader ecosystem."
     },
     {
@@ -394,7 +469,11 @@
       "label": "Package lattice",
       "description": "Three interlocking isometric package modules form a compact dependency lattice; the Levi botanical mark is embedded into the central package face.",
       "file": "logos/lip/icon.svg",
-      "recommended": true,
+      "banner": "logos/lip/icon-banner.svg",
+      "favicon": "logos/lip/favicon.ico",
+      "apple_touch_icon": "logos/lip/apple-touch-icon.png",
+      "og_image": "logos/lip/og-image.png",
+      "og_image_svg": "logos/lip/og-image.svg",
       "summary": "A general-purpose package installer that resolves packages and their dependencies through one command."
     },
     {
@@ -404,7 +483,11 @@
       "label": "Dependency constellation",
       "description": "A rooted package graph connects a primary package to dependent modules, showing resolution and installation order rather than delivery or shopping.",
       "file": "logos/lip/variants/dependency-constellation.svg",
-      "recommended": false,
+      "banner": "logos/lip/variants/dependency-constellation-banner.svg",
+      "favicon": "logos/lip/variants/dependency-constellation-favicon.ico",
+      "apple_touch_icon": "logos/lip/variants/dependency-constellation-apple-touch-icon.png",
+      "og_image": "logos/lip/variants/dependency-constellation-og-image.png",
+      "og_image_svg": "logos/lip/variants/dependency-constellation-og-image.svg",
       "summary": "A general-purpose package installer that resolves packages and their dependencies through one command."
     },
     {
@@ -414,97 +497,137 @@
       "label": "Modular cube",
       "description": "A faceted installer core opens into three removable, linked modules; the central leaf acts as the package system's identity rather than a decorative sticker.",
       "file": "logos/lip/variants/modular-cube.svg",
-      "recommended": false,
+      "banner": "logos/lip/variants/modular-cube-banner.svg",
+      "favicon": "logos/lip/variants/modular-cube-favicon.ico",
+      "apple_touch_icon": "logos/lip/variants/modular-cube-apple-touch-icon.png",
+      "og_image": "logos/lip/variants/modular-cube-og-image.png",
+      "og_image_svg": "logos/lip/variants/modular-cube-og-image.svg",
       "summary": "A general-purpose package installer that resolves packages and their dependencies through one command."
     },
     {
       "project": "LeviAntiCheat",
       "project_slug": "levi-anticheat",
-      "slug": "guardian-aperture",
-      "label": "Guardian aperture",
-      "description": "A layered shield encloses a multi-ring scanning aperture with a leaf-shaped detection core, combining protection and active inspection.",
+      "slug": "integrity-fingerprint",
+      "label": "Integrity fingerprint",
+      "description": "A layered biometric-style trace pattern with a segmented scan pass. It communicates behavioural inspection and integrity analysis without defaulting to a shield or target.",
       "file": "logos/levi-anticheat/icon.svg",
-      "recommended": true,
-      "summary": "A technical protection and detection identity for monitoring suspicious activity."
+      "banner": "logos/levi-anticheat/icon-banner.svg",
+      "favicon": "logos/levi-anticheat/favicon.ico",
+      "apple_touch_icon": "logos/levi-anticheat/apple-touch-icon.png",
+      "og_image": "logos/levi-anticheat/og-image.png",
+      "og_image_svg": "logos/levi-anticheat/og-image.svg",
+      "summary": "A detection and integrity layer for identifying suspicious client and server behaviour."
     },
     {
       "project": "LeviAntiCheat",
       "project_slug": "levi-anticheat",
-      "slug": "scan-vault",
-      "label": "Scan vault",
-      "description": "A sealed technical enclosure uses a rotating scan ring, radial notches and a protected leaf core to suggest integrity checks and detection.",
-      "file": "logos/levi-anticheat/variants/scan-vault.svg",
-      "recommended": false,
-      "summary": "A technical protection and detection identity for monitoring suspicious activity."
+      "slug": "signal-weave",
+      "label": "Signal weave",
+      "description": "Three differently weighted signal paths weave across an inspection junction, showing continuous event observation and anomaly correlation.",
+      "file": "logos/levi-anticheat/variants/signal-weave.svg",
+      "banner": "logos/levi-anticheat/variants/signal-weave-banner.svg",
+      "favicon": "logos/levi-anticheat/variants/signal-weave-favicon.ico",
+      "apple_touch_icon": "logos/levi-anticheat/variants/signal-weave-apple-touch-icon.png",
+      "og_image": "logos/levi-anticheat/variants/signal-weave-og-image.png",
+      "og_image_svg": "logos/levi-anticheat/variants/signal-weave-og-image.svg",
+      "summary": "A detection and integrity layer for identifying suspicious client and server behaviour."
     },
     {
       "project": "LeviAntiCheat",
       "project_slug": "levi-anticheat",
-      "slug": "radar-sentinel",
-      "label": "Radar sentinel",
-      "description": "A segmented radial sweep sits behind a compact shield, giving the symbol a monitoring-first reading without weapon or combat cues.",
-      "file": "logos/levi-anticheat/variants/radar-sentinel.svg",
-      "recommended": false,
-      "summary": "A technical protection and detection identity for monitoring suspicious activity."
+      "slug": "proof-lattice",
+      "label": "Proof lattice",
+      "description": "A compact integrity lattice uses interrupted paths and differently coloured verification nodes to represent cross-checking and tamper detection.",
+      "file": "logos/levi-anticheat/variants/proof-lattice.svg",
+      "banner": "logos/levi-anticheat/variants/proof-lattice-banner.svg",
+      "favicon": "logos/levi-anticheat/variants/proof-lattice-favicon.ico",
+      "apple_touch_icon": "logos/levi-anticheat/variants/proof-lattice-apple-touch-icon.png",
+      "og_image": "logos/levi-anticheat/variants/proof-lattice-og-image.png",
+      "og_image_svg": "logos/levi-anticheat/variants/proof-lattice-og-image.svg",
+      "summary": "A detection and integrity layer for identifying suspicious client and server behaviour."
     },
     {
       "project": "LeviOptimize",
       "project_slug": "levioptimize",
-      "slug": "processing-core",
-      "label": "Processing core",
-      "description": "A six-sided compute engine combines a layered central core, precision channels and a botanical processing motif. It signals system efficiency without a generic speedometer.",
+      "slug": "folded-impeller",
+      "label": "Folded impeller",
+      "description": "Four broad, offset execution blades form a compact computational rotor. Contrasting facets communicate reduced work and controlled throughput without a generic chip or speedometer.",
       "file": "logos/levioptimize/icon.svg",
-      "recommended": true,
+      "banner": "logos/levioptimize/icon-banner.svg",
+      "favicon": "logos/levioptimize/favicon.ico",
+      "apple_touch_icon": "logos/levioptimize/apple-touch-icon.png",
+      "og_image": "logos/levioptimize/og-image.png",
+      "og_image_svg": "logos/levioptimize/og-image.svg",
       "summary": "A performance optimization project for reducing overhead across computational hot paths."
     },
     {
       "project": "LeviOptimize",
       "project_slug": "levioptimize",
-      "slug": "pipeline-flow",
-      "label": "Pipeline flow",
-      "description": "Three controlled execution channels converge through a compact leaf-bearing processor, representing streamlined work and reduced redundant processing.",
-      "file": "logos/levioptimize/variants/pipeline-flow.svg",
-      "recommended": false,
+      "slug": "execution-weave",
+      "label": "Execution weave",
+      "description": "Three wide execution tracks merge through a faceted processor core, with a fourth return channel representing avoided repeated work.",
+      "file": "logos/levioptimize/variants/execution-weave.svg",
+      "banner": "logos/levioptimize/variants/execution-weave-banner.svg",
+      "favicon": "logos/levioptimize/variants/execution-weave-favicon.ico",
+      "apple_touch_icon": "logos/levioptimize/variants/execution-weave-apple-touch-icon.png",
+      "og_image": "logos/levioptimize/variants/execution-weave-og-image.png",
+      "og_image_svg": "logos/levioptimize/variants/execution-weave-og-image.svg",
       "summary": "A performance optimization project for reducing overhead across computational hot paths."
     },
     {
       "project": "LeviOptimize",
       "project_slug": "levioptimize",
-      "slug": "layered-engine",
-      "label": "Layered engine",
-      "description": "Nested computational plates and aligned routing channels depict optimizations applied across several hot paths, with a leaf at the shared execution junction.",
-      "file": "logos/levioptimize/variants/layered-engine.svg",
-      "recommended": false,
+      "slug": "cache-strata",
+      "label": "Cache strata",
+      "description": "A tiered sequence of compressed processing plates narrows into a shared execution path. The asymmetric facets suggest batching and less repeated work.",
+      "file": "logos/levioptimize/variants/cache-strata.svg",
+      "banner": "logos/levioptimize/variants/cache-strata-banner.svg",
+      "favicon": "logos/levioptimize/variants/cache-strata-favicon.ico",
+      "apple_touch_icon": "logos/levioptimize/variants/cache-strata-apple-touch-icon.png",
+      "og_image": "logos/levioptimize/variants/cache-strata-og-image.png",
+      "og_image_svg": "logos/levioptimize/variants/cache-strata-og-image.svg",
       "summary": "A performance optimization project for reducing overhead across computational hot paths."
     },
     {
       "project": "MoreDimensions",
       "project_slug": "moredimensions",
-      "slug": "dimensional-arch",
-      "label": "Dimensional arch",
-      "description": "A nested, engineered portal uses layered elliptical frames, coordinate markers and a floating dimensional core. The leaf is embedded as the transition anchor.",
+      "slug": "phase-prism",
+      "label": "Phase prism",
+      "description": "Offset coordinate planes and a fractured central prism create a layered science-fiction spatial object. The composition suggests multiple coexisting dimensional spaces, not a fantasy portal.",
       "file": "logos/moredimensions/icon.svg",
-      "recommended": true,
+      "banner": "logos/moredimensions/icon-banner.svg",
+      "favicon": "logos/moredimensions/favicon.ico",
+      "apple_touch_icon": "logos/moredimensions/apple-touch-icon.png",
+      "og_image": "logos/moredimensions/og-image.png",
+      "og_image_svg": "logos/moredimensions/og-image.svg",
       "summary": "A science-fiction dimensional architecture API for adding custom Bedrock dimensions."
     },
     {
       "project": "MoreDimensions",
       "project_slug": "moredimensions",
-      "slug": "coordinate-cube",
-      "label": "Coordinate cube",
-      "description": "A dimensional wireframe cube intersects multiple offset coordinate planes, with a living botanical core marking the stable point between spaces.",
-      "file": "logos/moredimensions/variants/coordinate-cube.svg",
-      "recommended": false,
+      "slug": "coordinate-fold",
+      "label": "Coordinate fold",
+      "description": "Three displaced coordinate grids fold through a shared origin. Perspective offsets and interrupted edges give the symbol a precise dimensional-engineering feel.",
+      "file": "logos/moredimensions/variants/coordinate-fold.svg",
+      "banner": "logos/moredimensions/variants/coordinate-fold-banner.svg",
+      "favicon": "logos/moredimensions/variants/coordinate-fold-favicon.ico",
+      "apple_touch_icon": "logos/moredimensions/variants/coordinate-fold-apple-touch-icon.png",
+      "og_image": "logos/moredimensions/variants/coordinate-fold-og-image.png",
+      "og_image_svg": "logos/moredimensions/variants/coordinate-fold-og-image.svg",
       "summary": "A science-fiction dimensional architecture API for adding custom Bedrock dimensions."
     },
     {
       "project": "MoreDimensions",
       "project_slug": "moredimensions",
-      "slug": "parallel-frames",
-      "label": "Parallel frames",
-      "description": "Three overlapping portal planes show parallel dimensional spaces and the transitions between them, avoiding a literal Nether-portal silhouette.",
-      "file": "logos/moredimensions/variants/parallel-frames.svg",
-      "recommended": false,
+      "slug": "dimensional-shear",
+      "label": "Dimensional shear",
+      "description": "Offset slabs of space overlap at different depths. The diagonal shear and split facets represent transitions between coordinate systems and custom dimensions.",
+      "file": "logos/moredimensions/variants/dimensional-shear.svg",
+      "banner": "logos/moredimensions/variants/dimensional-shear-banner.svg",
+      "favicon": "logos/moredimensions/variants/dimensional-shear-favicon.ico",
+      "apple_touch_icon": "logos/moredimensions/variants/dimensional-shear-apple-touch-icon.png",
+      "og_image": "logos/moredimensions/variants/dimensional-shear-og-image.png",
+      "og_image_svg": "logos/moredimensions/variants/dimensional-shear-og-image.svg",
       "summary": "A science-fiction dimensional architecture API for adding custom Bedrock dimensions."
     },
     {
@@ -514,7 +637,11 @@
       "label": "Bot bridge",
       "description": "A custom bot core is framed by API connection ports and a botanical antenna, conveying programmable agents and Mineflayer-compatible integration.",
       "file": "logos/bedboo/icon.svg",
-      "recommended": true,
+      "banner": "logos/bedboo/icon-banner.svg",
+      "favicon": "logos/bedboo/favicon.ico",
+      "apple_touch_icon": "logos/bedboo/apple-touch-icon.png",
+      "og_image": "logos/bedboo/og-image.png",
+      "og_image_svg": "logos/bedboo/og-image.svg",
       "summary": "A bot library with a Mineflayer-compatible API surface and a Bedrock-focused identity."
     },
     {
@@ -524,7 +651,11 @@
       "label": "API bridge",
       "description": "A central agent node connects to three differently shaped API ports, making the integration and transport layer the main visual idea.",
       "file": "logos/bedboo/variants/api-bridge.svg",
-      "recommended": false,
+      "banner": "logos/bedboo/variants/api-bridge-banner.svg",
+      "favicon": "logos/bedboo/variants/api-bridge-favicon.ico",
+      "apple_touch_icon": "logos/bedboo/variants/api-bridge-apple-touch-icon.png",
+      "og_image": "logos/bedboo/variants/api-bridge-og-image.png",
+      "og_image_svg": "logos/bedboo/variants/api-bridge-og-image.svg",
       "summary": "A bot library with a Mineflayer-compatible API surface and a Bedrock-focused identity."
     },
     {
@@ -534,7 +665,11 @@
       "label": "Autonomous agent",
       "description": "A compact modular agent silhouette includes directional sensor fins, an articulated base and a leaf-shaped status mark.",
       "file": "logos/bedboo/variants/autonomous-agent.svg",
-      "recommended": false,
+      "banner": "logos/bedboo/variants/autonomous-agent-banner.svg",
+      "favicon": "logos/bedboo/variants/autonomous-agent-favicon.ico",
+      "apple_touch_icon": "logos/bedboo/variants/autonomous-agent-apple-touch-icon.png",
+      "og_image": "logos/bedboo/variants/autonomous-agent-og-image.png",
+      "og_image_svg": "logos/bedboo/variants/autonomous-agent-og-image.svg",
       "summary": "A bot library with a Mineflayer-compatible API surface and a Bedrock-focused identity."
     },
     {
@@ -544,7 +679,11 @@
       "label": "Curated catalogue",
       "description": "A structured catalogue of modular cards is arranged around a central discovery mark, balancing browsing, curation and the Levi botanical family cue.",
       "file": "logos/levimc-mods/icon.svg",
-      "recommended": true,
+      "banner": "logos/levimc-mods/icon-banner.svg",
+      "favicon": "logos/levimc-mods/favicon.ico",
+      "apple_touch_icon": "logos/levimc-mods/apple-touch-icon.png",
+      "og_image": "logos/levimc-mods/og-image.png",
+      "og_image_svg": "logos/levimc-mods/og-image.svg",
       "summary": "A curated catalogue for discovering and browsing LeviMC-compatible mods and tools."
     },
     {
@@ -554,7 +693,11 @@
       "label": "Discovery orbit",
       "description": "A discovery lens follows a ring of modular entries, representing search, sorting and exploration across a growing mod ecosystem.",
       "file": "logos/levimc-mods/variants/discovery-orbit.svg",
-      "recommended": false,
+      "banner": "logos/levimc-mods/variants/discovery-orbit-banner.svg",
+      "favicon": "logos/levimc-mods/variants/discovery-orbit-favicon.ico",
+      "apple_touch_icon": "logos/levimc-mods/variants/discovery-orbit-apple-touch-icon.png",
+      "og_image": "logos/levimc-mods/variants/discovery-orbit-og-image.png",
+      "og_image_svg": "logos/levimc-mods/variants/discovery-orbit-og-image.svg",
       "summary": "A curated catalogue for discovering and browsing LeviMC-compatible mods and tools."
     },
     {
@@ -564,9 +707,12 @@
       "label": "Module shelf",
       "description": "A tiered set of installed module tiles sits in a stable catalogue frame, with an embedded leaf marking the curated source.",
       "file": "logos/levimc-mods/variants/module-shelf.svg",
-      "recommended": false,
+      "banner": "logos/levimc-mods/variants/module-shelf-banner.svg",
+      "favicon": "logos/levimc-mods/variants/module-shelf-favicon.ico",
+      "apple_touch_icon": "logos/levimc-mods/variants/module-shelf-apple-touch-icon.png",
+      "og_image": "logos/levimc-mods/variants/module-shelf-og-image.png",
+      "og_image_svg": "logos/levimc-mods/variants/module-shelf-og-image.svg",
       "summary": "A curated catalogue for discovering and browsing LeviMC-compatible mods and tools."
     }
-  ],
-  "color_guidance": "Project-specific accents are used in the product geometry. The embedded LeviLamina leaf remains in the official green palette as a secondary family mark."
+  ]
 }

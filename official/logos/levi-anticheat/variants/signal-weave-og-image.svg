@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">LeviAntiCheat — LeviMC project identity concept</title><desc id="desc">A detection and integrity layer for identifying suspicious client and server behaviour.</desc>
+<rect width="1200" height="630" fill="#f6f7f8"/>
+<path d="M0 0 H1200 V44 H0Z" fill="#172d45"/>
+<path d="M500 80 H1200 V630 H500Z" fill="#fbfcfd"/>
+<g fill="none" stroke-width="9" opacity=".18"><path d="M1035 110 V520 M1085 110 V520 M1135 110 V520" stroke="#2c5e8a"/><path d="M1005 210 H1160 M1005 360 H1160" stroke="#e36e70"/></g>
+<rect x="52" y="82" width="410" height="466" rx="30" fill="#f1f5f8" stroke="#d9e7f0" stroke-width="3"/>
+<g transform="translate(72 102) scale(.72)"><path d="M58 165 C139 165 154 221 220 221 C276 221 303 145 454 145" fill="none" stroke="#2c6d9d" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" /><path d="M58 256 C139 256 163 256 224 256 C284 256 314 256 454 256" fill="none" stroke="#e36e70" stroke-width="21" stroke-linecap="round" stroke-linejoin="round" /><path d="M58 347 C139 347 154 291 220 291 C276 291 303 367 454 367" fill="none" stroke="#27a9bd" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" /><polygon points="256,164 349,256 256,348 163,256" fill="#e8eef5" stroke="#172d45" stroke-width="14" stroke-linejoin="round" /><polygon points="256,202 310,256 256,310 202,256" fill="#e36e70" stroke="#172d45" stroke-width="8" stroke-linejoin="round" /><path d="M226 256 H286" fill="none" stroke="#f6d7a0" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" /><g transform="translate(256 256) rotate(0) scale(0.095)" opacity="1.0">
+      <path d="M-2 80 C-12 42 -5 -12 21 -62 C45 -108 89 -151 142 -172 C149 -114 138 -60 112 -16 C86 28 44 63 -2 80Z" fill="#e36e70" stroke="#172d45" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M-2 80 C-33 56 -85 31 -112 -5 C-135 -36 -132 -71 -107 -91 C-65 -96 -23 -69 -4 -30 C8 -4 8 39 -2 80Z" fill="#e8f1f5" stroke="#2c5e8a" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M-3 82 C24 31 61 -42 139 -168" fill="none" stroke="#172d45" stroke-width="8" stroke-linecap="round"/>
+      <path d="M-7 54 C-45 27 -73 5 -110 -4" fill="none" stroke="#2c5e8a" stroke-width="7" stroke-linecap="round"/>
+      <path d="M-3 83 C-7 116 -8 145 -4 177" fill="none" stroke="#172d45" stroke-width="10" stroke-linecap="round"/>
+      <path d="M24 27 C54 10 82 -12 100 -42 M43 -10 C69 -34 87 -58 103 -81 M-29 42 C-55 17 -75 4 -94 -2" fill="none" stroke="#26a9c4" stroke-width="5" stroke-linecap="round"/>
+    </g><circle cx="58" cy="165" r="13" fill="#e8eef5" stroke="#2c6d9d" stroke-width="7" /><circle cx="58" cy="347" r="13" fill="#e8eef5" stroke="#27a9bd" stroke-width="7" /><circle cx="454" cy="145" r="13" fill="#e8eef5" stroke="#2c6d9d" stroke-width="7" /><circle cx="454" cy="367" r="13" fill="#e8eef5" stroke="#27a9bd" stroke-width="7" /></g>
+<text x="548" y="178" fill="#2c5e8a" font-family="Inter,Segoe UI,sans-serif" font-size="19" font-weight="750" letter-spacing="4">LEVI MC PROJECT CONCEPT</text>
+<text x="544" y="267" fill="#17202b" font-family="Inter,Segoe UI,sans-serif" font-size="64" font-weight="780" letter-spacing="-1.7">LeviAntiCheat</text>
+<text x="548" y="327" fill="#2c5e8a" font-family="Inter,Segoe UI,sans-serif" font-size="27" font-weight="650">Integrity monitoring and detection</text>
+<text x="548" y="389" fill="#4b5563" font-family="Inter,Segoe UI,sans-serif" font-size="18"><tspan x="548" dy="0">A detection and integrity layer for identifying</tspan><tspan x="548" dy="29">suspicious client and server behaviour.</tspan></text>
+<path d="M548 474 H690" stroke="#e36e70" stroke-width="6" stroke-linecap="round"/>
+<text x="548" y="540" fill="#68717e" font-family="Inter,Segoe UI,sans-serif" font-size="16" font-weight="650" letter-spacing="2">UNOFFICIAL DESIGN STUDY · FOR REVIEW</text>
+</svg>

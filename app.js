@@ -85,6 +85,14 @@ function orderedOptions(item) {
   return out;
 }
 
+/* the stage opens on the recommendation, not on whatever is first */
+function previewIndex(item, ordered) {
+  const stored = state.preview[item.id];
+  if (stored !== undefined && ordered[stored]) return stored;
+  const best = ordered.findIndex((o) => o.verdict === 'best');
+  return best >= 0 ? best : 0;
+}
+
 /* ------------------------------------------------------------ persistence */
 
 function load() {
@@ -231,7 +239,7 @@ function renderStage() {
   }
   const group = item.group;
   const ordered = orderedOptions(item);
-  const current = ordered[state.preview[item.id] || 0] || ordered[0];
+  const current = ordered[previewIndex(item, ordered)] || ordered[0];
   const choice = decisionOf(item);
   const list = visibleItems();
   const pos = list.findIndex((i) => i.id === item.id) + 1;
@@ -468,7 +476,7 @@ document.addEventListener('keydown', (event) => {
     const item = activeItem();
     if (!item) return;
     const ordered = orderedOptions(item);
-    const index = state.preview[item.id] || 0;
+    const index = previewIndex(item, ordered);
     state.preview[item.id] = (index + (event.key === 'ArrowDown' ? 1 : -1) + ordered.length) % ordered.length;
     renderStage();
     event.preventDefault();
@@ -476,7 +484,7 @@ document.addEventListener('keydown', (event) => {
     const item = activeItem();
     if (!item) return;
     const ordered = orderedOptions(item);
-    choose((ordered[state.preview[item.id] || 0] || ordered[0]).name);
+    choose((ordered[previewIndex(item, ordered)] || ordered[0]).name);
     event.preventDefault();
   } else if (event.key.toLowerCase() === 'k') {
     choose('keep');

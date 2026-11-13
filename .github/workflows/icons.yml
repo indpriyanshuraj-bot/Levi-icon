@@ -35,6 +35,10 @@ jobs:
         run: |
           for dir in assets/*/; do
             name=$(basename "$dir")
+            if ! ls "$dir"*.svg >/dev/null 2>&1; then
+              echo "skip $name: no SVGs yet"
+              continue
+            fi
             mkdir -p "dist/set/$name"
             npx --yes svgo@3 -f "$dir" -o "dist/set/$name" --config svgo.config.mjs
           done

@@ -33,7 +33,7 @@ const icons = readdirSync('dist/icons')
       file: `icons/${file}`,
       title: (body.match(/<title>(.*?)<\/title>/) || [, name])[1],
       palette: [...body.matchAll(/stop-color="(#[0-9a-fA-F]{6})"/g)].map((m) => m[1]),
-      accent: (body.match(/<g stroke="(#[0-9a-fA-F]{6})" stroke-opacity="\.3"/) || [, null])[1],
+      accent: ([...body.matchAll(/stroke="(#[0-9a-fA-F]{6})"/g)][0] || [])[1] || null,
       usedIn: usage[name] || [],
     };
   });

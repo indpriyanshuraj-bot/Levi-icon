@@ -32,7 +32,13 @@ jobs:
         run: node scripts/validate.mjs
 
       - name: Optimise SVGs
-        run: npx --yes svgo@3 -f assets -o dist/set --config svgo.config.mjs
+        run: |
+          for dir in assets/*/; do
+            name=$(basename "$dir")
+            mkdir -p "dist/set/$name"
+            npx --yes svgo@3 -f "$dir" -o "dist/set/$name" --config svgo.config.mjs
+          done
+          find dist/set -name '*.svg' | wc -l
 
       - name: Build manifest
         run: node scripts/manifest.mjs

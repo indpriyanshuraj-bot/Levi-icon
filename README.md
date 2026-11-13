@@ -14,15 +14,15 @@ The whole app is four files and no build step:
 | `data.json` | every placement, its current icon, its options and colours |
 | `app.js` | reads `data.json` and renders the rail, the stage and the decision sheet |
 | `styles.css` | the layout — landscape first, no page scroll |
-| `assets/icons/*.svg` | the candidate icons, single-colour, tinted at runtime |
+| `assets/website/*.svg` | the website icon set |
+| `assets/levi/*.svg`, `assets/miracle/*.svg` | the two logo sets, empty and ready |
 
 The current icons are **not stored here**. They are hotlinked from the `LiteLDev/levimc.org` repository
 (`kit/assets/icons/`) through jsDelivr, with a `raw.githubusercontent.com` fallback, so the comparison always shows
 what is live in the source rather than a copy that can drift.
 
-Candidates are drawn through a CSS mask, which is why one single-colour SVG can carry any token colour without
-being duplicated per palette. The tint is a three-stop gradient built from the token at runtime (light edge, token,
-shadowed edge), so the artwork stays colourless and the palette stays in `data.json`.
+Each SVG carries its own two-tone artwork: a three-stop gradient stroke, one accent colour on a detail, and a soft
+offset shadow. `data.json` decides which file each placement uses; the file decides the colour.
 
 ## Adding to it
 
@@ -66,15 +66,14 @@ Then open `http://localhost:8000/`. Opening `index.html` from the file system wi
 
 - Click a placement in the left rail, or step through with `←` `→`.
 - `↑` `↓` switch between the proposed options; `Enter` chooses the one on screen; `K` keeps the current icon.
-- Decisions are stored in the browser. **Review** shows the sheet; **Download** in the header writes
-  `levimc-icon-choices-<date>.json` at any time.
-- That JSON is written to be handed straight to a maintainer or an AI: one entry per decided placement with `ref`,
-  `size`, `from`, `to`, `file`, `colour` and an `instructions` line.
+- The app opens on a chooser: website icons, Levi project logos, Miracle project logos. Decisions are stored per set.
+- **Review & export** shows the sheet and writes JSON, CSV, a Markdown table or TXT. The JSON is one entry per decided
+  placement with `id`, `choice`, `ref` and `file` — nothing else, so it can be handed straight to a maintainer or an AI.
 
 ## Releases
 
-Every push that touches `assets/icons/` or `data.json` runs `.github/workflows/icons.yml`: it validates, optimises the
-SVGs with SVGO, builds `manifest.json`, and publishes a release.
+Every push that touches `assets/` or `data.json` runs `.github/workflows/icons.yml`: it validates, optimises the SVGs
+with SVGO, builds `manifest.json`, and publishes a release with a zip per set.
 
 | What | URL |
 |---|---|

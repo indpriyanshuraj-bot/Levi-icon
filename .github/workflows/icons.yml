@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'assets/icons/**'
+      - 'assets/**'
       - 'data.json'
       - 'svgo.config.mjs'
       - 'scripts/manifest.mjs'
@@ -32,7 +32,7 @@ jobs:
         run: node scripts/validate.mjs
 
       - name: Optimise SVGs
-        run: npx --yes svgo@3 -r assets/icons -o dist/icons --config svgo.config.mjs
+        run: npx --yes svgo@3 -f assets -o dist/set --config svgo.config.mjs
 
       - name: Build manifest
         run: node scripts/manifest.mjs
@@ -40,7 +40,11 @@ jobs:
       - name: Package
         run: |
           cd dist
-          zip -qr levimc-icons.zip icons manifest.json
+          zip -qr levimc-icons.zip set manifest.json
+          for dir in set/*/; do
+            name=$(basename "$dir")
+            [ -n "$(ls -A "$dir")" ] && zip -qr "${name}-icons.zip" "set/$name"
+          done
           ls -la
 
       - name: Publish release
@@ -52,12 +56,17 @@ jobs:
           body: |
             Optimised SVG set built from `${{ github.sha }}`.
 
-            **Download the whole set:** [levimc-icons.zip](https://github.com/${{ github.repository }}/releases/latest/download/levimc-icons.zip)
+            | Set | Download |
+            | --- | --- |
+            | Everything | [levimc-icons.zip](https://github.com/${{ github.repository }}/releases/latest/download/levimc-icons.zip) |
+            | Website icons | [website-icons.zip](https://github.com/${{ github.repository }}/releases/latest/download/website-icons.zip) |
+            | Levi project logos | [levi-icons.zip](https://github.com/${{ github.repository }}/releases/latest/download/levi-icons.zip) |
+            | Miracle project logos | [miracle-icons.zip](https://github.com/${{ github.repository }}/releases/latest/download/miracle-icons.zip) |
 
-            **One icon:** `https://github.com/${{ github.repository }}/releases/latest/download/<name>.svg`
-
-            `manifest.json` lists every icon with its palette, accent and the placements it is used for.
+            Single icon: `https://github.com/${{ github.repository }}/releases/latest/download/<name>.svg`.
+            `manifest.json` lists every set, icon, palette and placement.
           files: |
             dist/levimc-icons.zip
+            dist/*-icons.zip
             dist/manifest.json
-            dist/icons/*.svg
+            dist/set/*/*.svg

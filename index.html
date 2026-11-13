@@ -4,19 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LeviMC icon review</title>
-<meta name="description" content="Compare the current levimc.org icons with the proposed replacements, one placement at a time.">
+<meta name="description" content="Compare current icons and logos with the proposed replacements, one placement at a time.">
 <meta name="theme-color" content="#f7f3e8">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css?v=4">
-<script src="app.js?v=4" defer></script>
+<link rel="stylesheet" href="styles.css?v=5">
+<script src="app.js?v=5" defer></script>
 </head>
 <body>
 <div class="app">
   <header class="topbar">
-    <div class="brand">
+    <button class="brand" id="brand" type="button" title="Back to the sets">
       <span class="brand-mark" aria-hidden="true"></span>
       <span class="brand-text">LEVI<b>ICON REVIEW</b></span>
-    </div>
+    </button>
 
     <nav class="groups" id="groups" aria-label="Sections"></nav>
 
@@ -25,15 +25,15 @@
         <span id="progress-count">0 / 0</span>
         <span class="progress-bar" aria-hidden="true"><i id="progress-fill"></i></span>
       </div>
-      <button class="btn ghost sm" id="summary-btn" type="button">Review</button>
-      <button class="btn ghost sm" id="download-btn" type="button" title="Download the chosen icons as JSON">Download</button>
-      <button class="btn ghost sm icon" id="theme-btn" type="button" aria-pressed="false" title="Switch preview surface">
+      <button class="btn ghost sm" id="summary-btn" type="button">Review &amp; export</button>
+      <button class="btn ghost sm" id="theme-btn" type="button" aria-pressed="false" title="Switch preview surface">
         <span id="theme-label">Dark</span>
       </button>
     </div>
   </header>
 
-  <main class="body">
+  <main class="body" id="body">
+    <section class="start" id="start"></section>
     <aside class="rail" id="rail" aria-label="Placements"></aside>
     <section class="stage" id="stage" aria-live="polite"></section>
   </main>
@@ -52,8 +52,10 @@
     <footer class="sheet-foot">
       <p class="hint" id="sheet-hint"></p>
       <div class="sheet-actions">
-        <button class="btn ghost sm" id="export-copy" type="button">Copy JSON</button>
-        <button class="btn ghost sm" id="export-file" type="button">Download JSON</button>
+        <button class="btn ghost sm" id="export-json" type="button">JSON</button>
+        <button class="btn ghost sm" id="export-csv" type="button">CSV</button>
+        <button class="btn ghost sm" id="export-md" type="button">Markdown</button>
+        <button class="btn ghost sm" id="export-txt" type="button">TXT</button>
         <button class="btn ghost sm danger" id="reset" type="button">Reset</button>
       </div>
     </footer>

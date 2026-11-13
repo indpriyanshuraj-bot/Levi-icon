@@ -17,10 +17,10 @@
     {
       "id": "website",
       "title": "Website icons",
-      "note": "Every decision below is a real placement in levimc.org source.",
+      "note": "Every decision is a real placement in levimc.org source.",
       "currentBase": "https://cdn.jsdelivr.net/gh/LiteLDev/levimc.org@main/kit/assets/icons",
       "currentFallback": "https://raw.githubusercontent.com/LiteLDev/levimc.org/main/kit/assets/icons",
-      "optionBase": "assets/icons",
+      "optionBase": "assets/website",
       "groups": [
         {
           "id": "home",
@@ -596,6 +596,20 @@
           ]
         }
       ]
+    },
+    {
+      "id": "levi",
+      "title": "Levi project logos",
+      "note": "Project and application marks for the Levi family. Add items to data.json to fill this set.",
+      "optionBase": "assets/levi",
+      "groups": []
+    },
+    {
+      "id": "miracle",
+      "title": "Miracle project logos",
+      "note": "Marks for Miracle. Add items to data.json to fill this set.",
+      "optionBase": "assets/miracle",
+      "groups": []
     }
   ]
 }

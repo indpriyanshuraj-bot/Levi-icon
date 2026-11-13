@@ -24,8 +24,10 @@ if (!Array.isArray(data.collections) || !data.collections.length) {
 const seen = new Set();
 
 for (const collection of data.collections || []) {
-  const optionBase = collection.optionBase || 'assets/icons';
-  if (!collection.currentBase) errors.push(`${collection.id}: currentBase is required`);
+  const optionBase = collection.optionBase || 'assets';
+  const filled = (collection.groups || []).some((g) => (g.items || []).length);
+  if (filled && !collection.currentBase) errors.push(`${collection.id}: currentBase is required once it has items`);
+  if (!filled) continue;
 
   for (const group of collection.groups || []) {
     if (!group.items || !group.items.length) warnings.push(`${collection.id}/${group.id}: group has no items`);
@@ -50,22 +52,24 @@ for (const collection of data.collections || []) {
   }
 }
 
-/* every candidate must be a single-colour glyph: no baked-in palette */
-const iconDir = join(root, 'assets/icons');
-if (existsSync(iconDir)) {
+/* every candidate carries its own two-tone artwork */
+const bases = [...new Set((data.collections || []).map((c) => c.optionBase || 'assets'))];
+for (const base of bases) {
+  const iconDir = join(root, base);
+  if (!existsSync(iconDir)) continue;
   for (const file of readdirSync(iconDir).filter((f) => f.endsWith('.svg'))) {
     const body = readFileSync(join(iconDir, file), 'utf8');
     if (!/<linearGradient/.test(body)) {
-      errors.push(`assets/icons/${file}: needs a <linearGradient> for its two-tone stroke`);
+      errors.push(`${base}/${file}: needs a <linearGradient> for its two-tone stroke`);
     }
     if (/stroke="currentColor"/.test(body)) {
-      errors.push(`assets/icons/${file}: still colourless; the set ships its own palette`);
+      errors.push(`${base}/${file}: still colourless; the set ships its own palette`);
     }
     if (!/<title>/.test(body)) {
-      warnings.push(`assets/icons/${file}: no <title>`);
+      warnings.push(`${base}/${file}: no <title>`);
     }
     if (!/viewBox="0 0 24 24"/.test(body)) {
-      warnings.push(`assets/icons/${file}: not on the 24x24 grid`);
+      warnings.push(`${base}/${file}: not on the 24x24 grid`);
     }
   }
 }

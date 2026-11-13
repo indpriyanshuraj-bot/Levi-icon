@@ -71,12 +71,12 @@
                 {
                   "name": "terminal",
                   "token": "pond",
-                  "verdict": "best"
+                  "verdict": "alt"
                 },
                 {
                   "name": "package-check",
                   "token": "primary",
-                  "verdict": "alt"
+                  "verdict": "best"
                 }
               ]
             },
@@ -98,12 +98,12 @@
                 {
                   "name": "code",
                   "token": "pond",
-                  "verdict": "best"
+                  "verdict": "alt"
                 },
                 {
                   "name": "languages",
                   "token": "pond",
-                  "verdict": "alt"
+                  "verdict": "best"
                 }
               ]
             },
@@ -212,12 +212,12 @@
                 {
                   "name": "file-code",
                   "token": "pond",
-                  "verdict": "best"
+                  "verdict": "alt"
                 },
                 {
                   "name": "code",
                   "token": "pond",
-                  "verdict": "alt"
+                  "verdict": "best"
                 }
               ]
             }

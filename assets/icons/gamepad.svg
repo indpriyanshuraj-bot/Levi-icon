@@ -1,5 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><title>Gamepad</title><path d="M8 7.2h8a4.6 4.6 0 0 1 4.5 5.5l-.8 4.1a2.7 2.7 0 0 1-4.8 1.1L13.5 16h-3l-1.4 1.9a2.7 2.7 0 0 1-4.8-1.1l-.8-4.1A4.6 4.6 0 0 1 8 7.2z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Gamepad</title><defs><linearGradient id="g" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#8bcd9a"/><stop offset=".52" stop-color="#4f8a5b"/><stop offset="1" stop-color="#2f5b3c"/></linearGradient></defs><g stroke="#e9c46a" stroke-opacity=".3" stroke-width="1.8" transform="translate(.75 1)"><path d="M8 7.2h8a4.6 4.6 0 0 1 4.5 5.5l-.8 4.1a2.7 2.7 0 0 1-4.8 1.1L13.5 16h-3l-1.4 1.9a2.7 2.7 0 0 1-4.8-1.1l-.8-4.1A4.6 4.6 0 0 1 8 7.2z"/>
 <path d="M8.4 9.6v4.2M6.3 11.7h4.2"/>
 <path d="M16.2 11.2h.01M18.3 13.3h.01"/>
-<path d="M7.6 7.2V5.6M16.4 7.2V5.6"/>
-</svg>
+<path d="M7.6 7.2V5.6M16.4 7.2V5.6"/></g><g stroke="url(#g)" stroke-width="1.8"><path d="M8 7.2h8a4.6 4.6 0 0 1 4.5 5.5l-.8 4.1a2.7 2.7 0 0 1-4.8 1.1L13.5 16h-3l-1.4 1.9a2.7 2.7 0 0 1-4.8-1.1l-.8-4.1A4.6 4.6 0 0 1 8 7.2z"/><path d="M8.4 9.6v4.2M6.3 11.7h4.2"/><path d="M16.2 11.2h.01M18.3 13.3h.01" stroke="#e9c46a"/><path d="M7.6 7.2V5.6M16.4 7.2V5.6" stroke="#e9c46a"/></g></svg>

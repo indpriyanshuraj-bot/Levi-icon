@@ -371,6 +371,7 @@ code, .mono { font-family: var(--mono); font-size: 11.5px; }
 }
 
 .big .sprite,
+.big .cand,
 .big .mask {
   width: clamp(64px, 15vh, 150px);
   height: clamp(64px, 15vh, 150px);
@@ -380,6 +381,8 @@ code, .mono { font-family: var(--mono); font-size: 11.5px; }
   display: block;
   image-rendering: pixelated;
 }
+
+.cand { display: block; }
 
 /* currentColor sprites render black inside <img>; flip them on the dark surface */
 [data-theme="oled"] .sprite.mono { filter: invert(1); }
@@ -620,7 +623,7 @@ code, .mono { font-family: var(--mono); font-size: 11.5px; }
   .topbar { gap: 10px; padding: 0 12px; }
   .brand-text { display: none; }
   .progress-bar { display: none; }
-  .big .sprite, .big .mask { width: clamp(56px, 11vh, 96px); height: clamp(56px, 11vh, 96px); }
+  .big .sprite, .big .cand, .big .mask { width: clamp(56px, 11vh, 96px); height: clamp(56px, 11vh, 96px); }
   .stage-head h1 { font-size: 22px; }
   .app { height: auto; min-height: 100dvh; grid-template-rows: auto auto; }
   .body { grid-template-columns: 1fr; }

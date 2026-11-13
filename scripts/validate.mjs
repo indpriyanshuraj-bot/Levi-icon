@@ -55,8 +55,14 @@ const iconDir = join(root, 'assets/icons');
 if (existsSync(iconDir)) {
   for (const file of readdirSync(iconDir).filter((f) => f.endsWith('.svg'))) {
     const body = readFileSync(join(iconDir, file), 'utf8');
-    if (/(stroke|fill)="#/.test(body)) {
-      errors.push(`assets/icons/${file}: carries a fixed colour; use stroke="currentColor"`);
+    if (!/<linearGradient/.test(body)) {
+      errors.push(`assets/icons/${file}: needs a <linearGradient> for its two-tone stroke`);
+    }
+    if (/stroke="currentColor"/.test(body)) {
+      errors.push(`assets/icons/${file}: still colourless; the set ships its own palette`);
+    }
+    if (!/<title>/.test(body)) {
+      warnings.push(`assets/icons/${file}: no <title>`);
     }
     if (!/viewBox="0 0 24 24"/.test(body)) {
       warnings.push(`assets/icons/${file}: not on the 24x24 grid`);

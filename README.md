@@ -71,6 +71,20 @@ Then open `http://localhost:8000/`. Opening `index.html` from the file system wi
 - That JSON is written to be handed straight to a maintainer or an AI: one entry per decided placement with `ref`,
   `size`, `from`, `to`, `file`, `colour` and an `instructions` line.
 
+## Releases
+
+Every push that touches `assets/icons/` or `data.json` runs `.github/workflows/icons.yml`: it validates, optimises the
+SVGs with SVGO, builds `manifest.json`, and publishes a release.
+
+| What | URL |
+|---|---|
+| Whole set | `https://github.com/indpriyanshuraj-bot/Levi-icon/releases/latest/download/levimc-icons.zip` |
+| One icon | `https://github.com/indpriyanshuraj-bot/Levi-icon/releases/latest/download/<name>.svg` |
+| Manifest | `https://github.com/indpriyanshuraj-bot/Levi-icon/releases/latest/download/manifest.json` |
+
+`AGENT.md` is written for an AI assistant picking this set up cold: where the icons live, what the grid and colour
+rules are, and how to apply a decision file.
+
 ## Provenance
 
 Placements, file references and the current icon set were read from `LiteLDev/levimc.org` at `a391a35`, kit 2.2.0.

@@ -1,0 +1,63 @@
+name: Icons — optimise and release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/icons/**'
+      - 'data.json'
+      - 'svgo.config.mjs'
+      - 'scripts/manifest.mjs'
+      - '.github/workflows/icons.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: icons-release
+  cancel-in-progress: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate data.json
+        run: node scripts/validate.mjs
+
+      - name: Optimise SVGs
+        run: npx --yes svgo@3 -r assets/icons -o dist/icons --config svgo.config.mjs
+
+      - name: Build manifest
+        run: node scripts/manifest.mjs
+
+      - name: Package
+        run: |
+          cd dist
+          zip -qr levimc-icons.zip icons manifest.json
+          ls -la
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: icons-v${{ github.run_number }}
+          name: Icon set v${{ github.run_number }}
+          make_latest: true
+          body: |
+            Optimised SVG set built from `${{ github.sha }}`.
+
+            **Download the whole set:** [levimc-icons.zip](https://github.com/${{ github.repository }}/releases/latest/download/levimc-icons.zip)
+
+            **One icon:** `https://github.com/${{ github.repository }}/releases/latest/download/<name>.svg`
+
+            `manifest.json` lists every icon with its palette, accent and the placements it is used for.
+          files: |
+            dist/levimc-icons.zip
+            dist/manifest.json
+            dist/icons/*.svg

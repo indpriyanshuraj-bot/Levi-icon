@@ -61,23 +61,9 @@ function spriteHTML(item, size, cls = '') {
 }
 
 /* candidate icon: masked so one file can carry any token colour */
-function shade(hex, amount) {
-  const clean = String(hex).replace('#', '');
-  const full = clean.length === 3 ? clean.split('').map((c) => c + c).join('') : clean;
-  const num = parseInt(full, 16);
-  const clamp = (v) => Math.max(0, Math.min(255, Math.round(v)));
-  const r = clamp(((num >> 16) & 255) + amount);
-  const g = clamp(((num >> 8) & 255) + amount);
-  const b = clamp((num & 255) + amount);
-  return '#' + ((r << 16) | (g << 8) | b).toString(16).padStart(6, '0');
-}
-
-/* one gradient per token: light edge, token in the middle, shadowed edge */
-function maskHTML(option, size, cls = '') {
-  const base = tintOf(option);
-  const light = shade(base, 66);
-  const dark = shade(base, -52);
-  return `<span class="mask ${cls}" style="--src:url('${optionSrc(option)}');--tint-a:${light};--tint-b:${base};--tint-c:${dark};width:${size}px;height:${size}px" aria-hidden="true"></span>`;
+/* the candidates carry their own two-tone artwork now, so they render as images */
+function candHTML(option, size, cls = '') {
+  return `<img class="cand ${cls}" src="${optionSrc(option)}" width="${size}" height="${size}" alt="" draggable="false">`;
 }
 
 function chosenHTML(item, size, cls = '') {
@@ -85,7 +71,7 @@ function chosenHTML(item, size, cls = '') {
   if (!choice) return '<span class="chip-tag">—</span>';
   if (choice === 'keep') return spriteHTML(item, size, cls);
   const option = optionOf(item, choice);
-  return option ? maskHTML(option, size, cls) : '<span class="chip-tag">—</span>';
+  return option ? candHTML(option, size, cls) : '<span class="chip-tag">—</span>';
 }
 
 /* ------------------------------------------------------------ persistence */
@@ -212,9 +198,9 @@ function renderStage() {
       </section>
       <section class="pane pane-prop">
         <p class="pane-label">Proposed <b>${option.name}</b></p>
-        <div class="big">${maskHTML(option, 150)}</div>
+        <div class="big">${candHTML(option, 150)}</div>
         <div class="ladder">${ladderSizes
-          .map((s) => `<div>${maskHTML(option, s)}<span>${s}px</span></div>`)
+          .map((s) => `<div>${candHTML(option, s)}<span>${s}px</span></div>`)
           .join('')}</div>
       </section>
     </div>
@@ -234,7 +220,7 @@ function renderStage() {
           .map(
             (o, i) => `<button class="chip${choice === o.name ? ' is-chosen' : ''}" type="button" data-pick="${o.name}"
               data-verdict="${o.verdict || ''}" aria-pressed="${index === i}">
-              <span class="chip-ic">${maskHTML(o, 22)}</span>
+              <span class="chip-ic">${candHTML(o, 22)}</span>
               <span class="chip-body">
                 <span class="chip-name">${o.name}</span>
                 <span class="chip-tag">${o.verdict === 'best' ? 'recommended' : 'alternative'}</span>
@@ -279,7 +265,7 @@ function choose(value) {
   renderStage();
   const list = visibleItems();
   const pos = list.findIndex((i) => i.id === item.id);
-  if (pos < list.length - 1) step(1);
+  if (value !== 'keep' && pos < list.length - 1) step(1);
 }
 
 function step(delta) {
